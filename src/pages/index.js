@@ -43,7 +43,7 @@ Begining of my blog
 
 export function getStaticProps() {
   const posts = getAllPosts().slice(0, 6)
-console.log(posts)
+//console.log(posts)
   return {
     props:{
       posts

@@ -1,4 +1,5 @@
 import  path from 'path'
+import {glob, globSync, Glob} from 'glob'
 import fs from 'fs'
 import matter from 'gray-matter'
 import { sortByDate } from '@/utils/sortByDate'
@@ -19,26 +20,98 @@ import remarkMdxImages from 'remark-mdx-images' //change images to javascript im
 //get posts path
 
 const ROOT = process.cwd()
-const postsDirectory = path.join(ROOT, 'posts')
+const postsDirectory = path.join(ROOT, 'content/posts')
 
 
 //public path
 const PUBLIC_PATH  = path.join(ROOT, 'public')
 
 
-export const getAllPosts = () => {
-    const fileNames = fs.readdirSync(postsDirectory)
+//array to store all our file paths
+const blogFiles = [];
+//function to get all posts in the subdirectory method one
 
-    const posts = fileNames.map((fileName) => {
-        // console.log(fileName)
+
+// const readTargetDir = (directory) => {
+//     //console.log(directory)
+//     fs.readdirSync(directory).forEach((file) => {
+
+//         //console.log(file)
+//         const absoluteFilePath = path.join(directory, file)
+//         //.isDirectory() checks if path is a file or directory
+//         //console.log(absoluteFilePath)
+//         if(fs.statSync(absoluteFilePath).isDirectory()){
+//             return readTargetDir(absoluteFilePath)
+//         }else{
+//             return blogFiles.push(absoluteFilePath)
+//         }
+//     })
+// }
+// readTargetDir(postsDirectory)
+
+//  //console.log(blogFiles)
+
+//function to get all posts in the subdirectory method two
+// const getFilesRecursively = (directory) => {
+//     const filesInDirectory = fs.readdirSync(directory)
+//     for(const file of filesInDirectory){
+//         const absolute = path.join(directory, file) ;
+//         //.isDirectory() checks if path is a file or directory
+//         if(fs.statSync(absolute).isDirectory()){
+//             getFilesRecursively(absolute)
+//         }else if(absolute.includes('.mdx')){
+//         blogFiles.push(absolute.replace(`${directory}/`, ''))
+//         }
+    
+//     }
+// }
+
+// getFilesRecursively(postsDirectory)
+// console.log(blogFiles)
+
+
+//function to get all posts in the subdirectory method three
+const getFilesFromSubDirectories = (dir, fileTypes) => {
+
+    const walkDir = (currentPath) => {
+        const files = fs.readdirSync(currentPath)
+        for(let i in files) {
+            let currentFile = path.join(currentPath, files[i])
+            if(fs.statSync(currentFile).isFile() && fileTypes.indexOf(path.extname(currentFile)) !=-1){
+
+                console.log(currentFile)
+
+                blogFiles.push(currentFile.replace(`${dir}/`, ''))
+            }else if(fs.statSync(currentFile).isDirectory()){
+
+                walkDir(currentFile)
+            }
+        }
+    }
+
+    walkDir(dir)
+
+    return blogFiles
+}
+
+getFilesFromSubDirectories(postsDirectory, ['.mdx'])
+
+//console.log(blogFiles)
+
+export const getAllPosts = () => {
+    //const fileNames = fs.readdirSync(postsDirectory)
+
+    const posts = blogFiles?.map((fileName) => {
+        //console.log(fileName)
+        
 
         const slug = fileName.replace('.mdx', "" )
 
         const fullPath = path.join(postsDirectory, fileName)
-        // console.log(fullPath)
+        //console.log(fullPath)
 
-        const fileContents = fs.readFileSync(fullPath, 'utf-8')
-        // console.log(fileContents)
+         const fileContents = fs.readFileSync(fullPath, 'utf-8')
+     //console.log(fileContents)
 
         const {data: frontmatter} = matter(fileContents)
 
@@ -78,7 +151,7 @@ export const getSinglePost = async(slug) => {
         },
          scope:frontmatter,
     })
-     console.log(frontmatter)
+     //console.log(frontmatter)
     
 
     return {

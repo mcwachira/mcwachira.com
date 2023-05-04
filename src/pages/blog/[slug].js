@@ -8,7 +8,7 @@ import Image from 'next/image'
 const PostPage = ({slug, source, frontmatter}) => {
 
 
-    console.log(frontmatter)
+    //console.log(frontmatter)
     return (
 
         <div>
@@ -37,8 +37,9 @@ export default PostPage
 
 export const getStaticProps = async ({params}) => {
    
+    console.log(params)
     const post = await getSinglePost(params.slug)
-    // console.log(post)
+    console.log(post)
 
     return {
         props:{
