@@ -1,10 +1,10 @@
-import '@/styles/globals.css'
+import '../styles/globals.css'
 import Layout from '@/components/Layout'
 import * as gtag from '@/utils/gtag'
 import Router from 'next/router'
 import { useEffect } from 'react'
 import Script from 'next/script'
-// import { PageView, Event} from '@/utils/gtag'
+import { PageView, Event} from '@/utils/gtag'
 
 
 function MyApp({ Component, pageProps }) {

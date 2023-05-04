@@ -8,7 +8,6 @@ import { Blog } from 'styled-icons/icomoon'
 import { getAllPosts } from '@/lib/posts'
 import {device} from '@/utils/devices'
 import ContactMe from '@/components/ContactMe/ContactMe'
-import Navbar from '@/components/Navbar/Navbar'
 //import dynamically
 
 const  ToggleButton  = dynamic(() =>import( '@/components/Button/ToggleButton'),{
@@ -161,7 +160,8 @@ export default function Home({posts}) {
 
 
   return (
-    <div>
+    <div >
+   
       <Head>
         <title>Mcwachira&#8216;s Blog and Portfolio site</title>
         <meta name="description" content="personal website blog and portfolio" />
@@ -223,12 +223,16 @@ export default function Home({posts}) {
 }
 
 
-export function getStaticProps() {
+
+//always return an object with getStaticProps
+export const getStaticProps = async () => {
+
   const posts = getAllPosts().slice(0, 6)
-//console.log(posts)
+
+
   return {
-    props:{
-      posts
+    props: {
+       posts
     }
   }
 }
