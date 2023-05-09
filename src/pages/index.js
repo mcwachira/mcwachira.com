@@ -113,8 +113,8 @@ const BodyContainer = styled.div`
 width: 100%;
 margin:auto;
 display:grid;
-gap:4rem;
-margin:3rem auto;
+gap:1rem;
+margin:2rem auto;
 /* background: #EAEEF4; */
 
 @media ${device.tablet}{
@@ -225,7 +225,7 @@ export default function Home({posts}) {
 
 export function getStaticProps() {
   const posts = getAllPosts().slice(0, 6)
-//console.log(posts)
+console.log(posts)
   return {
     props:{
       posts

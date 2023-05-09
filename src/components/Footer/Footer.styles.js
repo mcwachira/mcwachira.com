@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { device } from '../../utils/devices'
 import MyLink from '../Link'
+import Link from 'next/link'
 
 export const FooterContainer = styled.div`
 font-size:13px;
@@ -12,14 +13,14 @@ border-top:1px solid  #999;
 padding-top: 2rem;
 display:flex;
 flex-direction: column;
-margin-top: 20rem;
+margin-top: 10rem;
 
 
 
 @media ${device.tablet}{
 flex-direction: row;
 justify-content: space-between;
-margin-top: 5rem;
+margin-top: 3rem;
 
 }
 
@@ -81,7 +82,7 @@ flex-direction: column;
 }
 
 `
-export const FooterLink = styled(MyLink)`
+export const FooterLink = styled(Link)`
 font-size: 1.1rem;
 padding:.5rem 0;
 

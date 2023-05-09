@@ -1,35 +1,130 @@
+import React, {useMemo} from 'react'
+import styled from 'styled-components'
 import { getAllPosts, getSinglePost } from '@/lib/posts'
 import { MDXRemote } from 'next-mdx-remote'
-import MdxImage from '@/utils/mdxImage'
+import {device} from '@/utils/devices'
+import {CH} from '@code-hike/mdx/components'
+import MdxImage from '@/utils/MdxImage';
 import Link from 'next/link'
-import Image from 'next/image'
+import Image from 'next/legacy/image';
 
+const BackButton = styled(Link)`
+/* background-color: #0070f3; */
+font-size:1.2rem;
+/* padding:.5rem 1rem ; */
+color:#0AC2C2;
+`
+
+const PostPageContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    background: var(--color-bg-primary);
+  color: var(--color-text-primary);
+    transition: background 350ms;
+    margin:8rem auto;
+
+`
+
+const PostContainer = styled.div`
+  width:100%;
+    position: relative;
+    margin:auto;
+    flex: 1 1 0%;
+    max-width: 100vw;
+    min-height: 100vh;
+    overflow: hidden;
+    padding: 0px 32px;
+    /* letter-spacing:1px;
+    line-height: 1rem; */
+  
+@media ${device.tablet}{
+width:50%;
+};
+
+/* background-color: #fff; */
+
+`
+const PostTitle = styled.h1`
+font-size: 3rem;
+line-height: 3.2rem;
+color:#000;
+text-align: center;
+margin: 3rem auto;
+  color: var(--color-text-secondary);
+
+`
+
+const PostTextContainer = styled.div`
+
+`
+const PostTextHeader = styled.div`
+margin-top:1rem;
+display: flex;
+justify-content:space-around
+`
 
 const PostPage = ({slug, source, frontmatter}) => {
 
+/* 
+    const Component  =useMemo(() => {
+
+        if(source){
+            return (    <MDXRemote {...source} />)
+        }
+        return (<div></div>)
+ 
+        /* img:(props) => (
+            <Image {...props} layout='responsive' loading='lazy' placeholder='blur'/>
+        ) */
+
+/* }  ,[source]) */
 
     //console.log(frontmatter)
     return (
 
-        <div>
-<Link href='/'>
+ <PostPageContainer      title={frontmatter.title}
+ description={frontmatter.excerpt}
+ date={frontmatter.date}
+ type={frontmatter.article}>
 
-        Go  Back Home
-    
 
-</Link>
+<PostContainer>
+     
+              <PostTitle>
+          {frontmatter?.title} 
+          
+              </PostTitle>
+        <Image src={frontmatter.cover_image} alt={frontmatter.title} width={1000} height={400}/>
+     
+              <PostTextContainer>
+          <PostTextHeader>
+            <BackButton href='/blog'> Go Back</BackButton>
+            {frontmatter.readingTime.text}
+             {frontmatter.wordCount}           
+              {/* {frontmatter.slug}  */}
+          </PostTextHeader>
+      
 
-<h1>
-    
-    {frontmatter.title}
-</h1>
+     
+          
+          <MDXRemote {...source}  language={frontmatter.language} components={{
+            // pre:SyntaxHighlighter,
+            img:MdxImage,
+            CH
+          }}/> 
+              </PostTextContainer>
 
-<Image src={frontmatter.cover_image} alt={frontmatter.title} width={1000} height={400}/>
+</PostContainer>
+
+
+ </PostPageContainer>
+
+/* <Image src={frontmatter.cover_image} alt={frontmatter.title} width={1000} height={400}/> */
+/* <MdxImage src={frontmatter.cover_image} alt={frontmatter.title} layout='responsive'  objectFit='contain'  />
 <main>
-    <MDXRemote {...source}  components={{Image, MdxImage}}/>
-</main>
 
-        </div>
+</main> */
+
     )
 }
 

@@ -69,8 +69,8 @@ if(!mounted){
         {/* </div>
         </div> */}
 
-        <MobileMenuContainer >
-          <MobileMenu >
+        <MobileMenuContainer>
+          <MobileMenu>
             <NavbarLinks >
               <NavbarLink href='/projects'>Projects</NavbarLink>
               <NavbarLink href='/blog'>Blog</NavbarLink>
@@ -103,7 +103,7 @@ if(!mounted){
         <NavContainer>
           <NavbarLogo>
             <NavbarLink href='/'>
-             <Image src="" width='50px' height='50px' alt='logo' className='logo'/>
+            <img src="" width='50px' height='50px' className='logo' />
             </NavbarLink>
           </NavbarLogo>
 

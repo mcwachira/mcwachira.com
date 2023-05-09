@@ -3,15 +3,18 @@ import Document, { Html, Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
 import Script from 'next/script'
 class MyDocument extends Document {
+  // `getInitialProps` belongs to `_document` (instead of `_app`),
+              // it's compatible with server-side generation (SSG).
     static async getInitialProps(ctx) {
         const styledComponentsSheet = new ServerStyleSheet();
         const originalRenderPage = ctx.renderPage;
         try {
             ctx.renderPage = () =>
                 originalRenderPage({
-                    enhanceApp: App => props =>
-                        styledComponentsSheet.collectStyles(<App {...props} />)
+                    enhanceApp: (App) => props => styledComponentsSheet.collectStyles(<App {...props} />)
                 });
+
+                
             const initialProps = await Document.getInitialProps(ctx);
             return {
                 ...initialProps,

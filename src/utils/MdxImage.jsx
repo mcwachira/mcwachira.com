@@ -1,5 +1,5 @@
 import React from 'react'
-import Image from 'next/image'
+import Image from 'next/legacy/image';
 import styled from 'styled-components'
 
 
@@ -12,11 +12,11 @@ margin:1rem auto;
  top: 0px; */
 
 `
-const MdxImage = ({alt, src, width, height }) => {
+const MdxImage = ({alt, src, width, height, children }) => {
   return (
     <ImageContainer>
-      <Image src={src} alt={alt} layout='fill' width={width} height={height} objectFit='contain' blurDataURL="URL"
-        placeholder="blur" />
+      <Image src={src} alt={alt}  width={width} height={height} placeholder="blur" priority={true} />
+      {children}
     </ImageContainer>
   )
 }
@@ -25,8 +25,8 @@ const MdxImage = ({alt, src, width, height }) => {
 MdxImage.defaultProps = {
   src:'',
   alt:'',
-  width:0,
-  height:0,
+  width:1920,
+  height:1080,
 
 }
 export default MdxImage

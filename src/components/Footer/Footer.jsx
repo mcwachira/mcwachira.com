@@ -37,7 +37,7 @@ const Footer = () => {
   <FooterLogoColumn>
     <FooterLogo>
                   <FooterLink href='/'>
-                      <Image src="" width='50px' height='50px' className='logo' />
+                      <img src="" width='50px' height='50px' className='logo' />
                   </FooterLink>
     </FooterLogo>
 

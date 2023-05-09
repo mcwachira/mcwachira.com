@@ -34,8 +34,6 @@ const Layout = ({ children, ...customMeta}) => {
           href={`https://www.mcwachira.dev${router.asPath}`}
         />
 
-
-
         <meta property="og:type" content={meta.type} />
         <meta property="og:site_name" content="mcwachira.dev" />
         <meta property="og:description" content={meta.description} />

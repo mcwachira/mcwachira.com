@@ -17,25 +17,28 @@ const Post = ({post}) => {
     height={200} width={100}/> */}
          
 <PostCardTop>
+
 <PostCardTopChild>
-<Calendar size={30}/>
+
+<span>
+        #{post.frontmatter.category}
+    </span>
+</PostCardTopChild>
+
+
+<PostCardTopChild>
+
+    <span>{post.frontmatter.readingTime.text}</span>
+</PostCardTopChild>
+           
+{/* <PostCardTopChild>
+
                   <span>
                       {post.frontmatter.date}
                   </span>
 
-</PostCardTopChild>
-  
-<PostCardTopChild>
-    <Watch size={30}/>
-    <span>{post.frontmatter.readingTime.text}</span>
-</PostCardTopChild>
-              <PostCardTopChild>
-                  <Eye size={30} />
-                  <span>views</span>
-              </PostCardTopChild>
-    <span style={{marginLeft:'.5rem'}}>
-        {post.frontmatter.category}
-    </span>
+</PostCardTopChild> */}
+
 </PostCardTop>
 
           

@@ -2,37 +2,35 @@ import styled from 'styled-components'
 import { device } from '../../utils/devices'
 
 export const FormContainer = styled.div`
-
-width:100%;
+width:90%;
 display: flex;
 flex-direction: column;
 gap:1rem;
-margin-bottom: 2rem;
+margin:0px auto;
+margin-bottom: 1rem;
 
-@media ${device.tablet}{
+
+@media ${device.laptop}{
 flex-direction: row;
 gap:2rem;
 
 }
 
 
-
-
-
-
-
 `
 export const FormCta = styled.div`
-width:100%;
+width:90%;
 display: flex;
 flex-direction: column;
-margin-left:auto;
+margin:auto;
 justify-items: center;
 align-self: center;
 
 
-@media ${device.tablet}{
+
+@media ${device.laptop}{
 margin-left: 5rem;
+width:100%;
 }
 
 
@@ -49,6 +47,7 @@ font-size:1.5rem;
 font-weight: bold;
 border-radius:10px;
 margin-top: 2rem;
+margin-left:1rem;
 padding:.5rem;
 @media ${device.tablet}{
 margin:2rem;
@@ -100,7 +99,7 @@ border: medium none !important;
 
 
 export const Form = styled.form`
-width:100%;
+width:90%;
 margin:auto;
 display: flex;
 flex-direction: column;
@@ -111,9 +110,10 @@ background: var( --color-bg-primary);
 box-shadow: 8px 5px 5px 6px rgba(0,0,0,0.21);
 -webkit-box-shadow: 8px 5px 5px 6px rgba(0,0,0,0.21);
 -moz-box-shadow: 8px 5px 5px 6px rgba(0,0,0,0.21);
-@media ${device.tablet}{
+@media ${device.laptop}{
     margin:5rem auto;
 margin-right: 5rem;
+width:100%;
 }
 
 `

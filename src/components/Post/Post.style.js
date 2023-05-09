@@ -6,8 +6,9 @@ import { ArrowRight } from '@styled-icons/bootstrap/ArrowRight'
 
 
 export const PostCard = styled.div`
-padding:.9rem;
-width:100%;
+// padding:.9rem;
+width:95%;
+margin:1rem auto;
 background: var(--color-bg-card);
 border: 1px solid #eaeaea;
 border-radius: 10px;
@@ -37,6 +38,7 @@ align-items: center;
 font-size:.9rem;
 flex-wrap:wrap;
 color:var(--color-card-logo-color);
+margin:1rem 1rem;
 
 
 /* gap:.5rem; */
@@ -44,6 +46,7 @@ color:var(--color-card-logo-color);
     justify-content: space-around;
 align-items: center;
 flex-direction: row;
+
 }
 
 
@@ -66,14 +69,15 @@ gap:.5rem;
 `
 
 export const PostBody = styled.div`
-/* margin:1rem; */
+margin:0  1rem;
 
 
 `
 
 export const PostHeading = styled.h2`
-font-size: 1.2rem;
+font-size: 1.3rem;
 color:var(--color-text-secondary);
+margin:.2rem auto
 
 @media ${device.tablet}{
 font-size: 1.5rem;
@@ -86,6 +90,7 @@ font-size: 1.5rem;
 export const PostExcerpt = styled.p`
 font-size: 1rem;
 color:#000;
+margin-bottom: auto;
 @media ${device.tablet}{
 font-size: 1.2rem;
 
@@ -99,6 +104,14 @@ text-align: center;
 cursor:pointer;
 font-size: 1rem;
 transition: color 0.15s ease;
+margin:.1rem 1rem;
+margin-top: auto;
+
+@media ${device.tablet}{
+    margin-top: auto;
+    
+    
+    }
 
 
 

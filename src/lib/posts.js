@@ -5,6 +5,12 @@ import matter from 'gray-matter'
 import { sortByDate } from '@/utils/sortByDate'
 import readingTime from 'reading-time'
 import {serialize} from 'next-mdx-remote/serialize'
+import imageSize from 'rehype-image-size'
+
+//syntax highlighting
+import { remarkCodeHike } from "@code-hike/mdx"
+import theme from "shiki/themes/poimandres.json"
+
 
 //plugins
 
@@ -32,7 +38,7 @@ const blogFiles = [];
 //function to get all posts in the subdirectory method one
 
 
-// const readTargetDir = (directory) => {
+// const readTargetDir = (directory) => { 
 //     //console.log(directory)
 //     fs.readdirSync(directory).forEach((file) => {
 
@@ -142,16 +148,17 @@ export const getSinglePost = async(slug) => {
     
     const {content, data:frontmatter} =  matter(source)
 
-    //console.log(content)
+  console.log(content)
     //  console.log(frontmatter)
     const mdxSource = await serialize(content, {
         mdxOptions:{
-            remarkPlugins:[[remarkToc, {heading: 'contents'}], remarkMdxImages],
-            rehypePlugins:[rehypeFormat, rehypeSlug,rehypeCodeTitles ,  [rehypeAutolinkHeadings, { behavior: "wrap" }],],
+            remarkPlugins:[[remarkToc, {heading: 'contents'}],[remarkCodeHike,{autoImport:false, theme}], remarkMdxImages],
+            rehypePlugins:[rehypeFormat, rehypeSlug,rehypeCodeTitles ,  [rehypeAutolinkHeadings, { behavior: "wrap" }],[imageSize, {dir:'public'}]],
+            useDynamicImport: true,
         },
          scope:frontmatter,
     })
-     //console.log(frontmatter)
+     console.log(frontmatter)
     
 
     return {

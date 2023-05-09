@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { Sun, MoonStarsFill } from 'styled-icons/bootstrap'
 import { device } from '../../utils/devices'
 import MyLink from '../Link'
+import Link from 'next/link'
 
 
 export const NavbarMobileMenu = styled.div`
@@ -78,11 +79,10 @@ display: flex;
 padding-top: 1.25rem;
 padding-bottom: 1.25rem; 
 margin-left: 1.25rem;
-margin-right: 1.25rem; 
-
 justify-content: space-between; 
 align-items: center;
 width: 100%; 
+height: 120px;
 
 @media ${device.tablet}{
 margin:auto;
@@ -92,7 +92,6 @@ margin:auto;
 `
 export const NavbarLogo = styled.div`
 display: flex;
-    width:100%;
 font-size: 1.5rem;
 @media ${device.tablet}{
 align-items:center;
@@ -107,10 +106,12 @@ export const NavbarMenu = styled.div`
 display:none;
 
 @media ${device.tablet}{
-  width:100%;
-    margin: auto;
+  margin: auto;
   display: flex;
+  width:100%;
+  flex:1;
   flex-direction: row;
+  justify-content:flex-end;
 /* margin-left: 2.5rem;  */
 font-size: 0.875rem;
 line-height: 1.25rem; 
@@ -135,7 +136,7 @@ margin:auto;
 `
 
 
-export  const NavbarLink  = styled(MyLink)`
+export  const NavbarLink  = styled(Link)`
 font-size: 1rem;
 margin:1rem 0;
 /* display: flex;  */

@@ -57,7 +57,6 @@ margin: 3rem auto;
 `
 const PostTextContainer = styled.div`
 
-;
 `
 const PostTextHeader = styled.div`
 margin-top:1rem;
