@@ -1,3 +1,4 @@
+import { device } from "@/utils/devices"
 import Link from "next/link"
 import styled from "styled-components"
 import { ArrowRight } from "styled-icons/bootstrap"
@@ -5,7 +6,7 @@ import { ArrowRight } from "styled-icons/bootstrap"
 
 
 export const BlogPostCard = styled.div`
-width:100%;
+width:90%;
 /* height:.5rem; */
 background:#BFFFF0;
 border: 1px solid #0AC2C2;
@@ -29,6 +30,9 @@ transition:all .3s ease-in-out;
     transform: translateY(-1rem);
     color: #0AC2C2;
 } */
+
+@media ${device.tablet}{
+    width:100%;
 `
 
 

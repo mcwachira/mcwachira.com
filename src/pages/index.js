@@ -18,7 +18,7 @@ const  ToggleButton  = dynamic(() =>import( '@/components/Button/ToggleButton'),
 
 const TopContainer = styled.div`
 display: flex;
-height: 60vh;
+height: 40vh;
 flex-direction: column;
 align-items: center;
 justify-content: center;
@@ -33,6 +33,7 @@ height: 70vh;
 
 `
 const Title = styled.h1`
+margin: 0 1rem;
 margin-top:1.5rem;
 font-size:1.1rem;
 color:var(--color-text-primary);
@@ -126,7 +127,8 @@ grid-template-columns: repeat(3, 1fr);
 `
 const PostHeading = styled.h2`
 color:var(--color-text-secondary);
-font-size:2.5rem;
+font-size:1.7rem;
+margin-left:1rem;
 font-weight:bold;
 padding-bottom:1rem;
 border-bottom:4px solid  var(--color-text-primary);
@@ -141,7 +143,11 @@ font-size:3rem;
 const ContactContainer = styled.div`
 background: var(--color-bg-tertiary);
 width:100%;
-height:100vh;
+
+
+@media ${device.tablet}{
+  height:100vh;
+}
 
 `
 

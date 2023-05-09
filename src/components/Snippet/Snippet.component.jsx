@@ -12,9 +12,9 @@ const Snippet = ({ post }) => {
         <SnippetCard>
             <SnippetBody>
                 <Link href={`/snippet/${post.slug}`}>
-                    <a>
+         
                 <SnippetHeading> {post.frontmatter.title}</SnippetHeading>
-                    </a>
+          
                 </Link>
                 <SnippetExcerpt>
                     {post.frontmatter.excerpt}

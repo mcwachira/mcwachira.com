@@ -12,9 +12,9 @@ const BlogPost = ({ post }) => {
         <BlogPostCard>
             <BlogPostBody>
                 <Link href={`/blog/${post.slug}`}>
-                    <a>
+    
                 <BlogPostHeading> {post.frontmatter.title}</BlogPostHeading>
-                    </a>
+       
                 </Link>
                 <BlogPostExcerpt>
                     {post.frontmatter.excerpt}

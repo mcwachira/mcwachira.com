@@ -186,6 +186,7 @@ width:2rem;
 height:2rem;
 color:#0070f3;
 cursor: pointer;
+margin-right:1rem;
 
 /* margin: auto;
 display: block; */

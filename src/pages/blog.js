@@ -3,7 +3,7 @@ import { getAllPosts } from '@/lib/posts'
 import { BlogPost } from '@/components/index'
 import styled from 'styled-components'
 import {device}from '@/utils/devices'
-import Link from '@/components/Link'
+import Link from 'next/link'
 import { CategoryList } from '@/components/index'
 
 
@@ -20,6 +20,11 @@ const BlogCategory = styled.div`
  align-items: center;
  gap:1rem;
  flex-wrap: wrap;
+margin-left:2rem;
+
+ @media ${device.tablet}{
+ margin:0;
+ }
 
 
 

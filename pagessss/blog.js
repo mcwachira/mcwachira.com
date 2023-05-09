@@ -3,7 +3,7 @@ import { getAllPosts } from '@/lib/posts'
 import { BlogPost } from '@/components/index'
 import styled from 'styled-components'
 import {device}from '@/utils/devices'
-import Link from '@/components/Link'
+import Link from 'next/link'
 import { CategoryList } from '@/components/index'
 
 

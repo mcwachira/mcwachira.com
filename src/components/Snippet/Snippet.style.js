@@ -5,7 +5,7 @@ import { ArrowRight } from '@styled-icons/bootstrap/ArrowRight'
 
 
 export const SnippetCard = styled.div`
-width:100%;
+width:90%;
 /* height:.5rem; */
 background:#DCCCFF;
 border: 1px solid #0AC2C2;
@@ -24,6 +24,12 @@ transition:all .3s ease-in-out;
     transform: translateY(-1rem);
     /* color: #0AC2C2; */
 }
+
+@media ${device.tablet}{
+    width:100%;
+}
+
+
 
 `
 

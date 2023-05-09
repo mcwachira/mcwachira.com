@@ -77,7 +77,7 @@ margin:0  1rem;
 export const PostHeading = styled.h2`
 font-size: 1.3rem;
 color:var(--color-text-secondary);
-margin:.2rem auto
+margin:.2rem auto;
 
 @media ${device.tablet}{
 font-size: 1.5rem;

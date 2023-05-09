@@ -1,6 +1,6 @@
 import React, {useMemo} from 'react'
 import styled from 'styled-components'
-import Link from '@/components/Link'
+import Link from 'next/link'
 import { getSinglePost, getAllPosts} from '../../lib/posts'
 import { getMDXComponent } from "mdx-bundler/client";
 import {device} from '@/utils/devices'
