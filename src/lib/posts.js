@@ -9,7 +9,7 @@ import imageSize from 'rehype-image-size'
 
 //syntax highlighting
 import { remarkCodeHike } from "@code-hike/mdx"
-import theme from "shiki/themes/poimandres.json"
+import theme from "shiki/themes/solarized-dark.json"
 
 
 //plugins

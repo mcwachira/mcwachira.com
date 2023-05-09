@@ -75,7 +75,6 @@ if(!mounted){
               <NavbarLink href='/projects'>Projects</NavbarLink>
               <NavbarLink href='/blog'>Blog</NavbarLink>
               <NavbarLink href='/snippets'>Snippets</NavbarLink>
-              <NavbarLink href='/newsletter'>NewsLetter</NavbarLink>
               <NavbarLink href='/contact'>Contact </NavbarLink>
             </NavbarLinks>
 
@@ -112,7 +111,6 @@ if(!mounted){
               <NavbarLink href='/projects'>Projects</NavbarLink>
               <NavbarLink href='/blog'>Blog</NavbarLink>
               <NavbarLink href='/snippets'>Snippets</NavbarLink>
-              <NavbarLink href='/newsletter'>NewsLetter</NavbarLink>
               <NavbarLink href='/contact'>Contact </NavbarLink>
             </NavbarLinks>
 

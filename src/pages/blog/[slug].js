@@ -38,18 +38,19 @@ const PostContainer = styled.div`
     line-height: 1rem; */
   
 @media ${device.tablet}{
-width:50%;
+width:70%;
 };
 
 /* background-color: #fff; */
 
 `
 const PostTitle = styled.h1`
-font-size: 3rem;
-line-height: 3.2rem;
+font-size: 2.5rem;
+line-height: 2.7rem;
+width:100%;
 color:#000;
-text-align: center;
-margin: 3rem auto;
+/* text-align: center; */
+margin: 3rem 0;
   color: var(--color-text-secondary);
 
 `
@@ -58,9 +59,11 @@ const PostTextContainer = styled.div`
 
 `
 const PostTextHeader = styled.div`
-margin-top:1rem;
 display: flex;
-justify-content:space-around
+width:100%;
+margin-top:1rem;
+
+justify-content:space-between;
 `
 
 const PostPage = ({slug, source, frontmatter}) => {
@@ -89,19 +92,19 @@ const PostPage = ({slug, source, frontmatter}) => {
 
 
 <PostContainer>
-     
+<BackButton href='/blog'> Go Back</BackButton> 
               <PostTitle>
           {frontmatter?.title} 
           
               </PostTitle>
-        <Image src={frontmatter.cover_image} alt={frontmatter.title} width={1000} height={400}/>
+        <Image src={frontmatter.cover_image} alt={frontmatter.title} width={1000} height={600}/>
      
               <PostTextContainer>
           <PostTextHeader>
-            <BackButton href='/blog'> Go Back</BackButton>
-            {frontmatter.readingTime.text}
-             {frontmatter.wordCount}           
-              {/* {frontmatter.slug}  */}
+       
+           Read: {frontmatter.readingTime.text} 
+                
+              Date :{frontmatter.date}  
           </PostTextHeader>
       
 

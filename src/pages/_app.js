@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps }) {
   // Router here to allow gtag to track page views and events individually. 
   useEffect(() => {
     const handleRouteChange = (url) => {
-gtag.pageview(url)
+gtag.Pageview(url)
     }
     Router.events.on('routeChangeComplete', handleRouteChange);
     return () => {

@@ -24,12 +24,7 @@ transition:all .3s ease-in-out;
     transform: translateY(-1rem);
     color: #0AC2C2;
 }
-/* &:hover,
-&:active{
-    border: 5px solid  #0AC2C2;
-    transform: translateY(-1rem);
-    color: #0AC2C2;
-} */
+
 
 @media ${device.tablet}{
     width:100%;
@@ -45,6 +40,7 @@ margin:.5rem;
 `
 
 export const BlogPostHeading = styled.h2`
+margin-top:1rem;
 font-size: 1.5rem;
 color:#0070f3;
 

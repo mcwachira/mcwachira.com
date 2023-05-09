@@ -11,6 +11,10 @@ body {
   background: var(--color-bg-primary);
   color: var(--color-text-primary);
   font-family: sans-serif;
+  /* background-image: url('/images/bg-light.svg');
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat; */
   /* transition: background 0.25s ease-in-out;
      */
 }
