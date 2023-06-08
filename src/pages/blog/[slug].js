@@ -135,9 +135,9 @@ export default PostPage
 
 export const getStaticProps = async ({params}) => {
    
-    console.log(params)
+    //console.log(params)
     const post = await getSinglePost(params.slug)
-    console.log(post)
+    //console.log(post)
 
     return {
         props:{

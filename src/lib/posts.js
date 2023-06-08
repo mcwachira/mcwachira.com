@@ -2,7 +2,7 @@ import  path from 'path'
 import {glob, globSync, Glob} from 'glob'
 import fs from 'fs'
 import matter from 'gray-matter'
-import { sortByDate } from '@/utils/sortByDate'
+import { SortByDate } from '@/utils/sortByDate'
 import readingTime from 'reading-time'
 import {serialize} from 'next-mdx-remote/serialize'
 import imageSize from 'rehype-image-size'
@@ -136,7 +136,7 @@ export const getAllPosts = () => {
 
     })
 
-    return posts.sort(sortByDate)
+    return posts.sort(SortByDate)
 }
 
 
@@ -148,7 +148,7 @@ export const getSinglePost = async(slug) => {
     
     const {content, data:frontmatter} =  matter(source)
 
-  console.log(content)
+  //console.log(content)
     //  console.log(frontmatter)
     const mdxSource = await serialize(content, {
         mdxOptions:{

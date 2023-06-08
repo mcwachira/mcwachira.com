@@ -1,11 +1,11 @@
 import "@code-hike/mdx/dist/index.css"
 import '@/styles/globals.css'
 import Layout from '@/components/Layout'
-import * as gtag from '@/utils/gtag'
 import Router from 'next/router'
 import { useEffect } from 'react'
 import Script from 'next/script'
- import { PageView, Event} from '@/utils/gtag'
+import { PageView } from "@/utils/gtag"
+
 
 
 function MyApp({ Component, pageProps }) {
@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps }) {
   // Router here to allow gtag to track page views and events individually. 
   useEffect(() => {
     const handleRouteChange = (url) => {
-gtag.Pageview(url)
+PageView(url)
     }
     Router.events.on('routeChangeComplete', handleRouteChange);
     return () => {
