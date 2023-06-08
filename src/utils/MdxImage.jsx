@@ -25,8 +25,8 @@ const MdxImage = ({alt, src, width, height, children }) => {
 MdxImage.defaultProps = {
   src:'',
   alt:'',
-  width:1920,
-  height:1080,
+  width:650,
+  height:650,
 
 }
 export default MdxImage

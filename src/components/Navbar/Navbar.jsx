@@ -75,7 +75,7 @@ if(!mounted){
               <NavbarLink href='/projects'>Projects</NavbarLink>
               <NavbarLink href='/blog'>Blog</NavbarLink>
               <NavbarLink href='/snippets'>Snippets</NavbarLink>
-              <NavbarLink href='/contact'>Contact </NavbarLink>
+              <NavbarLink href='#contact-section'>Contact </NavbarLink>
             </NavbarLinks>
 
             {/* {mounted && (<ThemeToggler aria-label='change theme' >
