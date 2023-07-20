@@ -33,83 +33,14 @@ height: 70vh;
 }
 
 `
-const Title = styled.h1`
-margin: 2rem auto;
-font-size:1.2rem;
-text-align:left;
-width: 80%;
-color:var(--color-text-primary);
 
-@media ${device.mobileL}{
-font-size:1.4rem;
-}
-@media ${device.tablet}{
-  text-align:left;
-font-size:1.7rem;
-
-color:#000;
-width: 100%;
-}
-
-
-
-@media ${device.tablet}{
-font-size:1.9rem;
-color:#000;
-}
-@media ${device.laptop}{
-font-size:2.5rem;
-color:#000;
-}
-
-`
 const TitleSpan = styled.span`
 color:#0070f3
 
 `
 
-const Motto = styled.p`
-margin: 1.5rem  0;
-font-weight: 300;
-font-size:1rem;
-line-height:2.2rem;
-width: 80%;
-text-align:left;
 
-color:var(--color-text-primary);
 
-@media ${device.mobileL}{
-font-size:1.3rem;
-}
-@media ${device.tablet}{
-font-size:1.5rem;
-width: 100%;
-
-}
-@media ${device.laptop}{
-font-size:1.7rem;
-
-}
-
-`
-const HireMeButton = styled(Link)`
-outline: none;
-border: none;
-width:150px;
-//background-color: #10B981;
- background-color:transparent;
-border:2px solid #fff;
-color:#fff;
-font-size:1.3rem;
-font-weight: bold;
-border-radius:10px;
-margin:2rem 0;
-// margin-left:1rem;
-padding:0.6rem;
-@media ${device.tablet}{
-/* margin:2rem; */
-}
-`
 
 const MySkills = styled.div`
   display: flex;
@@ -234,7 +165,7 @@ width:100%;
 `
 
 //importing the post component dynamically o improve speed
-const Post = dynamic(() => import('@/components/Post/Post.component'), {ssr:false});
+//const Post = dynamic(() => import('@/components/Post/Post.component'), {ssr:false});
 /* const ContactMe = dynamic(() => import('@/components/ContactMe/ContactMe'), {
   ssr:false,
 
@@ -248,33 +179,76 @@ const Post = dynamic(() => import('@/components/Post/Post.component'), {ssr:fals
           Hi I&#8216;m  <TitleSpan>Charles Wachira</TitleSpan>
           </Title>
 });  */
-export default function Home({posts}) {
+export default function Home() {
 
 
     return (
         <div>
             <Head>
-                <h1 className='my-8 mx-auto text-sm w-10/12 text-warmGay-800 sm:text-2xl md:text-left md:text-3xl md:text-black md:w-full lg:text-4xl'>Mcwachira&#8216;s Blog and Portfolio site</h1>
+                <h1 className='my-8 mx-auto text-sm w-10/12 text-warmGay-800 sm:text-2xl md:text-left md:text-3xl md:text-black md:w-full lg:text-4xl'>
+                Mcwachira&#8216;s Blog and Portfolio site</h1>
                 <meta name="description" content="personal website blog and portfolio" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
 
 
+/* display: flex;
+height: 80vh;
+flex-direction: column;
+align-items: left;
 
 
+@media ${device.tablet}{
+height: 70vh;
 
+*/
+              <div className='flex flex-col justify-center mr-auto ml-12 mt-20 text-center h-5/6'>
+
+              const Motto = styled.p`
+margin: 1.5rem  0;
+font-weight: 300;
+font-size:1rem;
+line-height:2.2rem;
+width: 80%;
+text-align:left;
+
+color:var(--color-text-primary);
+
+@media ${device.mobileL}{
+font-size:1.3rem;
+}
+@media ${device.tablet}{
+font-size:1.5rem;
+width: 100%;
+
+}
 @media ${device.laptop}{
-font-size:2.5rem;
-color:#000;
+font-size:1.7rem;
+
 }
 
 `
-            <TopContainer>
-
-                <Motto>
+const HireMeButton = styled(Link)`
+outline: none;
+border: none;
+width:150px;
+//background-color: #10B981;
+ background-color:transparent;
+border:2px solid #fff;
+color:#fff;
+font-size:1.3rem;
+font-weight: bold;
+border-radius:10px;
+margin:2rem 0;
+// margin-left:1rem;
+padding:0.6rem;
+@media ${device.tablet}{
+/* margin:2rem; */
+}
+                <p className='my-6 mx-0 font-light leading-9'>
                     I am a Fullstack Software developer helping Startup&#8216;s build mobile and web applications that your user&#8216;s will love.
-                </Motto>
+                </p>
 
 
                 <HireMeButton href='#contact-section'>
@@ -330,7 +304,7 @@ color:#000;
                         </a>
                     </li>
                 </SocialLinks>
-            </TopContainer>
+            </div>
 
 
 
