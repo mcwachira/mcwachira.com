@@ -2,7 +2,7 @@ import Head from 'next/head'
 import dynamic from 'next/dynamic'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-// import styled from 'styled-components'
+import styled from 'styled-components'
 import { Twitter, LinkedinSquare ,Github, Instagram} from 'styled-icons/boxicons-logos'
 import { Blog } from 'styled-icons/icomoon'
 import { getAllPosts } from '@/lib/posts'
@@ -12,10 +12,10 @@ import Navbar from '@/components/Navbar/Navbar'
 import Link from 'next/link'
 //import dynamically
 
-// const  ToggleButton  = dynamic(() =>import( '@/components/Button/ToggleButton'),{
-//         ssr:false
-//     }
-// )
+const  ToggleButton  = dynamic(() =>import( '@/components/Button/ToggleButton'),{
+  ssr:false
+}
+)
 
 const TopContainer = styled.div`
 display: flex;
@@ -246,120 +246,109 @@ const Post = dynamic(() => import('@/components/Post/Post.component'), {ssr:fals
 
         / <Title>
           Hi I&#8216;m  <TitleSpan>Charles Wachira</TitleSpan>
-          </Title>
+          </Title> 
 });  */
 export default function Home({posts}) {
 
 
-    return (
-        <div>
-            <Head>
-                <h1 className='my-8 mx-auto text-sm w-10/12 text-warmGay-800 sm:text-2xl md:text-left md:text-3xl md:text-black md:w-full lg:text-4xl'>Mcwachira&#8216;s Blog and Portfolio site</h1>
-                <meta name="description" content="personal website blog and portfolio" />
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
+  return (
+    <div>
+      <Head>
+        <title>Mcwachira&#8216;s Blog and Portfolio site</title>
+        <meta name="description" content="personal website blog and portfolio" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
 
+      <TopContainer>
+  
+          <Motto>
+            I am a Fullstack Software developer helping Startup&#8216;s build mobile and web applications that your user&#8216;s will love.
+          </Motto>
 
+  
+                    <HireMeButton href='#contact-section'>
+                      Hire me
+                    </HireMeButton>
+        
+    
+          <MySkills>
 
+          <BasicSkill>
+          <h3> Experience </h3>
+          <p> 3+ Years</p>
+          </BasicSkill>
+     
+          
+          <BasicSkill>
+          <h3> Core Tech Stack </h3>
+          <p> React, Node, Java & Go</p>
+          </BasicSkill>
+          
+          <BasicSkill>
+          <h3> Location</h3>
+          <p> Nairobi</p>
+          </BasicSkill>
+      
+          <BasicSkill>
+      
+          <h3> Languages </h3>
+          <p> English, Swahili</p>
+          </BasicSkill>
+          </MySkills>
+        
+        <SocialLinks>
+         
+        <li>
+            <a href="https://twitter.com/mc_wachira/" target="_blank" rel='noreferrer'>
+              <BlueTwitter size='40' />
+       </a>
+        </li>
+          <li>
+            <a href="https://www.linkedin.com/in/maina-wachira/" target="_blank" rel='noreferrer'>
+              <BlueLinkedIn size='40'/>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/mcwachira" target="_blank" rel='noreferrer'>
+              <BlueGithub size='40' />
+            </a>
+          </li>
+          <li>
+            <a href="" target="_blank" rel='noreferrer'>
+              <BlueInstagram size='40' />
+            </a>
+          </li>
+        </SocialLinks>
+      </TopContainer>
+     
+ 
 
+      <PostHeading>
+        Latest Posts
+      
+      </PostHeading>
+      <BodyContainer>
+        {posts.map((post, index) => (
+          <Post key={index} post={post} />
+        ))}
 
+      </BodyContainer>
 
-@media ${device.laptop}{
-font-size:2.5rem;
-color:#000;
-}
-
-`
-            <TopContainer>
-
-                <Motto>
-                    I am a Fullstack Software developer helping Startup&#8216;s build mobile and web applications that your user&#8216;s will love.
-                </Motto>
-
-
-                <HireMeButton href='#contact-section'>
-                    Hire me
-                </HireMeButton>
-
-
-                <MySkills>
-
-                    <BasicSkill>
-                        <h3> Experience </h3>
-                        <p> 3+ Years</p>
-                    </BasicSkill>
-
-
-                    <BasicSkill>
-                        <h3> Core Tech Stack </h3>
-                        <p> React, Node, Java & Go</p>
-                    </BasicSkill>
-
-                    <BasicSkill>
-                        <h3> Location</h3>
-                        <p> Nairobi</p>
-                    </BasicSkill>
-
-                    <BasicSkill>
-
-                        <h3> Languages </h3>
-                        <p> English, Swahili</p>
-                    </BasicSkill>
-                </MySkills>
-
-                <SocialLinks>
-
-                    <li>
-                        <a href="https://twitter.com/mc_wachira/" target="_blank" rel='noreferrer'>
-                            <BlueTwitter size='40' />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.linkedin.com/in/maina-wachira/" target="_blank" rel='noreferrer'>
-                            <BlueLinkedIn size='40'/>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/mcwachira" target="_blank" rel='noreferrer'>
-                            <BlueGithub size='40' />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="" target="_blank" rel='noreferrer'>
-                            <BlueInstagram size='40' />
-                        </a>
-                    </li>
-                </SocialLinks>
-            </TopContainer>
-
-
-
-            <PostHeading>
-                Latest Posts
-
-            </PostHeading>
-            <BodyContainer>
-                {posts.map((post, index) => (
-                    <Post key={index} post={post} />
-                ))}
-
-            </BodyContainer>
-
-            <ContactContainer>
-                <ContactMe />
-            </ContactContainer>
-
-        </div>
-    )
+      <ContactContainer>
+        <ContactMe />
+      </ContactContainer>
+      
+    </div>
+  )
 }
 
 
 export function getStaticProps() {
-    const posts = getAllPosts().slice(0, 6)
-    console.log(posts)
-    return {
-        props:{
-            posts
-        }
+  const posts = getAllPosts().slice(0, 6)
+console.log(posts)
+  return {
+    props:{
+      posts
     }
+  }
 }
