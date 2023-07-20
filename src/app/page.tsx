@@ -246,7 +246,7 @@ padding:0.6rem;
 @media ${device.tablet}{
 /* margin:2rem; */
 }
-                <p className='my-6 mx-0 font-light leading-9'>
+                <p className='my-6 mx-0 font-light leading-9 text-xs w-10/12'>
                     I am a Fullstack Software developer helping Startup&#8216;s build mobile and web applications that your user&#8216;s will love.
                 </p>
 
