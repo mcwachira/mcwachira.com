@@ -86,7 +86,7 @@ const navbarToggleHandler = () => {
                   }`}
                 >
 
-                  <ul className="block lg:flex lg:space-x-12">
+                  <ul className="block items-center xl:flex lg:space-x-12">
 
 
                     {menuData.map((menuItem, index) => (
@@ -94,7 +94,7 @@ const navbarToggleHandler = () => {
 
 {menuItem.path && <Link
                             href={menuItem.path}
-                            className={`flex py-2 text-base text-dark group-hover:opacity-70 dark:text-white lg:mr-0 lg:inline-flex lg:py-6 lg:px-0`}
+                            className={`flex py-2 text-base font-semibold lg:text-xl  text-dark group-hover:opacity-70 dark:text-white lg:mr-0 lg:inline-flex lg:py-6 lg:px-0`}
                           >
                             {menuItem.title}
                           </Link>}
@@ -102,18 +102,38 @@ const navbarToggleHandler = () => {
 
                       </li>
                     ))}
+
+
+
+<div>
+
+<ThemeToggler />
+</div>
+
+
                   </ul>
+
+            
 
                 </nav>
 
-
+  
 
       </div>
 
-      <ThemeToggler />
-    </div>
-  </div>
-</div>
+      <div className="flex items-center justify-end  pr-16  lg:pr-0">
+           
+                <Link
+                  href="/hire"
+                  className="ease-in-up  rounded-md bg-primary py-3 px-8 text-base font-bold text-white transition duration-300 hover:bg-opacity-90 hover:shadow-signUp md:block md:px-9 lg:px-6 xl:px-9"
+                >
+                 Hire
+                </Link>
+                
+              </div>
+            </div>
+          </div>
+        </div>
    </header>
    
    
