@@ -40,7 +40,7 @@ const navbarToggleHandler = () => {
 
 <div className="container">
   <div className="relative mx-4 flex items-center justify-between">
-    <div className="w-60 max-w-full px-4 xl:mr-12">
+    <div className="w-60 max-w-full ">
       <Link   href='/' className={`header-logo block w-full ${sticky ? 'py-5 lg:py-2':'py-8'}`}>
 
 
@@ -86,7 +86,7 @@ const navbarToggleHandler = () => {
                   }`}
                 >
 
-                  <ul className="block items-center xl:flex lg:space-x-12">
+                  <ul className="block items-center lg:flex lg:space-x-12">
 
 
                     {menuData.map((menuItem, index) => (
@@ -94,7 +94,7 @@ const navbarToggleHandler = () => {
 
 {menuItem.path && <Link
                             href={menuItem.path}
-                            className={`flex py-2 text-base font-semibold lg:text-xl  text-dark group-hover:opacity-70 dark:text-white lg:mr-0 lg:inline-flex lg:py-6 lg:px-0`}
+                            className={`flex py-2 text-base font-semibold lg:text-xl  text-dark group-hover:opacity-70 dark:text-white lg:mr-0 md:inline-flex lg:py-6 lg:px-0`}
                           >
                             {menuItem.title}
                           </Link>}
