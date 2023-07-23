@@ -26,6 +26,9 @@ dependencies:
   eslint-config-next:
     specifier: 13.4.10
     version: 13.4.10(eslint@8.45.0)(typescript@5.1.6)
+  framer-motion:
+    specifier: ^10.13.0
+    version: 10.13.0(react-dom@18.2.0)(react@18.2.0)
   next:
     specifier: 13.4.10
     version: 13.4.10(@babel/core@7.22.9)(react-dom@18.2.0)(react@18.2.0)
@@ -50,6 +53,9 @@ dependencies:
   typescript:
     specifier: 5.1.6
     version: 5.1.6
+  uuid:
+    specifier: ^9.0.0
+    version: 9.0.0
 
 packages:
 
@@ -293,11 +299,24 @@ packages:
       to-fast-properties: 2.0.0
     dev: false
 
+  /@emotion/is-prop-valid@0.8.8:
+    resolution: {integrity: sha512-u5WtneEAr5IDG2Wv65yhunPSMLIpuKsbuOktRojfrEiEvRyC85LgPMZI63cr7NUqT8ZIGdSVg8ZKGxIug4lXcA==}
+    requiresBuild: true
+    dependencies:
+      '@emotion/memoize': 0.7.4
+    dev: false
+    optional: true
+
   /@emotion/is-prop-valid@1.2.1:
     resolution: {integrity: sha512-61Mf7Ufx4aDxx1xlDeOm8aFFigGHE4z+0sKCa+IHCeZKiyP9RLD0Mmx7m8b9/Cf37f7NAvQOOJAbQQGVr5uERw==}
     dependencies:
       '@emotion/memoize': 0.8.1
     dev: false
+
+  /@emotion/memoize@0.7.4:
+    resolution: {integrity: sha512-Ja/Vfqe3HpuzRsG1oBtWTHk2PGZ7GR+2Vz5iYGelAw8dx32K0y7PjVuxK6z1nMpZOqAFsRUPCkK1YjJ56qJlgw==}
+    dev: false
+    optional: true
 
   /@emotion/memoize@0.8.1:
     resolution: {integrity: sha512-W2P2c/VRW1/1tLox0mVUalvnWXxavmv/Oum2aPsRcoDJuob75FC3Y8FbpfLwUegRcxINtGUMPq0tFCvYNTBXNA==}
@@ -2022,6 +2041,24 @@ packages:
     resolution: {integrity: sha512-MhLuK+2gUcnZe8ZHlaaINnQLl0xRIGRfcGk2yl8xoQAfHrSsL3rYu6FCmBdkdbhc9EPlwyGHewaRsvwRMJtAlA==}
     dev: false
 
+  /framer-motion@10.13.0(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-xKhw9VCizmwEHbopOfluaoVunGHSZyMztGbTvsgOYqCjaKu6qtlwWY1J+6GhL41NY1P157JgEikjDm67XCFnvQ==}
+    peerDependencies:
+      react: ^18.0.0
+      react-dom: ^18.0.0
+    peerDependenciesMeta:
+      react:
+        optional: true
+      react-dom:
+        optional: true
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      tslib: 2.6.0
+    optionalDependencies:
+      '@emotion/is-prop-valid': 0.8.8
+    dev: false
+
   /fs.realpath@1.0.0:
     resolution: {integrity: sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==}
     dev: false
@@ -3564,6 +3601,11 @@ packages:
 
   /util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
+    dev: false
+
+  /uuid@9.0.0:
+    resolution: {integrity: sha512-MXcSTerfPa4uqyzStbRoTgt5XIe3x5+42+q1sDuy3R5MDk66URdLMOZe5aPX/SQd+kuYAh0FdP/pO28IkQyTeg==}
+    hasBin: true
     dev: false
 
   /watchpack@2.4.0:

@@ -3,6 +3,8 @@
 import Head from 'next/head'
 
 import Hero from '../components/Hero/Hero';
+import About from '@/components/About/About';
+import ProjectsGrid from '@/components/Projects/ProjectsGrid';
 
 export default function Home() {
 
@@ -19,6 +21,8 @@ export default function Home() {
 
 
 <Hero/>
+<About/>
+<ProjectsGrid/>
              
         </div>
         </>

@@ -8,7 +8,7 @@ import { Blog } from 'styled-icons/icomoon'
 
 import Link from 'next/link'
 import Image from 'next/image'
-const Hero = () => {
+const About = () => {
   return (
   <section id="about" className="pt-16 md:pt-20 lg:pt-28">
 
@@ -19,16 +19,19 @@ const Hero = () => {
 
 
 <div>
-<p className="text-lg mt-24  !leading-relaxed text-body-color md:text-2xl my-10">
-            Hey There 👋 I am
+<p className="text-xl mt-24  !leading-relaxed font-semibold text-primary md:text-2xl my-10">
+            About Me
         </p>
 
        
               <SectionTitle
-                title="Charles Wachira"
-                paragraph="I am a Fullstack Software developer helping Startup&#8216;s build mobile and web applications that their users will love.
-                "
+                title="Better Design Better Experience"
+
+                paragraph='I&#8216;m Proficient in designing and implementing responsive and user-friendly interfaces, while also building robust and scalable server-side applications. '
+               
               />
+
+
 
 
 
@@ -73,7 +76,7 @@ const Hero = () => {
   )
 }
 
-export default Hero
+export default About
 
 // export default function Home() {
 

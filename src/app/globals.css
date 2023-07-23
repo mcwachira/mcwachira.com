@@ -5,9 +5,11 @@
 
 * {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-html,
+/* html,
 body {
   padding: 0;
   margin: 0;
@@ -55,7 +57,7 @@ body[data-theme="dark"] {
 
   /* color:#ff6b00 */
 
-
+/* 
 h2 {
   color: var(--color-text-secondary);
 }  a {
@@ -73,4 +75,4 @@ h2 {
   background-size: 50px;
   background-repeat: no-repeat;
   padding-left: 100px;
-} 
+}  */ 
