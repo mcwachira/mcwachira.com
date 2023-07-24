@@ -14,7 +14,7 @@ type ProjectFilterProps ={
 const ProjectFilter = ({setSelectProject}:ProjectFilterProps) => {
 	return (
 		<>
-		<label htmlFor="projects">
+		<label htmlFor="projects" className='hidden'>
 			Projects
 		</label>
 		<select  id='projects' name='projects'

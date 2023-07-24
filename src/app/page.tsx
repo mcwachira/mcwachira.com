@@ -6,6 +6,7 @@ import Hero from '../components/Hero/Hero';
 import About from '@/components/About/About';
 import ProjectsGrid from '@/components/Projects/ProjectsGrid';
 import Services from '@/components/Services/Services';
+import Experience from '../components/Experience/Experience';
 
 export default function Home() {
 
@@ -25,6 +26,7 @@ export default function Home() {
 <About/>
 <Services/>
 <ProjectsGrid/>
+<Experience/>
              
         </div>
         </>
