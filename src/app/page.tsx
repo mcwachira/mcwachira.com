@@ -7,6 +7,7 @@ import About from '@/components/About/About';
 import ProjectsGrid from '@/components/Projects/ProjectsGrid';
 import Services from '@/components/Services/Services';
 import Experience from '../components/Experience/Experience';
+import Testimonials from '@/components/Testimonials/Testimonials';
 
 export default function Home() {
 
@@ -27,6 +28,7 @@ export default function Home() {
 <Services/>
 <ProjectsGrid/>
 <Experience/>
+<Testimonials/>
              
         </div>
         </>
