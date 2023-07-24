@@ -5,6 +5,7 @@ import Head from 'next/head'
 import Hero from '../components/Hero/Hero';
 import About from '@/components/About/About';
 import ProjectsGrid from '@/components/Projects/ProjectsGrid';
+import Services from '@/components/Services/Services';
 
 export default function Home() {
 
@@ -22,6 +23,7 @@ export default function Home() {
 
 <Hero/>
 <About/>
+<Services/>
 <ProjectsGrid/>
              
         </div>

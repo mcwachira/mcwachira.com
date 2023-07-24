@@ -1,3 +1,5 @@
+'use client'
+
 import { useState } from "react";
 import ProjectSingle from "./ProjectSingle";
 import { projectsData } from "@/data/projectsData";
