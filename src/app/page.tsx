@@ -10,6 +10,7 @@ import Experience from '../components/Experience/Experience';
 import Testimonials from '@/components/Testimonials/Testimonials';
 import ProjectTimeline from '@/components/ProjectTimeline/ProjectTimeline';
 import Contact from '@/components/Contact/Contact';
+import Faq from '@/components/Faq/Faq';
 export default function Home() {
 
 
@@ -32,7 +33,7 @@ export default function Home() {
 <Testimonials/>
 <ProjectTimeline/>
 <Contact/>
-             
+             <Faq/>
         </div>
         </>
     )
