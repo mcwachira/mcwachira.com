@@ -7,32 +7,36 @@ import {Tag} from '@styled-icons/bootstrap/Tag'
 import Image from 'next/image';
 
 
-export async function getStaticParams({ params:{id} }: { params: { id: string } }) {
-	// console.log(query)
+export function getStaticParams({ params}) {
+	console.log(projectsData)
 
-	console.log(id)
+const id = params.id
+
+
+// const data =  projectsData.filter((project) => project.id === parseInt(id))
+
+
+// return data
+//console.log(data)
 
 	return {
-		props: {
-			project: projectsData.filter(
+			project: projectsData.find(
 				(project) => project.id === parseInt(id)
-			)[0],
-		},
+			)
 	};
 }
 
 
 
-const page =({params}) => {
+const page =(params) => {
 
-// const id = params.id
-// console.log(id)
 
-// const project = projectsData.filter(
-// 	 				(project) => project.id === parseInt(id)
-// 	 			)
-// const { props } = params
-console.log(params.id)
+const props=getStaticParams(params) 
+
+console.log(props)
+
+// {props.map((prop) => console.log(prop))}
+
 	return (
 		<div className="container mx-auto">
 
@@ -136,7 +140,7 @@ console.log(params.id)
 					</div>
 
 					{/* Single project social sharing */}
-					<div>
+					{/* <div>
 						<p className="font-general-regular text-2xl font-semibold text-ternary-dark dark:text-ternary-light mb-2">
 							{props.project.ProjectInfo.SocialSharingHeading}
 						</p>
@@ -159,7 +163,7 @@ console.log(params.id)
 								}
 							)}
 						</div>
-					</div>
+					</div> */}
 				</div>
 
 				{/*  Single project right section details */}
