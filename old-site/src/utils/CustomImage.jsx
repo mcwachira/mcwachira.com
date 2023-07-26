@@ -1,7 +1,7 @@
 import Image from 'next/image'
 
-const CustomInmage = ({src,alt, priority}) = {
-    const prty = priority ? true:false
+const CustomImage = ({src,alt, priority}) = {
+    const prty = priority ? true:false;
 
     return (
         <div style={{width:100%; height:100%}}>

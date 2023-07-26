@@ -38,7 +38,7 @@ console.log(props)
 // {props.map((prop) => console.log(prop))}
 
 	return (
-		<div className="container mx-auto">
+		<div className="container py-8 sm:py-10 mt-5 sm:mt-10">
 
 
 			{/* Header */}

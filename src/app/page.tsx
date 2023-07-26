@@ -13,7 +13,6 @@ import Contact from '@/components/Contact/Contact';
 import Faq from '@/components/Faq/Faq';
 export default function Home() {
 
-
     return (
         <>
         <div>

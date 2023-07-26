@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@code-hike/mdx": "^0.9.0",
     "@heroicons/react": "^2.0.18",
     "@types/node": "20.4.2",
     "@types/react": "18.2.15",
@@ -17,14 +18,37 @@
     "eslint": "8.45.0",
     "eslint-config-next": "13.4.10",
     "framer-motion": "^10.13.0",
+    "glob": "^10.3.3",
+    "gray-matter": "^4.0.3",
     "next": "13.4.10",
+    "next-mdx-remote": "^4.4.1",
     "next-themes": "^0.2.1",
     "postcss": "8.4.26",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "reading-time": "^1.5.0",
+    "rehype-autolink-headings": "^6.1.1",
+    "rehype-code-titles": "^1.2.0",
+    "rehype-format": "^4.0.1",
+    "rehype-highlight": "^6.0.0",
+    "rehype-image-size": "^1.0.0",
+    "rehype-img-size": "^1.0.1",
+    "rehype-slug": "^5.1.0",
+    "remark": "^14.0.3",
+    "remark-gfm": "^3.0.1",
+    "remark-mdx-images": "^2.0.0",
+    "remark-toc": "^8.0.1",
+    "rss": "^1.2.2",
     "styled-icons": "^10.47.0",
     "tailwindcss": "3.3.3",
     "typescript": "5.1.6",
     "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/line-clamp": "^0.4.4",
+    "@tailwindcss/typography": "^0.5.9",
+    "@types/gtag.js": "^0.0.12",
+    "@types/mdx": "^2.0.5",
+    "@types/rss": "^0.0.30"
   }
 }
