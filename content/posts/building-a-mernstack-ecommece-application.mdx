@@ -117,7 +117,7 @@ const port = 8000;
 app.listen(port, () =>  {
 console.log(`Server is listening on port ${port}...`)
 }
-```
+
 
 To run the app we type `npm start` in our terminal and the program starts, and this is what we will see in our terminal
 
@@ -438,7 +438,7 @@ const Category = require('../models/category'); const express = require('express
 const { updateCategory } = require('../controllers/categoryController') router.put('/:id', updateCategory)
 module.exports = router;
 
-```
+
 ![Screenshot from 2022-11-11 14-45-34.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1668167149776/0wVdR_MKW.png align="left")
 We test the route and we successfully update the electronics category filter and changed its name to computers.
 

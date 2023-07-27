@@ -14,8 +14,8 @@ module.exports = {
     colors: {
       current: "currentColor",
       transparent: "transparent",
-      white: "#FFFFFF",
-      black: "#090E34",
+      white: '#eff6ff',
+      black: '#172554',
       dark: "#1D2144",
       primary: "#4A6CF7",
       yellow: "#FBB040",
@@ -33,6 +33,20 @@ module.exports = {
 
 				// Extended v3 color
 				// gray: colors.neutral,
+
+        'blue': {
+          '50': '#eff6ff',
+          '100': '#dbeafe',
+          '200': '#bfdbfe',
+          '300': '#93c5fd',
+          '400': '#60a5fa',
+          '500': '#3b82f6',
+          '600': '#2563eb',
+          '700': '#1d4ed8',
+          '800': '#1e40af',
+          '900': '#1e3a8a',
+          '950': '#172554',
+        },
     },
     screens: {
       xs: "450px",
