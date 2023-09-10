@@ -19,6 +19,22 @@ const Navbar = () => {
 
     const router = useRouter()
 
+       const [sticky, setSticky] = useState<boolean>(false)
+
+    const handleStickyNavbar = () => {
+        if(window.scrollY >=80){
+            setSticky(true)
+          }else{
+            setSticky(false)
+          }
+        }
+
+        
+        useEffect(() => {
+
+            window.addEventListener('scroll', handleStickyNavbar)
+        },[]
+        )
   function MenuIcon({ open }) {
     return (
       <span className="relative h-3.5 w-4 transform transition duration-500 ease-in-out">
@@ -50,11 +66,12 @@ const Navbar = () => {
     )
   }
 
+
   function MobileNav() {
     return (
       <Popover>
         <Popover.Button
-          className="group relative z-50 flex cursor-pointer items-center justify-center rounded-full bg-slate-100/80 p-3 shadow-sm shadow-sky-100/50 ring-1 ring-slate-900/5 transition duration-300 ease-in-out hover:bg-slate-200/60 focus:outline-none md:hidden"
+          className="group relative z-50 flex cursor-pointer items-center justify-center rounded-full bg-slate-100/80 p-3 shadow-sm shadow-sky-100/50 ring-1 ring-slate-900/5 transition duration-300 ease-in-out hover:bg-slate-200/60 focus:outline-none md:hidden  "
           aria-label="Toggle Navigation"
         >
           {({ open }) => <MenuIcon open={open} />}
@@ -106,7 +123,8 @@ const Navbar = () => {
   }
 
   return (
-    <header className="h-24 border-b border-slate-200/80 bg-white">
+    <header className={clsx("h-24 border-b  w-full   border-slate-200/80 bg-white",  sticky ? "!fixed !z-[9999] !bg-white !bg-opacity-80 shadow-sticky backdrop-blur-sm !transition dark:!bg-primary dark:!bg-opacity-20":"")}> 
+    {/* absolute */}
       <Container className="flex h-full w-full items-center">
         <nav className="relative z-50 flex w-full items-center justify-between">
           <div className="flex shrink-0 items-center">
