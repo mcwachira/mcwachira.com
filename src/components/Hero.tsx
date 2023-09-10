@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 import { Button } from './Button'
-import { Container } from './Container'
+import { Container } from './Common/Container'
 import heroPortrait from '../images/1.png'
 import figma from '../images/logos/icons/figma.png'
 import tailwind from '../images/logos/icons/tailwindcss.png'

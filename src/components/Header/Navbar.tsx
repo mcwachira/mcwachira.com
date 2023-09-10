@@ -10,7 +10,7 @@ import clsx from 'clsx'
 import { Menu, Popover, Transition, Disclosure } from '@headlessui/react'
 import { useRouter } from 'next/navigation'
 import logo from '@/logo/png/color.png'
-import { Container } from '../Container';
+import { Container } from '../Common/Container';
 import { Button } from '../Button'
 
 

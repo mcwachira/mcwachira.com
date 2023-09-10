@@ -3,6 +3,7 @@ import Experience from "@/components/Experience";
 import { Hero } from "@/components/Hero";
 import Head from "next/head";
 import ToolsIconsRows from "@/components/Tools";
+import Services from "@/components/Services/Services";
 
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
       <Hero />
       <Experience/>
       <ToolsIconsRows/>
+      <Services/>
 
 
 
