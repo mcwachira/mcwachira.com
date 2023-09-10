@@ -1,7 +1,9 @@
 export type Menu = {
     id:number;
-    title:string;
-    path?:string;
+    label:string,
+    href?:string;
+    // title:string;
+    // path?:string;
     newTab:boolean;
     subMenu?:Menu[]
 }
