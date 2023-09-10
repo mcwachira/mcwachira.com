@@ -2,6 +2,7 @@ import Navbar from "@/components/Header/Navbar";
 import Experience from "@/components/Experience";
 import { Hero } from "@/components/Hero";
 import Head from "next/head";
+import ToolsIconsRows from "@/components/Tools";
 
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
     <Navbar/>
       <Hero />
       <Experience/>
+      <ToolsIconsRows/>
 
 
 
