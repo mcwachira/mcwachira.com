@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-export function Pagination() {
+const Pagination = () => {
   return (
     <div className="mt-20 flex items-center justify-center gap-2">
       <span className="inline-flex h-10 w-20 items-center justify-center rounded-full bg-slate-50 text-sm font-medium text-slate-500/60 shadow-sm shadow-sky-100/50 ring-1 ring-slate-900/5">
@@ -42,3 +42,6 @@ export function Pagination() {
     </div>
   )
 }
+
+
+export default Pagination

@@ -1,7 +1,8 @@
-import { Container } from './Common/Container'
+
 import Image from 'next/image'
 
 import bgGradient from '@/images/blog-hero-bg.png'
+import { Container } from './Common/Container'
 
 export function BlogHero() {
   return (

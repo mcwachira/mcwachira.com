@@ -9,6 +9,7 @@ import { getAllCaseStudies } from "@/lib/caseStudies";
 import { getAllArticles } from "@/lib/articles";
 import { Footer } from "@/components/Footer";
 import Testimonials from "@/components/Testimonials/Testimonials";
+import FeaturedArticles from "@/components/FeaturedArticles";
 
 
 export default function Home({ caseStudies, articles }) {
@@ -30,7 +31,7 @@ export default function Home({ caseStudies, articles }) {
       <Services/>
       <FeaturedWork caseStudies={caseStudies} />
 <Testimonials/>
-      {/* <FeaturedArticles articles={articles} /> */}
+      <FeaturedArticles articles={articles} />
       <Footer />
 
    </>

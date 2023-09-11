@@ -5,13 +5,13 @@ import Link from 'next/link'
 import  Navbar from '@/components/Header/Navbar'
 import { Footer } from '@/components/Footer'
 import { formatDate } from '@/lib/formatDate'
-import { LinkedInIcon, InstagramIcon, TwitterIcon } from './SocialIcons'
+import { LinkedInIcon, InstagramIcon, TwitterIcon } from '@/components/SocialIcons'
 import {
   WebDevelopmentIcon,
   TutorialIcon,
   BusinessIcon,
   ContentCreationIcon,
-} from './CategoryIcons'
+} from '@/components/CategoryIcons'
 
 const iconOptions = {
   'Web Development': WebDevelopmentIcon,
@@ -20,7 +20,7 @@ const iconOptions = {
   Tutorials: TutorialIcon,
 }
 
-function SocialLink({ icon: Icon, ...props }) {
+const SocialLink = ({ icon: Icon, ...props }) =>  {
   return (
     <Link
       className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 duration-200 hover:bg-slate-50"
@@ -41,7 +41,7 @@ export function ArticleLayout({ meta, children }) {
         <title>{`${meta.title} - Jane Doe`}</title>
         <meta name="description" content={meta.description} />
       </Head>
-      <Header />
+      <Navbar />
       <main>
         <article>
           {/* Article Header */}
@@ -174,3 +174,6 @@ export function ArticleLayout({ meta, children }) {
     </>
   )
 }
+
+
+export default ArticleLayout

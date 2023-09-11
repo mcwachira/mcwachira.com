@@ -6,7 +6,7 @@ import {
   TutorialIcon,
   BusinessIcon,
   ContentCreationIcon,
-} from './CategoryIcons'
+} from '@/components/CategoryIcons'
 
 const iconOptions = {
   'Web Development': WebDevelopmentIcon,
@@ -15,7 +15,7 @@ const iconOptions = {
   Tutorials: TutorialIcon,
 }
 
-export function Article({ article }) {
+const  Article = ({ article }) =>  {
   const categorySlug = article.category.replace(/ /g, '-').toLowerCase()
   const CategoryIcon = iconOptions[article.category]
 
@@ -95,3 +95,5 @@ export function Article({ article }) {
     </article>
   )
 }
+
+export default Article
