@@ -6,7 +6,7 @@ import { WorkExperience } from '@/components/WorkExperience'
 import { Workstation } from '@/components/Workstation'
 import { Stack } from '@/components/Stack'
 
-import { Footer } from '@/components/Footer'
+import  Footer from '@/components/Footer'
 
 export default function About() {
   return (

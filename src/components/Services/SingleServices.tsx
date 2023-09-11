@@ -6,7 +6,7 @@ const SingleService = ({service}:{service :Service}) => {
 
 const {icon, title, paragraph} = service
   return (
-    <div className="w-full">
+    <div className="w-full  overflow-hidden rounded-2xl bg-slate-50 px-4 pb-14 pt-5 shadow-sm shadow-sky-100/50 ring-1 ring-slate-100">
     <div className="wow fadeInUp" data-wow-delay=".15s">
       <div className="mb-10 flex h-[70px] w-[70px] items-center justify-center rounded-md bg-primary bg-opacity-10 text-primary">
         {icon}
@@ -23,3 +23,4 @@ const {icon, title, paragraph} = service
 }
 
 export default SingleService
+

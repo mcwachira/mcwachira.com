@@ -84,8 +84,7 @@ const  Footer = ({ newsletter = true }) => {
                     Subscribe to my newsletter
                   </h3>
                   <p className="mx-auto mt-4 max-w-lg text-lg text-sky-50 lg:mx-0 lg:mt-6">
-                    Join 10,000+ designers and get creative site breakdowns,
-                    design musings and tips every Monday.
+                  Ready to level up your skills in JavaScript, React, Node.js, and Go? Join our newsletter for a weekly dose of coding articles! 
                   </p>
                 </div>
                 <form
@@ -139,8 +138,7 @@ const  Footer = ({ newsletter = true }) => {
             </div>
             <div className="flex flex-col items-center lg:col-span-5 lg:items-start">
               <p className="text-center text-lg text-slate-50 lg:max-w-sm lg:text-left">
-                Iced pumpkin ristretto irish trifecta robusta trade froth
-                affogato barista con barista cappuccino filter roast.
+          
               </p>
               <Link
                 href="#"
@@ -186,7 +184,7 @@ const  Footer = ({ newsletter = true }) => {
               ))}
             </div>
             <p className="mt-8 text-base text-slate-400/90 md:mt-0">
-              © {year} mcwachira
+              © {year}  mcwachira
             </p>
           </div>
         </Container>

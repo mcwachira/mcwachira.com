@@ -7,7 +7,7 @@ import {
   getFeaturedTags,
   getAllTags,
 } from '@/lib/caseStudies'
-import { Footer } from '@/components/Footer'
+import  Footer  from '@/components/Footer'
 
 export default function Work({ caseStudies, tags, tag }) {
   return (

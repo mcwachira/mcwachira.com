@@ -44,7 +44,8 @@ const Services = () => {
               Services I offer
             </span>
           </div> */}
-          <div className="grid grid-cols-1 gap-x-12 gap-y-14 md:grid-cols-2 md:gap-14 lg:grid-cols-2 lg:gap-16 py-24">
+          <div className="grid grid-cols-1 gap-x-12 gap-y-14 md:grid-cols-2 md:gap-14 lg:grid-cols-2 lg:gap-16 lg:gap-x-24 py-24">
+            
             {ServicesData.map((service) => (
               <SingleService key={service.id} service={service} />
             ))}

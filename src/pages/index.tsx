@@ -7,7 +7,7 @@ import Services from "@/components/Services/Services";
 import FeaturedWork from "@/components/FeaturedWork";
 import { getAllCaseStudies } from "@/lib/caseStudies";
 import { getAllArticles } from "@/lib/articles";
-import { Footer } from "@/components/Footer";
+import  Footer  from "@/components/Footer";
 import Testimonials from "@/components/Testimonials/Testimonials";
 import FeaturedArticles from "@/components/FeaturedArticles";
 
@@ -17,12 +17,13 @@ export default function Home({ caseStudies, articles }) {
   console.log(caseStudies)
   return (
     <>
-    <Head>
-        <h1 className='my-8 mx-auto text-sm w-10/12 text-warmGay-800 sm:text-2xl md:text-left md:text-3xl md:text-black md:w-full lg:text-4xl'>
-        Mcwachira&#8216;s Blog and Portfolio site</h1>
-        <meta name="description" content="personal website blog and portfolio" />
-        <link rel="icon" href="/favicon.ico" />
-    </Head>
+     <Head>
+        <title>Contact me - Mcwachira </title>
+        <meta
+          name="description"
+          content="Hi, I'm Mcwachira , a passionate developer, entrepreneur, and general technology enthusiast living in San Francisco."
+        />
+      </Head>
  
     <Navbar/>
       <Hero />

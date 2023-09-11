@@ -156,8 +156,8 @@ export function Experience() {
                         Speed
                       </h3>
                       <p className="mt-2.5 text-base text-slate-700">
-                        I like to work hard and fast. I know how important
-                        deadlines are to my clients.
+                    
+                        I  am a hard worker and efficient and I strive to meet project deadlines.
                       </p>
                     </div>
                   </div>
@@ -226,8 +226,8 @@ export function Experience() {
                         Responsiveness
                       </h3>
                       <p className="mt-2.5 text-base text-slate-700">
-                        You can rely on me to be responsive and clear whenever
-                        we work together.
+                        Clients can rely on me to be responsive and clear while working together.
+                  
                       </p>
                     </div>
                   </div>
@@ -273,10 +273,10 @@ export function Experience() {
                 className="h-full w-full rounded-3xl object-cover object-center"
                 src={image}
 
-                //    width={500}
-                // height={500}
+                   width={100}
+                height={100}
                 alt=""
-                fill
+                //fill
                 sizes="(min-width: 1280px) 705.34px, (min-width: 1024px) calc((100vw - 64px) * 0.6667 - 32px), (min-width: 616px) 36rem, calc(100vw - 40px)"
               />
               <div>
@@ -415,7 +415,7 @@ export function Experience() {
                       Years of experience
                     </dt>
                     <dd className="order-first text-3xl font-extrabold text-white sm:text-4xl">
-                      10
+                   4
                     </dd>
                   </div>
 
@@ -424,7 +424,7 @@ export function Experience() {
                       Projects completed
                     </dt>
                     <dd className="order-first text-3xl font-extrabold text-white sm:text-4xl">
-                      150
+                      10
                     </dd>
                   </div>
                 </div>
