@@ -29,11 +29,7 @@ const socialLinks = [
     icon: EmailIcon,
     href: '#',
   },
-  {
-    label: 'Dribbble',
-    icon: DribbbleIcon,
-    href: '#',
-  },
+
   {
     label: 'Instagram',
     icon: InstagramIcon,
@@ -69,6 +65,7 @@ function SocialLink({ icon: Icon, label, ...props }) {
 }
 
 export function Footer({ newsletter = true }) {
+  const year = new Date().getFullYear();
   return (
     <section className={clsx(newsletter && 'pt-12 sm:pt-16')}>
       {newsletter && (
@@ -189,7 +186,7 @@ export function Footer({ newsletter = true }) {
               ))}
             </div>
             <p className="mt-8 text-base text-slate-400/90 md:mt-0">
-              © 2023 Tailwind Awesome. All rights reserved.
+              © {year} mcwachira
             </p>
           </div>
         </Container>

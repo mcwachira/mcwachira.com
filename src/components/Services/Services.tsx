@@ -24,7 +24,7 @@ const Services = () => {
             paragraph="Here is what I can help you with"
           />
           </div>
-          <div className="absolute inset-y-0 left-0 h-full w-64 bg-gradient-to-r from-white/50 to-white/0" />
+          {/* <div className="absolute inset-y-0 left-0 h-full w-64 bg-gradient-to-r from-white/50 to-white/0" />
           <div className="absolute inset-y-0 right-0 h-full w-64 bg-gradient-to-l from-white/50 to-white/0" />
           <div className="absolute -top-2.5 right-4 flex transform gap-6 sm:right-16 lg:top-[unset] lg:right-0 lg:-bottom-12 xl:-bottom-20 2xl:right-32">
             <svg
@@ -41,9 +41,9 @@ const Services = () => {
               ></path>
             </svg>
             <span className="inline-block w-48 rotate-6 transform font-writing text-[22px] tracking-wide text-slate-600 lg:text-2xl">
-              The tools I use on my day-to-day
+              Services I offer
             </span>
-          </div>
+          </div> */}
           <div className="grid grid-cols-1 gap-x-12 gap-y-14 md:grid-cols-2 md:gap-14 lg:grid-cols-2 lg:gap-16 py-24">
             {ServicesData.map((service) => (
               <SingleService key={service.id} service={service} />
