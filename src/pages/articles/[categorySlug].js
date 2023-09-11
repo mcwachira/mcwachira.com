@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Navbar from '@/components/Header/Navbar'
 import { BlogHero } from '@/components/BlogHero'
 import { Articles } from '@/components/Articles'
-import { Footer } from '@/components/Footer'
+import  Footer  from '@/components/Footer'
 
 import { getArticlesInCategory, getAllCategories } from '@/lib/articles'
 

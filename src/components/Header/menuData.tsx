@@ -35,7 +35,7 @@ const menuData: Menu[] = [
   {
     id: 5,
     label: "Blog",
-   href: "/blog",
+   href: "/articles",
     newTab: false,
   },
   {
