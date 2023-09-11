@@ -90,21 +90,10 @@ const AboutHero = () => {
             and I’m a Fullstack Javascript Developer
           </h1>
           <p className="mt-8 text-lg leading-8 text-slate-700">
-            Pumpkin seasonal rich froth decaffeinated trifecta organic blue
-            panna doppio. Body a whipped lungo variety spice seasonal body press
-            mountain con macchiato. Medium coffee single white to caramelization
-            siphon con siphon id as con go single. So ristretto pumpkin affogato
-            cinnamon breve turkish organic. Lait black kopi dripper spice lait
-            cultivar robusta panna whipped and sit aromatic sugar.
+          I am a  seasoned professional with over four years of experience in the dynamic world of web development. I am  not just a coder;i am a creator, a digital architect who crafts beautiful and responsive websites and full-stack web applications that leave a lasting impression.
           </p>
           <p className="mt-6 text-lg leading-8 text-slate-700">
-            And café frappuccino extraction filter froth sugar siphon coffee
-            pumpkin press milk ristretto et au. Trade instant aged as wings bar
-            seasonal pumpkin barista turkish shot go seasonal robusta. Strong
-            iced lungo frappuccino espresso redeye macchiato aftertaste trade
-            pot. Seasonal turkish mocha wings sit crema blue au and grounds eu
-            cortado café cup. Filter viennese bar seasonal wings siphon as
-            frappuccino go luwak single mazagran.
+           I am adept to harnessing the power of React to create interactive and engaging user interfaces, leveraging TypeScript for robust type checking and enhanced code quality, and using Node.js and Go to craft scalable, high-performance backends.
           </p>
           <p
             className={clsx('mt-16 text-3xl text-slate-700', mrDafoe.className)}

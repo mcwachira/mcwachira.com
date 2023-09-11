@@ -103,7 +103,7 @@ export function Stack() {
                 </span>
               </h2>
               <p className="mt-6 text-lg leading-8 text-slate-700">
-                I've been a software developer for over 13 years, and while my
+                I've been a software developer for over 4 years, and while my
                 stack has shifted over the years, I kept coming back to the same
                 technologies. The following is the stack that I've developed &
                 honed over the years as a software developer.
@@ -147,7 +147,7 @@ export function Stack() {
               </div>
               <div className="absolute -bottom-16 right-6 max-w-xs rounded-2xl bg-sky-700/95 p-8 backdrop-blur-sm xl:right-0 xl:bottom-10 xl:translate-x-1/4">
                 <p className="font-display text-2xl font-medium text-sky-50">
-                  <span className="text-[28px] font-bold text-white">55+</span>{' '}
+                  <span className="text-[28px] font-bold text-white">10+</span>{' '}
                   Clients have loved my work
                 </p>
                 <div className="mt-6 flex -space-x-1.5 overflow-hidden">
