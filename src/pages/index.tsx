@@ -8,6 +8,7 @@ import FeaturedWork from "@/components/FeaturedWork";
 import { getAllCaseStudies } from "@/lib/caseStudies";
 import { getAllArticles } from "@/lib/articles";
 import { Footer } from "@/components/Footer";
+import Testimonials from "@/components/Testimonials/Testimonials";
 
 
 export default function Home({ caseStudies, articles }) {
@@ -28,7 +29,7 @@ export default function Home({ caseStudies, articles }) {
       <ToolsIconsRows/>
       <Services/>
       <FeaturedWork caseStudies={caseStudies} />
-
+<Testimonials/>
       {/* <FeaturedArticles articles={articles} /> */}
       <Footer />
 
