@@ -7,6 +7,7 @@ import Services from "@/components/Services/Services";
 import FeaturedWork from "@/components/FeaturedWork";
 import { getAllCaseStudies } from "@/lib/caseStudies";
 import { getAllArticles } from "@/lib/articles";
+import { Footer } from "@/components/Footer";
 
 
 export default function Home({ caseStudies, articles }) {
@@ -28,7 +29,8 @@ export default function Home({ caseStudies, articles }) {
       <Services/>
       <FeaturedWork caseStudies={caseStudies} />
 
-
+      {/* <FeaturedArticles articles={articles} /> */}
+      <Footer />
 
    </>
   )

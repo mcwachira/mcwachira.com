@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 import { Button } from './Button'
 import { Container } from './Common/Container'
-import heroPortrait from '../images/1.png'
+import heroPortrait from '../images/1.jpg'
 import figma from '../images/logos/icons/figma.png'
 import tailwind from '../images/logos/icons/tailwindcss.png'
 import sketch from '../images/logos/icons/sketch.png'
