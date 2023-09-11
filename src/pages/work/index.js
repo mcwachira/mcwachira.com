@@ -1,11 +1,11 @@
 import Head from 'next/head'
 
 import Navbar from '@/components/Header/Navbar'
-import { CaseStudies } from '@/components/CaseStudies'
+import  CaseStudies  from '@/components/CaseStudy/CaseStudies'
 import { getAllCaseStudies, getFeaturedTags } from '@/lib/caseStudies'
 import { Footer } from '@/components/Footer'
 
-export default function Work({ caseStudies, tags }) {
+const Work  = ({ caseStudies, tags })  =>{
   return (
     <>
       <Head>
@@ -30,3 +30,6 @@ export async function getStaticProps() {
     },
   }
 }
+
+
+export default Work

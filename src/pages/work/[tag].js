@@ -1,7 +1,7 @@
 import Head from 'next/head'
 
 import Navbar from '@/components/Header/Navbar'
-import { CaseStudies } from '@/components/CaseStudies'
+import  CaseStudies  from '@/components/CaseStudy/CaseStudies'
 import {
   getCaseStudiesWithTag,
   getFeaturedTags,
