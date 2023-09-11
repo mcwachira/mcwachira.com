@@ -64,7 +64,7 @@ function SocialLink({ icon: Icon, label, ...props }) {
   )
 }
 
-export function Footer({ newsletter = true }) {
+const  Footer = ({ newsletter = true }) => {
   const year = new Date().getFullYear();
   return (
     <section className={clsx(newsletter && 'pt-12 sm:pt-16')}>
@@ -194,3 +194,6 @@ export function Footer({ newsletter = true }) {
     </section>
   )
 }
+
+
+export default Footer

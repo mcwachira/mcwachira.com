@@ -3,13 +3,14 @@ import Head from 'next/head'
 import Navbar from '@/components/Header/Navbar'
 import  CaseStudies  from '@/components/CaseStudy/CaseStudies'
 import { getAllCaseStudies, getFeaturedTags } from '@/lib/caseStudies'
-import { Footer } from '@/components/Footer'
+import Footer   from '@/components/Footer'
 
 const Work  = ({ caseStudies, tags })  =>{
+  console.log(caseStudies)
   return (
     <>
       <Head>
-        <title>Work - Jane Doe</title>
+        <title>Work - Mcwachira</title>
         <meta
           name="description"
           content="Explore an impressive collection of case studies showcasing a my diverse skill set, innovative solutions, and successful projects."

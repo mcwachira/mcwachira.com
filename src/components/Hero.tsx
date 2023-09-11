@@ -22,7 +22,7 @@ function SocialLink({ icon: Icon, ...props }) {
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden py-20 lg:py-56">
+    <section className="relative overflow-hidden py-20 lg:py-24">
       {/* Light blue gradient background */}
       <svg
         width={1728}

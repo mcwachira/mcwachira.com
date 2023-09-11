@@ -16,10 +16,16 @@ const menuData: Menu[] = [
   },
   {
     id: 3,
-    label: "Services",
-   href: "/services",
+    label: "Work",
+   href: "/work",
     newTab: false,
   },
+  // {
+  //   id: 3,
+  //   label: "Services",
+  //  href: "/services",
+  //   newTab: false,
+  // },
   {
     id: 4,
     label: "Pricing",
