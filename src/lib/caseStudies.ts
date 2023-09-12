@@ -56,7 +56,7 @@ export async function getFeaturedTags() {
   return tags.slice(0, 4)
 }
 
-export async function getCaseStudiesWithTag(tag) {
+export async function getCaseStudiesWithTag(tag:any) {
   const caseStudies = await getAllCaseStudies()
 
   const caseStudiesWithTag = caseStudies.filter((caseStudy) => {
