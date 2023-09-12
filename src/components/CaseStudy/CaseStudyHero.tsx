@@ -26,7 +26,7 @@ function Tag({ tag }:tagTypes) {
   )
 }
 
-export function CaseStudyHero({ title, subtitle, tags, coverImage }:Work) {
+export function CaseStudyHero({ title, subtitle, tags, coverImage }:any) {
   return (
     <section className="overflow-hidden bg-white pt-16 sm:pt-20 lg:pt-28">
       <Container className="">

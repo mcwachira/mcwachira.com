@@ -11,7 +11,7 @@ interface CaseStudyTestimonialProps {
 }
 
 
-export function CaseStudyTestimonial({ testimonial, clientName }:CaseStudyTestimonialProps) {
+export function CaseStudyTestimonial({ testimonial, clientName }:any) {
   return (
     <section className="overflow-hidden bg-white py-16 sm:py-20 lg:py-28">
       <Container className="">

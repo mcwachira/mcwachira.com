@@ -1,7 +1,7 @@
 import { Work } from '@/types/work'
 import { Button } from '@/components/Button'
 
-function Detail({ label, data }) {
+function Detail({ label, data }:any) {
   return (
     <div>
       <dt className="font-display text-lg font-medium text-slate-900">
@@ -18,7 +18,7 @@ export function CaseStudyDetails({
   projectDuration,
   projectURL,
   children,
-}:Work) {
+}:any) {
   return (
     <section className="overflow-hidden bg-white py-16 sm:py-20 lg:py-28">
       <div className="mx-auto grid max-w-lg px-5 sm:max-w-2xl sm:px-6 lg:max-w-6xl lg:grid-cols-10 lg:px-8 xl:px-12">

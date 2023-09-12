@@ -4,7 +4,7 @@ import { Work } from '@/types/work'
 
 import { Container } from '../Common/Container'
 
-export function CaseStudyNavigation({ navigation }:Work) {
+export function CaseStudyNavigation({ navigation }:any) {
   return (
     <section className="border-t border-slate-200 py-8">
            <Container className="">

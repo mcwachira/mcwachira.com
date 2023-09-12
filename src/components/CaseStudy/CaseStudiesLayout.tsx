@@ -14,7 +14,7 @@ children:React.ReactElement,
 data:Work
 }
 
-const CaseStudiesLayout = ({data, children}: caseStudiesLayoutProps) => {
+const CaseStudiesLayout = ({data, children}: any) => {
   return (
     <>
       <Head>

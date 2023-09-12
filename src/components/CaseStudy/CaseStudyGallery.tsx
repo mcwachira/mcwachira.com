@@ -3,12 +3,12 @@ import Image from 'next/image'
 import { Container } from '../Common/Container'
 import { Work } from '@/types/work'
 
-export function CaseStudyGallery({ images }:Work) {
+export function CaseStudyGallery({ images }:any) {
   return (
     <section className="overflow-hidden bg-slate-50 py-16 sm:py-24 lg:py-28 xl:py-32">
       <Container className="">
         <div className="mx-auto grid max-w-lg gap-8 sm:max-w-2xl sm:grid-cols-2 lg:mx-0 lg:max-w-none">
-          {images.map((image, index) => (
+          {images.map((image:any, index:number) => (
             <div
               key={`image-${index}`}
               className="aspect-w-3 aspect-h-2 w-full overflow-hidden sm:aspect-w-4 sm:aspect-h-3"
