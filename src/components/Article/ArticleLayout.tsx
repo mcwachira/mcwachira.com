@@ -14,14 +14,14 @@ import {
 } from '@/components/CategoryIcons'
 import React from 'react'
 
-const iconOptions = {
+const iconOptions:any = {
   'Web Development': WebDevelopmentIcon,
   Business: BusinessIcon,
   'Content Creation': ContentCreationIcon,
   Tutorials: TutorialIcon,
 }
 
-const SocialLink = ({ icon: Icon, ...props }) =>  {
+const SocialLink = ({ icon: Icon, ...props }:any) =>  {
   return (
     <Link
       className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 duration-200 hover:bg-slate-50"
