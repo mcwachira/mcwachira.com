@@ -13,8 +13,20 @@ import nextjs from '@/images/logos/icons/nextjs.png'
 import postgresql from '@/images/logos/icons/postgresql.png'
 import tailwind from '@/images/logos/icons/tailwindcss.png'
 import { DribbbleIcon, GitHubIcon, InstagramIcon, TwitterIcon } from './SocialIcons'
+import React from 'react'
+import { Url } from 'next/dist/shared/lib/router/router'
 
-function SocialLink({ icon: Icon, ...props }) {
+interface socialLinkTypes {
+props:React.ReactNode;
+icon:any;
+href:{
+  href: string; 
+  "aria-label": string; 
+  icon: (props: any) => Element
+}
+}
+
+function SocialLink({ icon: Icon, ...props }:socialLinkTypes) {
   return (
     <Link
       className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 duration-200 hover:bg-slate-50"
@@ -185,3 +197,4 @@ export function Hero() {
     </section>
   )
 }
+

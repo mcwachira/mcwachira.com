@@ -6,7 +6,7 @@ import image from '@/images/experience-image.jpg'
 export function Experience() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-slate-50 via-slate-50 to-white pt-20 pb-40 sm:pt-24 lg:pt-32 lg:pb-64">
-      <Container>
+      <Container className=''>
         <div className="mx-auto grid max-w-xl items-center gap-6 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:gap-16">
           <div>
             <h2 className="font-display text-4xl font-semibold text-slate-900 sm:text-5xl">

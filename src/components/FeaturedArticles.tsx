@@ -1,10 +1,10 @@
 import { Container } from '@/components/Common/Container'
 import  Article  from '@/components/Article/Article'
 
-const  FeaturedArticles = ({ articles })  => {
+const  FeaturedArticles = ({ articles }:any)  => {
   return (
     <section className="overflow-hidden bg-white py-16 sm:pt-24 lg:pt-28">
-      <Container>
+      <Container className=''>
         <h2 className="mx-auto max-w-2xl text-center font-display text-4xl font-semibold leading-tight text-slate-900 sm:text-5xl sm:leading-tight">
           <span className="relative whitespace-nowrap">
             <svg
@@ -42,7 +42,7 @@ const  FeaturedArticles = ({ articles })  => {
               ></path>
             </svg>
           </div>
-          {articles.slice(0, 3).map((article) => (
+          {articles.slice(0, 3).map((article:any) => (
             <Article key={article.slug} article={article} />
           ))}
         </div>

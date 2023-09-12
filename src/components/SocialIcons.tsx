@@ -1,6 +1,6 @@
 
 
-export function TwitterIcon(props) {
+export function TwitterIcon(props:any) {
     return (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -17,7 +17,7 @@ export function TwitterIcon(props) {
     )
   }
   
-  export function InstagramIcon(props) {
+  export function InstagramIcon(props:any) {
     return (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -36,7 +36,7 @@ export function TwitterIcon(props) {
     )
   }
   
-  export function FacebookIcon(props) {
+  export function FacebookIcon(props:any) {
     return (
       <svg
         height="24"
@@ -53,7 +53,7 @@ export function TwitterIcon(props) {
     )
   }
   
-  export function GitHubIcon(props) {
+  export function GitHubIcon(props:any) {
     return (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -79,7 +79,7 @@ export function TwitterIcon(props) {
     )
   }
   
-  export function LinkedInIcon(props) {
+  export function LinkedInIcon(props:any) {
     return (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -94,7 +94,7 @@ export function TwitterIcon(props) {
     )
   }
   
-  export function DribbbleIcon(props) {
+  export function DribbbleIcon(props:any) {
     return (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -116,7 +116,7 @@ export function TwitterIcon(props) {
   }
 
     
-  export function GithubIcon(props) {
+  export function GithubIcon(props:any) {
     return (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -133,7 +133,7 @@ export function TwitterIcon(props) {
     )
   }
   
-  export function EmailIcon(props) {
+  export function EmailIcon(props:any) {
     return (
       <svg
         xmlns="http://www.w3.org/2000/svg"

@@ -26,13 +26,13 @@ function CategoryIcon({ category, ...props }) {
 
 
 
-const  FeaturedWork =({ caseStudies})  => {
+const  FeaturedWork =({ caseStudies}:any)  => {
 
   console.log(caseStudies)
 
     return (
       <section className="overflow-x-clip bg-white pb-16 pt-8 sm:pb-24 sm:pt-12 md:pt-16">
-        <Container>
+        <Container className=''>
           <div className="text-center">
             <h2 className="font-display text-4xl font-semibold text-slate-900 sm:text-5xl">
               Check out my latest work

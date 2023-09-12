@@ -1,5 +1,5 @@
 import Link from 'next/link'
-
+import { Url } from 'next/dist/shared/lib/router/router'
 const Pagination = () => {
   return (
     <div className="mt-20 flex items-center justify-center gap-2">
@@ -21,12 +21,12 @@ const Pagination = () => {
       >
         3
       </Link>
-      <span
+      <Link
         href="#"
-        className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-slate-50 text-sm font-medium text-slate-500/60 shadow-sm shadow-sky-100/50 ring-1 ring-slate-900/5"
+        className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-slate-50 text-sm font-medium text-slate-700 shadow-sm shadow-sky-100/50 ring-1 ring-slate-900/5 transition duration-200 ease-in-out hover:bg-slate-100 hover:text-sky-700"
       >
-        ...
-      </span>
+        4
+      </Link>
       <Link
         href="#"
         className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-slate-50 text-sm font-medium text-slate-700 shadow-sm shadow-sky-100/50 ring-1 ring-slate-900/5 transition duration-200 ease-in-out hover:bg-slate-100 hover:text-sky-700"

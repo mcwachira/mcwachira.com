@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-
+import {MetaTypes } from '@/types/types'
 import  Navbar from '@/components/Header/Navbar'
 import Footer  from '@/components/Footer'
 import { formatDate } from '@/lib/formatDate'
@@ -12,6 +12,7 @@ import {
   BusinessIcon,
   ContentCreationIcon,
 } from '@/components/CategoryIcons'
+import React from 'react'
 
 const iconOptions = {
   'Web Development': WebDevelopmentIcon,
@@ -29,9 +30,15 @@ const SocialLink = ({ icon: Icon, ...props }) =>  {
       <Icon className="h-3.5 w-3.5 fill-slate-500 transition group-hover:fill-slate-600" />
     </Link>
   )
+
 }
 
-export function ArticleLayout({ meta, children }) {
+
+interface articleLayoutTypes {
+  meta:MetaTypes;
+children:React.ReactNode
+}
+export function ArticleLayout({ meta, children }:articleLayoutTypes) {
   const categorySlug = meta.category.replace(/ /g, '-').toLowerCase()
   const CategoryIcon = iconOptions[meta.category]
 

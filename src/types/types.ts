@@ -5,3 +5,14 @@ export type Service = {
     paragraph: string;
   };
   
+
+  export type MetaTypes = {
+
+    date:string;
+    title: string;
+    category: string;
+    image: string;
+    description:string;
+  timeToRead:string;
+
+  }

@@ -8,7 +8,7 @@ import {
   ContentCreationIcon,
 } from '@/components/CategoryIcons'
 
-const iconOptions = {
+const iconOptions= {
   'Web Development': WebDevelopmentIcon,
   Business: BusinessIcon,
   'Content Creation': ContentCreationIcon,

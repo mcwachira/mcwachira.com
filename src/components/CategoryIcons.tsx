@@ -1,4 +1,6 @@
-export function WebDevelopmentIcon(props) {
+import React from "react"
+
+export function WebDevelopmentIcon(props:any) {
     return (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -27,7 +29,7 @@ export function WebDevelopmentIcon(props) {
     )
   }
   
-  export function TutorialIcon(props) {
+  export function TutorialIcon(props:any) {
     return (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -58,7 +60,7 @@ export function WebDevelopmentIcon(props) {
     )
   }
   
-  export function BusinessIcon(props) {
+  export function BusinessIcon(props:any) {
     return (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -85,7 +87,7 @@ export function WebDevelopmentIcon(props) {
     )
   }
   
-  export function ContentCreationIcon(props) {
+  export function ContentCreationIcon(props:any) {
     return (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -113,7 +115,7 @@ export function WebDevelopmentIcon(props) {
     )
   }
   
-  export function ConsultingIcon(props) {
+  export function ConsultingIcon(props:any) {
     return (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -141,7 +143,7 @@ export function WebDevelopmentIcon(props) {
     )
   }
   
-  export function BrandingIcon(props) {
+  export function BrandingIcon(props:any) {
     return (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -173,7 +175,7 @@ export function WebDevelopmentIcon(props) {
     )
   }
   
-  export function ProductDevelopmentIcon(props) {
+  export function ProductDevelopmentIcon(props:any) {
     return (
       <svg
         xmlns="http://www.w3.org/2000/svg"

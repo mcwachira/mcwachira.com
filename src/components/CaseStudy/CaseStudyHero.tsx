@@ -5,7 +5,12 @@ import Link from 'next/link'
 import { Container } from '@/components/Common/Container'
 import { Work } from '@/types/work'
 
-function Tag({ tag }) {
+
+interface tagTypes {
+
+  tag:string
+}
+function Tag({ tag }:tagTypes) {
   const tagSlug = tag.replace(/ /g, '-').toLowerCase()
   const href = `/work/${tagSlug}`
 
@@ -24,13 +29,13 @@ function Tag({ tag }) {
 export function CaseStudyHero({ title, subtitle, tags, coverImage }:Work) {
   return (
     <section className="overflow-hidden bg-white pt-16 sm:pt-20 lg:pt-28">
-      <Container>
+      <Container className="">
         <div className="mx-auto max-w-lg sm:max-w-3xl lg:mx-0 lg:max-w-none">
           <h1 className="font-display text-4xl font-semibold leading-tight text-slate-900 sm:text-5xl sm:leading-tight lg:text-6xl lg:leading-tight">
             {title} - {subtitle}
           </h1>
           <ul className="mt-8 flex flex-wrap items-center gap-4 sm:gap-6">
-            {tags.map((tag, index) => (
+            {tags.map((tag:string, index:number) => (
               <Tag key={index} tag={tag} />
             ))}
           </ul>
