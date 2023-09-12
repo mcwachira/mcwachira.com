@@ -29,7 +29,11 @@ import { Container } from '../Common/Container'
 
 const Testimonials = () => {
 
-  let testimonialsCount = parseFloat(testimonials?.length)
+  //  let testimonialsCount = parseFloat(testimonials?.length)
+
+
+
+  let testimonialsCount = testimonials?.length
   let [swiperIndex, setSwiperIndex] = useState(1)
   let [carouselProgress, setCarouselProgress] = useState(15)
 
