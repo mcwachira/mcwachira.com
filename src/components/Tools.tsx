@@ -97,7 +97,7 @@ const icons = [
     index:number
   }
 
-  function StackIcon({ icon, alt, index }:toolsProps) {
+  function StackIcon({ icon, alt, index }:any) {
     const mtClass = getTopMargin(index)
     return (
       <div
