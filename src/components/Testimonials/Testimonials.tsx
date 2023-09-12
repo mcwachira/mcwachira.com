@@ -40,7 +40,7 @@ const Testimonials = () => {
       setCarouselProgress(((swiperIndex + 3) /testimonialsCount) * 100)
     }
 
-  },[swiperIndex])
+  },[swiperIndex, testimonialsCount])
   return (
 <section className="relative overflow-hidden bg-slate-50 py-20 sm:py-24 lg:pt-32 ">
 
