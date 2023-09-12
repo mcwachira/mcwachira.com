@@ -18,7 +18,7 @@ const iconOptions:any = {
   'Product Development': ProductDevelopmentIcon,
 }
 
-function CategoryIcon({ category:, ...props }:any) {
+function CategoryIcon({ category, ...props }:any) {
   const Icon = iconOptions[category]
 
   return <Icon {...props} />
