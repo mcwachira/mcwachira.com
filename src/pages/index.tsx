@@ -21,7 +21,7 @@ export default function Home({ caseStudies, articles }) {
         <title>Contact me - Mcwachira </title>
         <meta
           name="description"
-          content="Hi, I'm Mcwachira , a passionate developer, entrepreneur, and general technology enthusiast living in San Francisco."
+          content="Hi, I&apos;m Mcwachira , a passionate developer, entrepreneur, and general technology enthusiast living in San Francisco."
         />
       </Head>
  

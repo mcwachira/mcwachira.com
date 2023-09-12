@@ -103,7 +103,7 @@ export function Hero() {
             businesses turn their ideas into reality
           </h1>
           <p className="mt-6 text-center text-lg leading-8 text-slate-700 lg:text-left">
-            I'm a passionate developer, entrepreneur, and general technology
+            I&apos;m a passionate developer, entrepreneur, and general technology
             enthusiast living in Nairobi. I creates websites and apps for startups and businesses, turning their ideas into functional digital solutions and profitable businesses.
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-x-10 gap-y-6 lg:justify-start">
@@ -146,7 +146,7 @@ export function Hero() {
             <div>
               <div className="absolute hidden w-max md:left-full md:top-16 md:block lg:-left-28 lg:-top-8 2xl:left-full 2xl:top-16 ">
                 <span className="inline-block transform font-writing text-2xl tracking-wide text-slate-600 md:rotate-[16deg] lg:translate-x-6 lg:rotate-[-18deg] 2xl:rotate-12">
-                  Hi, I'm mcwachira!
+                  Hi, I&apos;m mcwachira!
                 </span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

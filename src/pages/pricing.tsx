@@ -9,7 +9,7 @@ const pricing = () => {
         <title>About - Mcwachira</title>
         <meta
           name="description"
-          content="Hi, I'm Mcwachira, a passionate developer, entrepreneur, and general technology enthusiast living in Nairobi."
+          content="Hi, I&apos;m Mcwachira, a passionate developer, entrepreneur, and general technology enthusiast living in Nairobi."
         />
       </Head>
       <Navbar/>
