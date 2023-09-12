@@ -103,9 +103,9 @@ export function Stack() {
                 </span>
               </h2>
               <p className="mt-6 text-lg leading-8 text-slate-700">
-                I've been a software developer for over 4 years, and while my
+                I&apos;ve been a software developer for over 4 years, and while my
                 stack has shifted over the years, I kept coming back to the same
-                technologies. The following is the stack that I've developed &
+                technologies. The following is the stack that I&apos;ve developed &
                 honed over the years as a software developer.
               </p>
               <div className="mt-12 grid grid-cols-2 gap-2 sm:gap-3">
