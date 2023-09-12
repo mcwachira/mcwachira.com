@@ -12,14 +12,21 @@ const variantStyles = {
 interface buttonTypes {
   variant:string,
   href:Url,
-  className:string
+  className:string,
+  // [key: string]:string
+  variantStyles:{
+    primaryClassName:string,
+    secondaryClassName:string,
+    primaryOnDarkClassName:string
+
+  }
 
 }
 
 export function Button({ variant = 'primary', className, href, ...props }:buttonTypes) {
   className = clsx(
     'inline-flex items-center rounded-full gap-2.5 justify-center px-7 py-3 text-md font-semibold leading-none outline-offset-2 transition-all duration-200 ease-in-out active:transition-none',
-    variantStyles[`${variant}ClassName`],
+    // variantStyles[`${variant}ClassName`],
     className
   )
 
