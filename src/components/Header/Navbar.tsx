@@ -137,13 +137,13 @@ const Navbar = () => {
                 src='/logo/png/color.png'
                 alt=""
                 width={50} height={50} 
-                className="h-8 w-auto sm:h-9 md:hidden lg:block lg:h-10"
+                className="h-8 w-auto sm:h-9 md:hidden lg:block lg:h-10 dark:hidden"
               />
               <Image
-                src='/logo/png/color.png'
+                src='/logo/png/white.png'
                 alt=""
                 width={50} height={50} 
-                className="hidden h-8 w-auto md:block lg:hidden"
+                className="hidden h-8 w-auto sm:h-9 md:hidden lg:block lg:h-10 dark:block"
               />
             </Link>
           </div>

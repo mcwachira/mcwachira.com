@@ -24,6 +24,10 @@ const config: Config = {
       '8xl': ['6rem', { lineHeight: '1.125' }],
       '9xl': ['8rem', { lineHeight: '1' }],
     },
+    colors: {
+dark:"#0F172A",
+light: '#ffffff',
+    },
     extend: {
       // fontFamily: {
       //   sans: ['var(--font-inter)', ...defaultTheme.fontFamily.sans],

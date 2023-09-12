@@ -22,6 +22,9 @@ const ThemeToggler = () =>{
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
+            fill="white"
+            stroke="black"
+         
           />
         </svg>
         <svg
