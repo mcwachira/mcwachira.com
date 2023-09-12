@@ -60,7 +60,7 @@ export async function getCaseStudiesWithTag(tag) {
   const caseStudies = await getAllCaseStudies()
 
   const caseStudiesWithTag = caseStudies.filter((caseStudy) => {
-    return caseStudy.tags.some((t) => {
+    return caseStudy.tags.some((t:any) => {
       console.log(tag)
       return t === tag
     })
