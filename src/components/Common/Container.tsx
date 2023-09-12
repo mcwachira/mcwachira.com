@@ -1,6 +1,6 @@
 import clsx from 'clsx'
 
-export function Container({ className, ...props }) {
+export function Container({ className, ...props }:any) {
   return (
     <div
       className={clsx(
