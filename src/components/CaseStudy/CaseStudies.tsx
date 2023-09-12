@@ -36,7 +36,7 @@ const  CaseStudies = ({ caseStudies, tags }:any)  =>{
               caseStudies.length % 2 === 0 && 'lg:pb-32'
             )}
           >
-            {caseStudies.map((caseStudy, index) => (
+            {caseStudies.map((caseStudy:any, index:number) => (
               <div
                 key={caseStudy.title}
                 className={clsx(
