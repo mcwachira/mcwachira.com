@@ -23,7 +23,7 @@ export const getAllArticles = async() => {
       articleFilenames.map((articleFilename) => importantArticle(articleFilename))
     )
   
-    return articles.sort((a1, a2) => new Date(a2.date) - new Date(a1.date))
+    return articles.sort((a1, a2) => new Date(a2.date).getTime() - new Date(a1.date).getTime())
   }
 
 

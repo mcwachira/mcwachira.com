@@ -21,7 +21,7 @@ export async function getAllCaseStudies() {
     )
   )
 
-  return caseStudies.sort((a1, a2) => new Date(a2.date) - new Date(a1.date))
+  return caseStudies.sort((a1, a2) => new Date(a2.date).getTime() - new Date(a1.date).getTime())
 }
 
 export async function getAllTags() {

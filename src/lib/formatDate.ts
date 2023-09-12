@@ -1,4 +1,4 @@
-export const formatDate = (datetime) => {
+export const formatDate = (datetime:any) => {
     const longEnUSFormatter = new Intl.DateTimeFormat('en-US', {
       year: 'numeric',
       month: 'short',
