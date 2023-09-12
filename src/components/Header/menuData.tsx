@@ -1,6 +1,7 @@
 import { Menu } from "@/types/menu";
 
 
+
 const menuData: Menu[] = [
   {
     id: 1,
@@ -46,4 +47,6 @@ const menuData: Menu[] = [
   },
   
 ];
+
+
 export default menuData;

@@ -15,7 +15,7 @@ const iconOptions = {
   Tutorials: TutorialIcon,
 }
 
-const  Article = ({ article }) =>  {
+const  Article = ({ article }:any) =>  {
   const categorySlug = article.category.replace(/ /g, '-').toLowerCase()
   const CategoryIcon = iconOptions[article.category]
 

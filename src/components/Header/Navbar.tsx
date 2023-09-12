@@ -1,4 +1,4 @@
-"use client"
+
 
 import React, { Fragment } from 'react'
 import Image from 'next/image'
@@ -9,7 +9,7 @@ import menuData from './menuData'
 import clsx from 'clsx'
 import { Menu, Popover, Transition, Disclosure } from '@headlessui/react'
 import { useRouter } from 'next/navigation'
-import logo from '@/logo/png/color.png'
+import { usePathname } from 'next/navigation'
 import { Container } from '../Common/Container';
 import { Button } from '../Button'
 
@@ -18,6 +18,7 @@ import { Button } from '../Button'
 const Navbar = () => {
 
     const router = useRouter()
+    const pathname = usePathname()
 
        const [sticky, setSticky] = useState<boolean>(false)
 
@@ -35,7 +36,7 @@ const Navbar = () => {
             window.addEventListener('scroll', handleStickyNavbar)
         },[]
         )
-  function MenuIcon({ open }) {
+  function MenuIcon({ open }:any) {
     return (
       <span className="relative h-3.5 w-4 transform transition duration-500 ease-in-out">
         <span
@@ -103,7 +104,7 @@ const Navbar = () => {
             >
               <div>
                 <div className="flex flex-col space-y-4">
-                  {menuData.map((link) => (
+                  {menuData?.map((link) => (
                     <Link
                       key={`${link.label}-mobile`}
                       href={link.href}
@@ -148,13 +149,13 @@ const Navbar = () => {
             </Link>
           </div>
           <div className="hidden items-center md:flex md:space-x-6 lg:space-x-8">
-            {menuData.map((link) => (
+            {menuData?.map((link) => (
               <Link
                 key={`${link.label}-desktop`}
-                href={link.href}
+                href={link?.href}
                 className={clsx(
                   'relative duration-200 after:absolute after:left-1/2 after:-bottom-2.5 after:h-0.5 after:w-4 after:-translate-x-1/2 after:rounded-full after:bg-slate-900 after:opacity-0 after:content-[""]',
-                  router.pathname == link.href
+                 pathname === link.href
                     ? 'font-semibold text-slate-900 after:opacity-100'
                     : 'font-medium text-slate-700 hover:text-slate-900 hover:after:opacity-25'
                 )}

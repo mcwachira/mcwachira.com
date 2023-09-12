@@ -12,7 +12,7 @@ import Testimonials from "@/components/Testimonials/Testimonials";
 import FeaturedArticles from "@/components/FeaturedArticles";
 
 
-export default function Home({ caseStudies, articles }) {
+export default function Home({ caseStudies, articles }:any) {
   console.log(articles)
   console.log(caseStudies)
   return (
