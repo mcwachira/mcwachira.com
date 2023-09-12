@@ -9,10 +9,10 @@ import Pagination from '@/components/Pagination'
 import Tabs from '@/components/Tabs'
 
 
-const  CaseStudies = ({ caseStudies, tags })  =>{
+const  CaseStudies = ({ caseStudies, tags }:any)  =>{
   return (
     <section className="overflow-hidden bg-white py-16 sm:pt-24 lg:pt-32">
-      <Container>
+      <Container className=''>
         <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
           <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
             <h2 className="font-display text-5xl font-semibold text-slate-900 sm:text-6xl lg:leading-none">
