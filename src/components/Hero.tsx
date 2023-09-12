@@ -26,7 +26,7 @@ href:{
 }
 }
 
-function SocialLink({ icon: Icon, ...props }:socialLinkTypes) {
+function SocialLink({ icon: Icon, ...props }:any) {
   return (
     <Link
       className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 duration-200 hover:bg-slate-50"
