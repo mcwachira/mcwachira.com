@@ -11,14 +11,14 @@ import {
   ProductDevelopmentIcon,
 } from './CategoryIcons'
 
-const iconOptions = {
+const iconOptions:any = {
   'Web Development': WebDevelopmentIcon,
   Consulting: ConsultingIcon,
   Branding: BrandingIcon,
   'Product Development': ProductDevelopmentIcon,
 }
 
-function CategoryIcon({ category, ...props }) {
+function CategoryIcon({ category:, ...props }:any) {
   const Icon = iconOptions[category]
 
   return <Icon {...props} />
@@ -44,7 +44,7 @@ const  FeaturedWork =({ caseStudies}:any)  => {
             </p>
           </div>
           <div className="relative mx-auto mt-16 max-w-xl space-y-16 lg:mx-0 lg:max-w-none">
-            {caseStudies?.slice(0, 4).map((caseStudy) => (
+            {caseStudies?.slice(0, 4).map((caseStudy:any) => (
               <div
                 key={caseStudy.title}
                 className="relative grid items-center gap-8 overflow-hidden rounded-2xl bg-slate-50 px-4 pb-14 pt-5 shadow-sm shadow-sky-100/50 ring-1 ring-slate-100 sm:gap-12 sm:px-8 sm:pt-8 lg:grid-cols-12 lg:px-0 lg:py-0 xl:gap-16 xl:pt-16"

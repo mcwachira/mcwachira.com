@@ -52,7 +52,7 @@ const socialLinks = [
   },
 ]
 
-function SocialLink({ icon: Icon, label, ...props }) {
+function SocialLink({ icon: Icon, label, ...props }:any) {
   return (
     <Link
       className="flex items-center justify-center gap-2.5 rounded-full border border-slate-600/90 py-2.5 text-sm text-slate-50 duration-200 ease-in-out hover:bg-slate-800 hover:text-white lg:gap-2 xl:gap-2.5"
