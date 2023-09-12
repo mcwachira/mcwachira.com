@@ -9,7 +9,7 @@ interface tabProps {
 tabName:string,
 }
 
-const Tab = ({tabName, directory}:tabsProps) => {
+const Tab = ({tabName, directory}:any) => {
     const isDefaultTab = tabName == null
     let tabSlug
     if (!isDefaultTab) {
@@ -49,11 +49,11 @@ const Tab = ({tabName, directory}:tabsProps) => {
         }
         
 
-const  Tabs = ({ tabs, directory, className, ...props }:tabsProps) =>  {
+const  Tabs = ({ tabs, directory, className, ...props }:any) =>  {
         return (
           <ul className={clsx('flex flex-wrap items-center', className)} {...props}>
             <Tab directory={directory} />
-            {tabs.map((tabName, index) => (
+            {tabs.map((tabName:string, index:number) => (
               <Tab
                 tabName={tabName}
                 directory={directory}
