@@ -6,7 +6,7 @@ import { CaseStudyDetails } from '@/components/CaseStudy/CaseStudyDetails'
 import { CaseStudyGallery } from '@/components/CaseStudy/CaseStudyGallery'
 import { CaseStudyTestimonial } from '@/components/CaseStudy/CaseStudyTestimonial'
 import { CaseStudyNavigation } from '@/components/CaseStudy/CaseStudyNavigation'
-import { Footer } from '@/components/Footer'
+import  Footer  from '@/components/Footer'
 import Head from 'next/head'
 
 interface caseStudiesLayoutProps{
