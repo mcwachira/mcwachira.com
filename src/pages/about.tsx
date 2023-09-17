@@ -18,12 +18,12 @@ export default function About() {
           content="Hi, I&apos;m Mcwachira, a passionate developer, entrepreneur, and general technology enthusiast living in Nairobi."
         />
       </Head>
-      <Navbar/>
+
       <AboutHero />
       {/* <WorkExperience />
       <Workstation /> */}
       <Stack /> 
-      <Footer />
+
     </>
   )
 }

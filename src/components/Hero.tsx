@@ -15,6 +15,11 @@ import tailwind from '@/images/logos/icons/tailwindcss.png'
 import { DribbbleIcon, GitHubIcon, InstagramIcon, TwitterIcon } from './SocialIcons'
 import React from 'react'
 import { Url } from 'next/dist/shared/lib/router/router'
+import { useTheme } from 'next-themes'
+import clsx from 'clsx'
+
+
+
 
 interface socialLinkTypes {
 props:React.ReactNode;
@@ -38,6 +43,8 @@ function SocialLink({ icon: Icon, ...props }:any) {
 }
 
 export function Hero() {
+
+  const {theme, setTheme} = useTheme();
   return (
     <section className="relative overflow-hidden py-20 lg:py-24">
       {/* Light blue gradient background */}
@@ -119,9 +126,12 @@ export function Hero() {
             enthusiast living in Nairobi. I creates websites and apps for startups and businesses, turning their ideas into functional digital solutions and profitable businesses.
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-x-10 gap-y-6 lg:justify-start">
-            <Button href="#" className="h-11">
+            <Button href="#" className={clsx("h-11", theme==='dark' ? "bg-[#1D1E30]" :"bg-[#FFFFFF]")}>
               Book a call with me
             </Button>
+
+
+
 
             <div className="flex gap-3 sm:gap-4">
               <SocialLink

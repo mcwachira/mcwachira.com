@@ -25,7 +25,7 @@ const config: Config = {
       '9xl': ['8rem', { lineHeight: '1' }],
     },
     colors: {
-dark:"#0F172A",
+dark:"#1D1E30",
 light: '#ffffff',
     },
     extend: {

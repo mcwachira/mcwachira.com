@@ -19,7 +19,7 @@ export default function  Contact(){
           content="Hi, I&apos;m Mcwachira , a passionate developer, entrepreneur, and general technology enthusiast living in San Francisco."
         />
       </Head>
-      <Navbar />
+
       <section className="relative overflow-hidden">
         <div className="mx-auto max-w-screen-xl">
           <div className="lg:columns-2 lg:gap-8">
@@ -330,7 +330,7 @@ export default function  Contact(){
           </div>
         </div>
       </section>
-      <Footer />
+
     </>
   )
 }

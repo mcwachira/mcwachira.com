@@ -12,7 +12,7 @@ const pricing = () => {
           content="Hi, I&apos;m Mcwachira, a passionate developer, entrepreneur, and general technology enthusiast living in Nairobi."
         />
       </Head>
-      <Navbar/>
+
     
 
 Coming Soon

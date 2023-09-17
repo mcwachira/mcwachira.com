@@ -1,4 +1,3 @@
-"use client "
 import { useTheme } from 'next-themes';
 
 const ThemeToggler = () =>{
@@ -50,4 +49,4 @@ const ThemeToggler = () =>{
 }
 
 
-export default ThemeToggler/*  */
+export default ThemeToggler

@@ -25,7 +25,7 @@ export default function Home({ caseStudies, articles }:any) {
         />
       </Head>
  
-    <Navbar/>
+
       <Hero />
       <Experience/>
       <ToolsIconsRows/>
@@ -33,7 +33,7 @@ export default function Home({ caseStudies, articles }:any) {
       <FeaturedWork caseStudies={caseStudies} />
 <Testimonials/>
       <FeaturedArticles articles={articles} />
-      <Footer />
+
 
    </>
   )
