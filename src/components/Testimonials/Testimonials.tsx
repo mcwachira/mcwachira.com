@@ -54,9 +54,9 @@ const Testimonials = () => {
             <h2 className="font-display text-4xl font-semibold text-slate-900 sm:text-5xl">
               Here’s what past clients are saying about me
             </h2>
-            <div className="mt-10 hidden h-[7px] w-full rounded-full bg-slate-200 lg:mt-16 lg:block">
+            <div className="mt-10 hidden h-[10px] w-full rounded-full bg-gray-300 lg:mt-16 lg:block">
               <div
-                className="h-full rounded-full bg-slate-900 duration-200"
+                className="h-full rounded-full bg-gray-500 duration-200"
                 style={{ width: `${carouselProgress}%` }}
               ></div>
             </div>
