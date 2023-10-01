@@ -10,6 +10,7 @@ import { getAllArticles } from "@/lib/articles";
 import  Footer  from "@/components/Footer";
 import Testimonials from "@/components/Testimonials/Testimonials";
 import FeaturedArticles from "@/components/FeaturedArticles";
+import ProjectsGrid from "@/components/Projects/ProjectsGrid";
 
 
 export default function Home({ caseStudies, articles }:any) {
@@ -30,8 +31,8 @@ export default function Home({ caseStudies, articles }:any) {
       <Experience/>
       <ToolsIconsRows/>
       <Services/>
+      {/* <ProjectsGrid/> */}
       <FeaturedWork caseStudies={caseStudies} />
-<Testimonials/>
       <FeaturedArticles articles={articles} />
 
 

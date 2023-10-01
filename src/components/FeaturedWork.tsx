@@ -32,7 +32,7 @@ const  FeaturedWork =({ caseStudies}:any)  => {
 
     return (
       <section className="overflow-x-clip bg-white pb-16 pt-8 sm:pb-24 sm:pt-12 md:pt-16">
-        <Container className=''>
+
           <div className="text-center">
             <h2 className="font-display text-4xl font-semibold text-slate-900 sm:text-5xl">
               Check out my latest work
@@ -43,7 +43,7 @@ const  FeaturedWork =({ caseStudies}:any)  => {
               this.
             </p>
           </div>
-          <div className="relative mx-auto mt-16 max-w-xl space-y-16 lg:mx-0 lg:max-w-none">
+          <div className="relative grid grid-cols-1 gap-x-12 gap-y-14 md:grid-cols-1 justify-center  mx-auto gap-20 lg:grid-cols-2 mt-20   w-3/4">
             {caseStudies?.slice(0, 4).map((caseStudy:any) => (
               <div
                 key={caseStudy.title}
@@ -101,7 +101,7 @@ const  FeaturedWork =({ caseStudies}:any)  => {
               </div>
             ))}
           </div>
-        </Container>
+
       </section>
     )
   }
