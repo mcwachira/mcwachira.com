@@ -1,13 +1,11 @@
-import Head from 'next/head'
+import Head from "next/head";
 
-import Navbar from '@/components/Header/Navbar'
-import  CaseStudies  from '@/components/CaseStudy/CaseStudies'
+import CaseStudies from "@/components/CaseStudy/CaseStudies";
 import {
   getCaseStudiesWithTag,
   getFeaturedTags,
   getAllTags,
-} from '@/lib/caseStudies'
-import  Footer  from '@/components/Footer'
+} from "@/lib/caseStudies";
 
 export default function Work({ caseStudies, tags, tag }) {
   return (
@@ -19,29 +17,28 @@ export default function Work({ caseStudies, tags, tag }) {
           content="Explore an impressive collection of case studies showcasing a my diverse skill set, innovative solutions, and successful projects."
         />
       </Head>
-      <Navbar />
+
       <CaseStudies caseStudies={caseStudies} tags={tags} />
-      <Footer />
     </>
-  )
+  );
 }
 
 export async function getStaticPaths() {
-  const tags = await getAllTags()
+  const tags = await getAllTags();
   return {
     paths: tags.map((tag) => ({
-      params: { tag: tag.replace(/ /g, '-').toLowerCase() },
+      params: { tag: tag.replace(/ /g, "-").toLowerCase() },
     })),
     fallback: false,
-  }
+  };
 }
 
 export async function getStaticProps({ params: { tag } }) {
   tag = tag
-    .replace(/-/g, ' ')
-    .split(' ')
+    .replace(/-/g, " ")
+    .split(" ")
     .map((w) => w[0].toUpperCase() + w.substring(1).toLowerCase())
-    .join(' ')
+    .join(" ");
 
   return {
     props: {
@@ -49,5 +46,5 @@ export async function getStaticProps({ params: { tag } }) {
       tags: await getFeaturedTags(),
       tag,
     },
-  }
+  };
 }

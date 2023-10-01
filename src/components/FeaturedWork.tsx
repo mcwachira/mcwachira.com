@@ -43,18 +43,21 @@ const  FeaturedWork =({ caseStudies}:any)  => {
               this.
             </p>
           </div>
-          <div className="relative grid grid-cols-1 gap-x-12 gap-y-14 md:grid-cols-1 justify-center  mx-auto gap-20 lg:grid-cols-2 mt-20   w-3/4">
+          <div className="relative grid grid-cols-1 gap-x-8 gap-y-14 md:grid-cols-1 justify-center  mx-auto gap-20 lg:grid-cols-2 mt-20   w-3/4 ">
             {caseStudies?.slice(0, 4).map((caseStudy:any) => (
               <div
                 key={caseStudy.title}
-                className="relative grid items-center gap-8 overflow-hidden rounded-2xl bg-slate-50 px-4 pb-14 pt-5 shadow-sm shadow-sky-100/50 ring-1 ring-slate-100 sm:gap-12 sm:px-8 sm:pt-8 lg:grid-cols-12 lg:px-0 lg:py-0 xl:gap-16 xl:pt-16"
+                className="relative flex  flex-col  lg:flex-row rounded-2xl  shadow-sm shadow-sky-100/50 ring-1 ring-slate-100 order-1 lg:order-2 "
               >
+
+                {/* grid items-center gap-8 overflow-hidden rounded-2xl bg-slate-50 px-4 pb-14 pt-5 shadow-sm shadow-sky-100/50 ring-1 ring-slate-100 sm:gap-12 sm:px-8 sm:pt-8 lg:grid-cols-12 lg:px-0 lg:py-0 xl:gap-16 xl:pt-16 */}
                 <Image
                   src={workBG}
                   alt=""
                   className="absolute inset-x-0 top-6 h-full w-full rotate-90 lg:rotate-0"
                 />
-                <div className="relative order-2 px-1 sm:px-4 lg:order-1 lg:col-span-6 lg:pb-16 lg:pl-12 lg:pt-16 xl:col-span-5 xl:pb-24 xl:pl-16 xl:pt-8">
+                
+                <div className="relative w-full  lg:w-1/2 px-1 sm:px-4  lg:col-span-6 lg:pb-16 lg:pl-12 lg:pt-16 xl:col-span-5 xl:pb-24 xl:pl-16 xl:pt-8">
                   <div className="inline-flex items-center gap-2.5  text-sm font-medium leading-[16px] text-sky-900/80 sm:text-md">
                     <CategoryIcon
                       category={caseStudy.tags[0]}
@@ -81,7 +84,7 @@ const  FeaturedWork =({ caseStudies}:any)  => {
                     >
                       <path
                         fillRule="evenodd"
-                        d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
+                        d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5ajws.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
                         clipRule="evenodd"
                       />
                     </svg>
@@ -89,13 +92,16 @@ const  FeaturedWork =({ caseStudies}:any)  => {
                 </div>
                 <Link
                   href={`/work/${caseStudy.slug}`}
-                  className="group aspect-h-9 aspect-w-16 relative order-1 h-full w-full overflow-hidden rounded-2xl ring-1 ring-slate-100/75 lg:order-2 lg:col-span-6 lg:rounded-l-none lg:rounded-r-none xl:col-span-7 xl:rounded-tl-2xl"
+                  className="group w-full order-2 lg:order-1  lg:w-1/2 aspect-h-9 aspect-w-16 relative h-full overflow-hidden l ring-1 ring-slate-100/75 "
                 >
                   <Image
                     src={caseStudy.thumbnail}
                     alt={caseStudy.title}
-                    className="absolute inset-x-0 bottom-0 top-16 object-cover object-top transition duration-300 group-hover:scale-105"
-                    fill={true}
+                    className="object-cover object-top transition duration-300 group-hover:scale-105"
+            
+                    layout="fill"
+                    // width={100}
+                    // height={90}
                   />
                 </Link>
               </div>

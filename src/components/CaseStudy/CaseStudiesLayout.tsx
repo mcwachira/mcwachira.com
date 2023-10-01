@@ -21,7 +21,7 @@ const CaseStudiesLayout = ({data, children}: any) => {
         <title>{`${data.title} - Jane Doe`}</title>
         <meta name="description" content={data.description} />
       </Head>
-      <Navbar />
+
       <CaseStudyHero
         title={data.title}
         subtitle={data.subtitle}
@@ -42,7 +42,7 @@ const CaseStudiesLayout = ({data, children}: any) => {
         testimonial={data.testimonial}
       />
       <CaseStudyNavigation navigation={data.navigation} />
-      <Footer newsletter={false} />
+
     </>
   )
 }
