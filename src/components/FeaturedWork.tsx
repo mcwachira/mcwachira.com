@@ -47,7 +47,7 @@ const  FeaturedWork =({ caseStudies}:any)  => {
             {caseStudies?.slice(0, 4).map((caseStudy:any) => (
               <div
                 key={caseStudy.title}
-                className="relative flex  flex-col  lg:flex-row rounded-2xl  shadow-sm shadow-sky-100/50 ring-1 ring-slate-100 order-1 lg:order-2 "
+                className="relative flex  flex-col lg:flex-row rounded-2xl  shadow-sm shadow-sky-100/50 ring-1 ring-slate-100 order-1 lg:order-2 "
               >
 
                 {/* grid items-center gap-8 overflow-hidden rounded-2xl bg-slate-50 px-4 pb-14 pt-5 shadow-sm shadow-sky-100/50 ring-1 ring-slate-100 sm:gap-12 sm:px-8 sm:pt-8 lg:grid-cols-12 lg:px-0 lg:py-0 xl:gap-16 xl:pt-16 */}
@@ -92,7 +92,7 @@ const  FeaturedWork =({ caseStudies}:any)  => {
                 </div>
                 <Link
                   href={`/work/${caseStudy.slug}`}
-                  className="group w-full order-2 lg:order-1  lg:w-1/2 aspect-h-9 aspect-w-16 relative h-full overflow-hidden l ring-1 ring-slate-100/75 "
+                  className="group w-full  display:none order-2 lg:order-1  lg:w-1/2 aspect-h-9 aspect-w-16 relative h-full overflow-hidden l ring-1 ring-slate-100/75 "
                 >
                   <Image
                     src={caseStudy.thumbnail}
