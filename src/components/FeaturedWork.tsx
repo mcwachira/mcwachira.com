@@ -92,7 +92,7 @@ const  FeaturedWork =({ caseStudies}:any)  => {
                 </div>
                 <Link
                   href={`/work/${caseStudy.slug}`}
-                  className="group w-full  display:none order-2 lg:order-1  lg:w-1/2 aspect-h-9 aspect-w-16 relative h-full overflow-hidden l ring-1 ring-slate-100/75 "
+                  className="group w-full  display:none o l ring-1 ring-slate-100/75 "
                 >
                   <Image
                     src={caseStudy.thumbnail}
