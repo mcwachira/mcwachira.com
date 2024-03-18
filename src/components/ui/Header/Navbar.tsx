@@ -198,8 +198,8 @@ const Navbar = () => {
                     </div>
                     <div className="flex items-center">
                         <Button
-                            
-                            className={clsx(theme === 'light' ? '!bg-dark !text-white' : '!bg-light text-black')}
+
+                            className={clsx(theme === 'light' ? '!bg-dark !text-white' : '!bg-light !ztext-black')}
                             href="#">
                             Book a call
                         </Button>
