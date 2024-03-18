@@ -11,7 +11,7 @@ const Services = () => {
 <>
       <section
         id="features"
-        className="bg-primary/[.03] py-16 md:py-20 lg:py-28"
+        className="bg-light dark:bg-dark  py-16 md:py-20 lg:py-28"
       >
         <Container className="">
 
