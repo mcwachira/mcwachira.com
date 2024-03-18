@@ -33,7 +33,7 @@ const socialLinks = [
   {
     label: 'Instagram',
     icon: InstagramIcon,
-    href: 'https://www.instagram.com/mcwachira',
+    href: 'https://www.instagram.com/mcwachira ',
   },
   {
     label: 'Twitter',
@@ -67,7 +67,7 @@ function SocialLink({ icon: Icon, label, ...props }:any) {
 const  Footer = ({ newsletter = true }) => {
   const year = new Date().getFullYear();
   return (
-    <section className={clsx(newsletter && 'pt-12 sm:pt-16')}>
+    <section className={clsx(newsletter && 'pt-12 sm:pt-16  bg-light dark:bg-dark')}>
       {newsletter && (
         <div className="relative">
           <div className="absolute inset-x-0 bottom-0 h-1/2 bg-light dark:bg-dark"></div>
@@ -141,7 +141,7 @@ const  Footer = ({ newsletter = true }) => {
           
               </p>
               <Link
-                href="#"
+                  href="tel:0726601941"
                 className="mt-10 inline-flex items-center justify-center gap-x-2.5 rounded-full bg-light px-7 py-3 text-md font-semibold leading-none text-slate-700 duration-200 ease-in-out hover:bg-sky-50 lg:hidden"
               >
                 Book a call
