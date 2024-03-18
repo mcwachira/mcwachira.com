@@ -67,7 +67,7 @@ const ProjectsGrid = () => {
 
                     <div className="flex justify-between gap-2">
 
-                        <span className="hidden sm:block bg-primary-light dark:bg-primary-dark p-2 5 shadow-sm rounded-xl cursor-pointer">
+                        <span className="hidden sm:block bg-light dark:bg-dark p-2 5 shadow-sm rounded-xl cursor-pointer">
                         <Search className="  text-body-color w-5 h-5"></Search>
                         </span>
 
