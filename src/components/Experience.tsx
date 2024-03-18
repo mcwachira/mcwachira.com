@@ -5,7 +5,7 @@ import image from '@/images/experience-image.jpg'
 
 export function Experience() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-slate-50 via-slate-50 to-white pt-20 pb-40 sm:pt-24 lg:pt-32 lg:pb-64">
+    <section className="relative overflow-hidden bg-light dark:bg-dark pt-20 pb-40 sm:pt-24 lg:pt-32 lg:pb-64">
       <Container className=''>
         <div className="mx-auto grid max-w-xl items-center gap-6 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:gap-16">
           <div>
@@ -47,7 +47,7 @@ export function Experience() {
                   ></span>
                   <div className="relative flex space-x-7">
                     <div>
-                      <span className="flex h-20 w-20 items-center justify-center rounded-full bg-slate-900 shadow-lg">
+                      <span className="flex h-20 w-20 items-center justify-center rounded-full bg-light dark:bg-dark shadow-lg">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="24"
@@ -100,7 +100,7 @@ export function Experience() {
                   ></span>
                   <div className="relative flex space-x-7">
                     <div>
-                      <span className="flex h-20 w-20 items-center justify-center rounded-full bg-slate-900 shadow-lg">
+                      <span className="flex h-20 w-20 items-center justify-center rounded-full bg-light dark:bg-dark shadow-lg">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="24"
@@ -167,7 +167,7 @@ export function Experience() {
                 <div className="relative">
                   <div className="relative flex space-x-7">
                     <div>
-                      <span className="flex h-20 w-20 items-center justify-center rounded-full bg-slate-900 shadow-lg">
+                      <span className="flex h-20 w-20 items-center justify-center rounded-full bg-light dark:bg-dark shadow-lg">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="24"
@@ -280,7 +280,7 @@ export function Experience() {
                 sizes="(min-width: 1280px) 705.34px, (min-width: 1024px) calc((100vw - 64px) * 0.6667 - 32px), (min-width: 616px) 36rem, calc(100vw - 40px)"
               />
               <div>
-                <div className="absolute top-1/2 left-1/2 h-32 w-32 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/50 backdrop-blur-sm lg:h-44 lg:w-44">
+                <div className="absolute top-1/2 left-1/2 h-32 w-32 -translate-x-1/2 -translate-y-1/2 rounded-full bg-light/50 backdrop-blur-sm lg:h-44 lg:w-44">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="145"
@@ -378,7 +378,7 @@ export function Experience() {
                       fill="currentColor"
                     />
                   </svg>
-                  <button className="relative top-1/2 left-1/2 inline-flex h-12 w-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-slate-900 duration-200 hover:bg-slate-800 lg:h-20 lg:w-20">
+                  <button className="relative top-1/2 left-1/2 inline-flex h-12 w-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-light dark:bg-dark duration-200 hover:bg-slate-800 lg:h-20 lg:w-20">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="32"
