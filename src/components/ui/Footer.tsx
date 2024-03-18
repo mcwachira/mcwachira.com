@@ -27,28 +27,28 @@ const socialLinks = [
   {
     label: 'Email me',
     icon: EmailIcon,
-    href: '#',
+    href: 'mailto:mcwachira@outlook.com',
   },
 
   {
     label: 'Instagram',
     icon: InstagramIcon,
-    href: '#',
+    href: 'https://www.instagram.com/mcwachira',
   },
   {
     label: 'Twitter',
     icon: TwitterIcon,
-    href: '#',
+    href: 'https://twitter.com/mc_wachira',
   },
   {
     label: 'LinkedIn',
     icon: LinkedInIcon,
-    href: '#',
+    href: 'www.linkedin.com/in/maina-wachira',
   },
   {
     label: 'Github',
     icon: GitHubIcon,
-    href: '#',
+    href: 'https://github.com/mcwachira',
   },
 ]
 
