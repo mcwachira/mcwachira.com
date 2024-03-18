@@ -1,16 +1,13 @@
-import Navbar from "@/components/Header/Navbar";
+import Navbar from "@/components/ui/Header/Navbar";
 import Experience from "@/components/Experience";
 import { Hero } from "@/components/Hero";
 import Head from "next/head";
 import ToolsIconsRows from "@/components/Tools";
 import Services from "@/components/Services/Services";
-import FeaturedWork from "@/components/FeaturedWork";
-import { getAllCaseStudies } from "@/lib/caseStudies";
-import { getAllArticles } from "@/lib/articles";
-import  Footer  from "@/components/Footer";
 import Testimonials from "@/components/Testimonials/Testimonials";
-import FeaturedArticles from "@/components/FeaturedArticles";
 import ProjectsGrid from "@/components/Projects/ProjectsGrid";
+import {FeaturedWork} from "@/components/work/FeaturedWork";
+import {FeaturedPosts} from "@/components/blog/FeaturedPosts";
 
 
 
@@ -32,7 +29,7 @@ export default function Home() {
         <Services/>
         {/* <ProjectsGrid/> */}
         <FeaturedWork/>
-        <FeaturedArticles/>
+          <FeaturedPosts />
 
 
       </>
