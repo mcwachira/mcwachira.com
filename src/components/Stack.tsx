@@ -64,7 +64,7 @@ const clientAvatars = [avatar1, avatar2, avatar3, avatar4, avatar5]
 
 export function Stack() {
   return (
-    <section className="overflow-hidden bg-white py-16 sm:py-24 lg:py-32">
+    <section className="overflow-hidden bg-light dark:bg-dark py-16 sm:py-24 lg:py-32">
       <Container className=''>
         <div className="grid grid-cols-1 gap-y-16 gap-x-8 sm:gap-y-20 lg:grid-cols-2">
           <div className="lg:order-2">
@@ -115,7 +115,7 @@ export function Stack() {
                     className="overflow-hidden rounded-lg bg-slate-50 px-4 py-6 ring-1 ring-slate-900/5 sm:px-6"
                   >
                     <div className="flex gap-4 sm:gap-6">
-                      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-white shadow-sm shadow-sky-100/75 ring-1 ring-slate-100/95 sm:h-11 sm:w-11">
+                      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-light shadow-sm shadow-sky-100/75 ring-1 ring-slate-100/95 sm:h-11 sm:w-11">
                         <Image
                           src={tech.logo}
                           alt={tech.name}
