@@ -1,12 +1,12 @@
 import Head from 'next/head'
 
-import Navbar from '@/components/Header/Navbar'
+import Navbar from '@/components/ui/Header/Navbar'
 import  AboutHero from '@/components/AboutHero'
 // import { WorkExperience } from '@/components/WorkExperience'
 // import { Workstation } from '@/components/Workstation'
 import { Stack } from '@/components/Stack'
 
-import  Footer from '@/components/Footer'
+import  Footer from '@/components/ui/Footer'
 
 export default function About() {
   return (
