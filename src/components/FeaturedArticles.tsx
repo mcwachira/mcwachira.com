@@ -3,7 +3,7 @@ import  Article  from '@/components/Article/Article'
 
 const  FeaturedArticles = ({ articles }:any)  => {
   return (
-    <section className="overflow-hidden bg-white py-16 sm:pt-24 lg:pt-28">
+    <section className="overflow-hidden bg-light py-16 sm:pt-24 lg:pt-28">
       <Container className=''>
         <h2 className="mx-auto max-w-2xl text-center font-display text-4xl font-semibold leading-tight text-slate-900 sm:text-5xl sm:leading-tight">
           <span className="relative whitespace-nowrap">
