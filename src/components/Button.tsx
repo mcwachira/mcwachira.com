@@ -3,10 +3,10 @@ import clsx from 'clsx'
 import { Url } from 'next/dist/shared/lib/router/router'
 
 const variantStyles = {
-  primaryClassName: 'bg-slate-900 text-white hover:bg-sky-800',
+  primaryClassName: 'bg-light dark:bg-dark text-white hover:bg-sky-800',
   secondaryClassName:
     'text-slate-900 shadow-sm shadow-sky-100/50 ring-1 ring-slate-100 hover:bg-slate-200/60 hover:shadow-sky-100/50 bg-slate-100/80',
-  primaryOnDarkClassName: 'bg-white hover:bg-sky-50 text-slate-700',
+  primaryOnDarkClassName: 'bg-light hover:bg-sky-50 text-slate-700',
 }
 
 interface buttonTypes {
