@@ -2,8 +2,8 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import {MetaTypes } from '@/types/types'
-import  Navbar from '@/components/Header/Navbar'
-import Footer  from '@/components/Footer'
+import  Navbar from '@/components/ui/Header/Navbar'
+import Footer  from '@/components/ui/Footer'
 import { formatDate } from '@/lib/formatDate'
 import { LinkedInIcon, InstagramIcon, TwitterIcon } from '@/components/SocialIcons'
 import {
@@ -53,7 +53,7 @@ export function ArticleLayout({ meta, children }:articleLayoutTypes) {
         <article>
           {/* Article Header */}
           <header className="relative bg-slate-50 py-16 sm:pt-24 lg:pt-28">
-            <div className="absolute inset-x-0 bottom-0 h-1/4 bg-white" />
+            <div className="absolute inset-x-0 bottom-0 h-1/4 bg-light" />
             <div className="relative mx-auto max-w-6xl px-4 text-center sm:px-6 lg:px-8">
               <Link
                 href={`/articles/${categorySlug}#articles`}
@@ -119,7 +119,7 @@ export function ArticleLayout({ meta, children }:articleLayoutTypes) {
           </header>
 
           {/* Article Content */}
-          <div className="bg-white px-4 sm:px-6 lg:px-8">
+          <div className="bg-light px-4 sm:px-6 lg:px-8">
             <div className="prose prose-lg mx-auto max-w-2xl">{children}</div>
             <footer className="mx-auto max-w-2xl">
               <hr className="mt-14 h-px w-full pb-6 text-slate-300/75 sm:pb-4" />

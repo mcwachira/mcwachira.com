@@ -7,7 +7,7 @@ export function Articles({ articles, categories }:any) {
   return (
     <section
       id="articles"
-      className="overflow-hidden bg-white py-16 sm:py-24 lg:py-28"
+      className="overflow-hidden bg-light dark:bg-dark py-16 sm:py-24 lg:py-28"
     >
       <Container className=''>
         <h2 className="text-center font-display text-4xl font-semibold text-slate-900 sm:text-5xl">
