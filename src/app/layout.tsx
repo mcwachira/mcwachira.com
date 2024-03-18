@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "../styles/globals.css";
-import Navbar from "@/components/ui/Header/Navbar";
+import '@/app/styles/globals.css'
+
 import Provider  from "@/providers/theme-provider";
-import Footer from "../../components/ui/Footer";
+
 import classNames from "classnames";
 import {cookies} from "next/headers";
-
-import siteMetadata from '@/lib/siteMetaData'
 import { ToastProvider } from '@/providers/toast-provider'
+import Template from "@/app/template";
+import siteMetadata from "@/lib/siteMetaData";
+import Navbar from "@/components/ui/Header/Navbar";
+import Footer from "@/components/ui/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,7 +26,7 @@ export const metadata = {
     description: siteMetadata.description,
     url: siteMetadata.siteUrl,
     siteName: siteMetadata.title,
-    images: [siteMetadata.socialBanner],
+    // images: [siteMetadata.socialBanner],
     locale: "en_US",
     type: "website",
   },
@@ -43,7 +45,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: siteMetadata.title,
-    images: [siteMetadata.socialBanner],
+    // images: [siteMetadata.socialBanner],
   },
 };
 
