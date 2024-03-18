@@ -43,7 +43,7 @@ const socialLinks = [
   {
     label: 'LinkedIn',
     icon: LinkedInIcon,
-    href: 'www.linkedin.com/in/maina-wachira',
+    href: 'https://linkedin.com/in/maina-wachira',
   },
   {
     label: 'Github',
@@ -140,10 +140,7 @@ const  Footer = ({ newsletter = true }) => {
               <p className="text-center text-lg text-slate-50 lg:max-w-sm lg:text-left">
           
               </p>
-              <Link
-                  href="tel:0726601941"
-                className="mt-10 inline-flex items-center justify-center gap-x-2.5 rounded-full bg-light px-7 py-3 text-md font-semibold leading-none text-slate-700 duration-200 ease-in-out hover:bg-sky-50 lg:hidden"
-              >
+              <Button href="tel:0726601941" className='h-11  bg-dark dark:bg-light  dark:!text-dark'>
                 Book a call
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -157,7 +154,7 @@ const  Footer = ({ newsletter = true }) => {
                     clipRule="evenodd"
                   />
                 </svg>
-              </Link>
+              </Button>
               <div className="mt-16 grid w-full max-w-sm grid-cols-2 gap-3.5 sm:max-w-none sm:grid-cols-3 lg:mt-8 lg:gap-2.5 xl:gap-3.5">
                 {socialLinks.map((socialLink) => (
                   <SocialLink

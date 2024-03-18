@@ -199,10 +199,10 @@ const Navbar = () => {
                         <ThemeToggler/>
                     </div>
                     <div className="flex items-center">
-                        <Button
 
-                            className={clsx(theme === 'light' ? '!bg-dark !text-white' : '!bg-light !text-black')}
-                            href="tel:0726601941">
+
+                            <Button href="tel:0726601941" className='h-11  bg-dark dark:bg-light  dark:!text-dark'>
+
                             Book a call
                         </Button>
                         <div className="ml-4 md:hidden">
