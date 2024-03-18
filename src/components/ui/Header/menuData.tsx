@@ -27,12 +27,12 @@ const menuData: Menu[] = [
   //  href: "/services",
   //   newTab: false,
   // },
-  {
-    id: 4,
-    label: "Pricing",
-   href: "/pricing",
-    newTab: false,
-  },
+  // {
+  //   id: 4,
+  //   label: "Pricing",
+  //  href: "/pricing",
+  //   newTab: false,
+  // },
   {
     id: 5,
     label: "Blog",

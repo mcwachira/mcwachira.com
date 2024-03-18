@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import clsx from 'clsx'
 
-import { Button } from './Button'
+import { Button } from '../Button'
 
 import newsletterBg from '@/images/newsletter-bg.png'
 import {
@@ -12,8 +12,8 @@ import {
   LinkedInIcon,
   GitHubIcon,
   EmailIcon,
-} from './SocialIcons'
-import { Container } from './Common/Container'
+} from '../SocialIcons'
+import { Container } from '../Common/Container'
 
 const links = [
   { label: 'Home', href: '/' },
@@ -70,7 +70,7 @@ const  Footer = ({ newsletter = true }) => {
     <section className={clsx(newsletter && 'pt-12 sm:pt-16')}>
       {newsletter && (
         <div className="relative">
-          <div className="absolute inset-x-0 bottom-0 h-1/2 bg-slate-900"></div>
+          <div className="absolute inset-x-0 bottom-0 h-1/2 bg-light dark:bg-dark"></div>
           <div className="relative mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
             <div className="relative overflow-hidden rounded-2xl bg-sky-700 px-5 py-12 sm:px-16 lg:py-14">
               <Image
@@ -94,7 +94,7 @@ const  Footer = ({ newsletter = true }) => {
                 >
                   <input
                     type="email"
-                    className="h-14 w-full rounded-full border-0 bg-white/10 py-3.5 pl-5 pr-32 text-sm leading-5 text-sky-50 placeholder-sky-100/90 outline-none ring-1 ring-white/25 backdrop-blur  duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-white/30 sm:pl-6"
+                    className="h-14 w-full rounded-full border-0 bg-light/10 py-3.5 pl-5 pr-32 text-sm leading-5 text-sky-50 placeholder-sky-100/90 outline-none ring-1 ring-white/25 backdrop-blur  duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-white/30 sm:pl-6"
                     required
                     placeholder="Enter your email"
                     autoComplete="email"
@@ -111,7 +111,7 @@ const  Footer = ({ newsletter = true }) => {
           </div>
         </div>
       )}
-      <footer className="overflow-hidden bg-slate-900 pb-8 pt-20 sm:pb-12 sm:pt-24 lg:pt-32">
+      <footer className="overflow-hidden bg-light dark:bg-dark pb-8 pt-20 sm:pb-12 sm:pt-24 lg:pt-32">
         <Container>
           <div className="mx-auto grid max-w-xl items-center gap-5 lg:mx-0 lg:max-w-none lg:grid-cols-12 lg:gap-12 xl:gap-20">
             <div className="lg:col-span-7">
@@ -142,7 +142,7 @@ const  Footer = ({ newsletter = true }) => {
               </p>
               <Link
                 href="#"
-                className="mt-10 inline-flex items-center justify-center gap-x-2.5 rounded-full bg-white px-7 py-3 text-md font-semibold leading-none text-slate-700 duration-200 ease-in-out hover:bg-sky-50 lg:hidden"
+                className="mt-10 inline-flex items-center justify-center gap-x-2.5 rounded-full bg-light px-7 py-3 text-md font-semibold leading-none text-slate-700 duration-200 ease-in-out hover:bg-sky-50 lg:hidden"
               >
                 Book a call
                 <svg
