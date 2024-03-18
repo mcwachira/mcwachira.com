@@ -20,10 +20,10 @@ export default function  Contact(){
         />
       </Head>
 
-      <section className="relative overflow-hidden">
+      <section className="relative overflow-hidden bg-light dark:bg-dark">
         <div className="mx-auto max-w-screen-xl">
           <div className="lg:columns-2 lg:gap-8">
-            <div className="relative bg-slate-50 px-5 py-16 sm:px-6 sm:py-24 lg:col-span-6 lg:rounded-br-[64px] lg:px-8 lg:pt-32 2xl:pl-0">
+            <div className="relative bg-ligth dark:bg-dark px-5 py-16 sm:px-6 sm:py-24 lg:col-span-6 lg:rounded-br-[64px] lg:px-8 lg:pt-32 2xl:pl-0">
               <div className="absolute inset-y-0 left-0 hidden w-full -translate-x-full bg-slate-50 lg:block" />
               <div className="relative mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
                 <h2 className="font-display text-4xl font-semibold leading-tight text-slate-900 sm:text-5xl sm:leading-tight lg:text-[40px] lg:leading-tight xl:text-5xl xl:leading-tight">
