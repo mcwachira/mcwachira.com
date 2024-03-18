@@ -3,7 +3,7 @@ import clsx from 'clsx'
 
 
 import heroImage from '@/images/about-hero.png'
-import { Container } from '@/components/Common/Container'
+import { Container } from '@/components/ui/Container'
 
 
 
