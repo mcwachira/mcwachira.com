@@ -201,7 +201,7 @@ const Navbar = () => {
                     <div className="flex items-center">
 
 
-                            <Button href="tel:0726601941" className='h-11  bg-dark dark:bg-light  dark:!text-dark'>
+                            <Button href="tel:0726601941" className='h-11   bg-dark !text-light dark:bg-light  dark:!text-dark'>
 
                             Book a call
                         </Button>

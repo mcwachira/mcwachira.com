@@ -140,7 +140,7 @@ const  Footer = ({ newsletter = true }) => {
               <p className="text-center text-lg text-slate-50 lg:max-w-sm lg:text-left">
           
               </p>
-              <Button href="tel:0726601941" className='h-11  bg-dark dark:bg-light  dark:!text-dark'>
+              <Button href="tel:0726601941" className='h-11  bg-dark !text-light dark:bg-light  dark:!text-dark'>
                 Book a call
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

@@ -127,7 +127,7 @@ export function Hero() {
             enthusiast living in Nairobi. I creates websites and apps for startups and businesses, turning their ideas into functional digital solutions and profitable businesses.
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-x-10 gap-y-6 lg:justify-start">
-            <Button href="#" className='h-11  bg-dark !text-white'>
+            <Button href="tel:0726601941" className='h-11  bg-dark !text-light dark:bg-light  dark:!text-dark'>
               Book a call with me
             </Button>
 
@@ -203,7 +203,7 @@ export function Hero() {
               </div>
             </div>
           </div>
-        </div>bg-light hover:bg-sky-50 text-slate-700'
+        </div>
       </Container>
     </section>
   )
