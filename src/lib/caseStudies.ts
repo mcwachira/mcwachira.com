@@ -1,32 +1,7 @@
-import glob from 'fast-glob'
-import path from 'path'
+import { allCaseStudies } from 'contentlayer/generated'
 
-async function importCaseStudy(caseStudyFilename:string) {
-  let { data } = await import(`../pages/work/${caseStudyFilename}`)
-
-  return {
-    slug: caseStudyFilename.replace(/(\/index)?\.mdx$/, ''),
-    ...data,
-  }
-}
-
-export async function getAllCaseStudies() {
-  let caseStudyFilenames = await glob(['*.mdx', '*/index.mdx'], {
-    cwd: path.join(process.cwd(), 'src/pages/work'),
-  })
-
-  let caseStudies = await Promise.all(
-    caseStudyFilenames.map((caseStudyFilename) =>
-      importCaseStudy(caseStudyFilename)
-    )
-  )
-
-  return caseStudies.sort((a1, a2) => new Date(a2.date).getTime() - new Date(a1.date).getTime())
-}
-
-export async function getAllTags() {
-  let caseStudies = await getAllCaseStudies()
-  let repeatingTags = caseStudies.map((caseStudy) => caseStudy.tags).flat()
+export function getAllTags() {
+  let repeatingTags = allCaseStudies.map((caseStudy) => caseStudy.tags).flat()
 
   const tagCount = new Map()
 
@@ -47,24 +22,11 @@ export async function getAllTags() {
     return freq2 - freq1
   })
 
-  return tags.slice(0, 4)
+  return tags
 }
 
-export async function getFeaturedTags() {
-  const tags = await getAllTags()
+export function getFeaturedTags() {
+  const tags = getAllTags()
 
   return tags.slice(0, 4)
-}
-
-export async function getCaseStudiesWithTag(tag:any) {
-  const caseStudies = await getAllCaseStudies()
-
-  const caseStudiesWithTag = caseStudies.filter((caseStudy) => {
-    return caseStudy.tags.some((t:any) => {
-      console.log(tag)
-      return t === tag
-    })
-  })
-
-  return caseStudiesWithTag
 }
