@@ -11,7 +11,7 @@ import Tabs from '@/components/Tabs'
 
 const  CaseStudies = ({ caseStudies, tags }:any)  =>{
   return (
-    <section className="overflow-hidden bg-white py-16 sm:pt-24 lg:pt-32">
+    <section className="overflow-hidden bg-light py-16 sm:pt-24 lg:pt-32">
       <Container className=''>
         <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
           <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
@@ -75,7 +75,7 @@ const  CaseStudies = ({ caseStudies, tags }:any)  =>{
                   </p>
                   <Link
                     href={`/work/${caseStudy.slug}`}
-                    className="group mt-12 inline-flex items-center justify-center gap-2 rounded-full bg-white py-3 px-9 text-md font-medium text-sky-900 shadow-sm shadow-sky-100/50 ring-1 ring-slate-100/90 transition duration-300 hover:bg-white/60 hover:text-sky-700 hover:shadow-md hover:shadow-sky-100"
+                    className="group mt-12 inline-flex items-center justify-center gap-2 rounded-full bg-light py-3 px-9 text-md font-medium text-sky-900 shadow-sm shadow-sky-100/50 ring-1 ring-slate-100/90 transition duration-300 hover:bg-light/60 hover:text-sky-700 hover:shadow-md hover:shadow-sky-100"
                   >
                     View Case study
                     <svg

@@ -13,7 +13,7 @@ interface CaseStudyTestimonialProps {
 
 export function CaseStudyTestimonial({ testimonial, clientName }:any) {
   return (
-    <section className="overflow-hidden bg-white py-16 sm:py-20 lg:py-28">
+    <section className="overflow-hidden bg-light py-16 sm:py-20 lg:py-28">
       <Container className="">
         <div className="mx-auto max-w-6xl">
           <h2 className="mx-auto max-w-3xl text-center font-display text-4xl font-semibold leading-tight text-slate-900 sm:text-5xl sm:leading-tight">

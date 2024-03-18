@@ -20,7 +20,7 @@ export function CaseStudyDetails({
   children,
 }:any) {
   return (
-    <section className="overflow-hidden bg-white py-16 sm:py-20 lg:py-28">
+    <section className="overflow-hidden bg-light dark:bg-dark py-16 sm:py-20 lg:py-28">
       <div className="mx-auto grid max-w-lg px-5 sm:max-w-2xl sm:px-6 lg:max-w-6xl lg:grid-cols-10 lg:px-8 xl:px-12">
         <div className="order-2 mt-8 border-t border-slate-200 pt-8 lg:order-1 lg:col-span-3 lg:mt-0 lg:border-0 lg:pt-0 lg:pr-8">
           <dl className="space-y-8">

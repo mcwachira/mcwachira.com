@@ -1,12 +1,12 @@
 import React from 'react'
 import { Work } from '@/types/work'
-import Navbar from '@/components/Header/Navbar'
+import Navbar from '@/components/ui/Header/Navbar'
 import { CaseStudyHero } from '@/components/CaseStudy/CaseStudyHero'
 import { CaseStudyDetails } from '@/components/CaseStudy/CaseStudyDetails'
 import { CaseStudyGallery } from '@/components/CaseStudy/CaseStudyGallery'
 import { CaseStudyTestimonial } from '@/components/CaseStudy/CaseStudyTestimonial'
 import { CaseStudyNavigation } from '@/components/CaseStudy/CaseStudyNavigation'
-import  Footer  from '@/components/Footer'
+import  Footer  from '@/components/ui/Footer'
 import Head from 'next/head'
 
 interface caseStudiesLayoutProps{
