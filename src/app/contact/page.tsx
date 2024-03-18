@@ -6,8 +6,8 @@ import { Button } from '@/components/Button'
 
 
 import image from '@/images/contact.jpg'
-import Footer from '@/components/Footer'
-import Navbar from '@/components/Header/Navbar'
+import Footer from '@/components/ui/Footer'
+import Navbar from '@/components/ui/Header/Navbar'
 
 export default function  Contact(){
   return (
@@ -161,7 +161,7 @@ export default function  Contact(){
                           id="name"
                           autoComplete="name"
                           placeholder="Mcwachira "
-                          className="block w-full rounded-xl border-0 bg-slate-50 px-4 py-4 text-md leading-4 text-slate-900 shadow-sm shadow-sky-100/50 ring-1 ring-inset ring-slate-200 transition-colors duration-200 ease-in-out placeholder:text-slate-400 hover:bg-white focus:border-0 focus:bg-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-sky-600/60"
+                          className="block w-full rounded-xl border-0 bg-slate-50 px-4 py-4 text-md leading-4 text-slate-900 shadow-sm shadow-sky-100/50 ring-1 ring-inset ring-slate-200 transition-colors duration-200 ease-in-out placeholder:text-slate-400 hover:bg-light focus:border-0 focus:bg-light focus:outline-none focus:ring-2 focus:ring-inset focus:ring-sky-600/60"
                         />
                       </div>
                     </div>
@@ -179,7 +179,7 @@ export default function  Contact(){
                           type="email"
                           autoComplete="email"
                           placeholder="foobar@email.com"
-                          className="block w-full rounded-xl border-0 bg-slate-50 px-4 py-4 text-md leading-4 text-slate-900 shadow-sm shadow-sky-100/50 ring-1 ring-inset ring-slate-200 transition-colors duration-200 ease-in-out placeholder:text-slate-400 hover:bg-white focus:border-0 focus:bg-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-sky-600/60"
+                          className="block w-full rounded-xl border-0 bg-slate-50 px-4 py-4 text-md leading-4 text-slate-900 shadow-sm shadow-sky-100/50 ring-1 ring-inset ring-slate-200 transition-colors duration-200 ease-in-out placeholder:text-slate-400 hover:bg-light focus:border-0 focus:bg-light focus:outline-none focus:ring-2 focus:ring-inset focus:ring-sky-600/60"
                         />
                       </div>
                     </div>
@@ -203,7 +203,7 @@ export default function  Contact(){
                           autoComplete="tel"
                           aria-describedby="phone-description"
                           placeholder="+1 (800) 123-4567"
-                          className="block w-full rounded-xl border-0 bg-slate-50 px-4 py-4 text-md leading-4 text-slate-900 shadow-sm shadow-sky-100/50 ring-1 ring-inset ring-slate-200 transition-colors duration-200 ease-in-out placeholder:text-slate-400 hover:bg-white focus:border-0 focus:bg-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-sky-600/60"
+                          className="block w-full rounded-xl border-0 bg-slate-50 px-4 py-4 text-md leading-4 text-slate-900 shadow-sm shadow-sky-100/50 ring-1 ring-inset ring-slate-200 transition-colors duration-200 ease-in-out placeholder:text-slate-400 hover:bg-light focus:border-0 focus:bg-light focus:outline-none focus:ring-2 focus:ring-inset focus:ring-sky-600/60"
                         />
                       </div>
                     </div>
@@ -229,7 +229,7 @@ export default function  Contact(){
                           rows={5}
                           aria-describedby="message-description"
                           placeholder="Tell me a little bit about your project..."
-                          className="block w-full rounded-xl border-0 bg-slate-50 px-4 py-4 text-md leading-6 text-slate-900 shadow-sm shadow-sky-100/50 ring-1 ring-inset ring-slate-200 transition-colors duration-200 ease-in-out placeholder:text-slate-400 hover:bg-white focus:border-0 focus:bg-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-sky-600/60"
+                          className="block w-full rounded-xl border-0 bg-slate-50 px-4 py-4 text-md leading-6 text-slate-900 shadow-sm shadow-sky-100/50 ring-1 ring-inset ring-slate-200 transition-colors duration-200 ease-in-out placeholder:text-slate-400 hover:bg-light focus:border-0 focus:bg-light focus:outline-none focus:ring-2 focus:ring-inset focus:ring-sky-600/60"
                         />
                       </div>
                     </div>
