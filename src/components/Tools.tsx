@@ -114,7 +114,7 @@ const icons = [
 
 const ToolsIconsRows = () => {
     return (
-        <section className="relative flex justify-center gap-x-12 overflow-x-clip bg-white pt-16 sm:gap-x-16 lg:pt-12 lg:pb-14">
+        <section className="relative flex justify-center gap-x-12 overflow-x-clip bg-light dark:bg-dark pt-16 sm:gap-x-16 lg:pt-12 lg:pb-14">
           <div className="absolute inset-y-0 left-0 h-full w-64 bg-gradient-to-r from-white/50 to-white/0" />
           <div className="absolute inset-y-0 right-0 h-full w-64 bg-gradient-to-l from-white/50 to-white/0" />
           <div className="absolute -top-2.5 right-4 flex transform gap-6 sm:right-16 lg:top-[unset] lg:right-0 lg:-bottom-12 xl:-bottom-20 2xl:right-32">
