@@ -2,7 +2,7 @@ import React from 'react'
 import SectionTitle from '../Common/SectionTitle'
 import ServicesData from './ServicesData'
 import SingleService from './SingleServices'
-import { Container } from '../Common/Container'
+import { Container } from '@/components/ui/Container'
 
 
 const Services = () => {

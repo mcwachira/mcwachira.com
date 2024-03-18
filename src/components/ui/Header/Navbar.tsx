@@ -10,7 +10,7 @@ import clsx from 'clsx'
 import { Menu, Popover, Transition, Disclosure } from '@headlessui/react'
 import { useRouter } from 'next/navigation'
 import { usePathname } from 'next/navigation'
-import { Container } from '../../Common/Container';
+import { Container } from '@/components/ui/Container'
 import { Button } from '../../Button'
 import { useTheme } from 'next-themes'
 
@@ -199,7 +199,7 @@ const Navbar = () => {
                     <div className="flex items-center">
                         <Button
 
-                            className={clsx(theme === 'light' ? '!bg-dark !text-white' : '!bg-light !ztext-black')}
+                            className={clsx(theme === 'light' ? '!bg-dark !text-white' : '!bg-light !text-black')}
                             href="#">
                             Book a call
                         </Button>

@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-import { Container } from './Common/Container'
+import { Container } from './ui/Container'
 import image from '@/images/experience-image.jpg'
 
 export function Experience() {

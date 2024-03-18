@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { Container } from '@/components/Common/Container'
+import { Container } from '@/components/ui/Container'
 
 import image from '@/images/portrait-02.png'
 import javascript from '@/images/logos/icons/javascript.png'

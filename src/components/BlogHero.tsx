@@ -2,17 +2,18 @@
 import Image from 'next/image'
 
 import bgGradient from '@/images/blog-hero-bg.png'
-import { Container } from './Common/Container'
+import {Container} from "@/components/ui/Container";
+
 
 export function BlogHero() {
   return (
-    <section className="relative overflow-hidden bg-light lg:px-8">
+    <section className="relative overflow-hidden bg-light dark:bg-dark lg:px-8">
       <Container className="relative bg-slate-50 py-16 sm:py-24 lg:rounded-b-3xl lg:py-32">
-        <Image
-          src={bgGradient}
-          alt=""
-          className="absolute inset-0 h-full w-full opacity-75"
-        />
+        {/*<Image*/}
+        {/*  src={bgGradient}*/}
+        {/*  alt=""*/}
+        {/*  className="absolute inset-0 h-full w-full opacity-75"*/}
+        {/*/>*/}
         <div className="relative flex flex-col items-center justify-center">
           <h1 className="text-center font-display text-5xl font-semibold text-slate-900 sm:text-6xl">
             Welcome to{' '}

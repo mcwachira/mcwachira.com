@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 import { Button } from './Button'
-import { Container } from './Common/Container'
+import { Container } from './ui/Container'
 import heroPortrait from '../images/1.jpg'
 import javascript from '@/images/logos/icons/javascript.png'
 import react from '@/images/logos/icons/react.png'

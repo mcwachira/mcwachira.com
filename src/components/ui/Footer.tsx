@@ -13,7 +13,7 @@ import {
   GitHubIcon,
   EmailIcon,
 } from '../SocialIcons'
-import { Container } from '../Common/Container'
+import { Container } from '@/components/ui/Container'
 
 const links = [
   { label: 'Home', href: '/' },
