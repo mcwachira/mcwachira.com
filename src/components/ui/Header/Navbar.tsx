@@ -202,7 +202,7 @@ const Navbar = () => {
                         <Button
 
                             className={clsx(theme === 'light' ? '!bg-dark !text-white' : '!bg-light !text-black')}
-                            href="#">
+                            href="tel:0726601941">
                             Book a call
                         </Button>
                         <div className="ml-4 md:hidden">

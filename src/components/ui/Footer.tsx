@@ -119,7 +119,7 @@ const  Footer = ({ newsletter = true }) => {
                 Lets make something great together
               </h3>
               <div className="hidden lg:block">
-                <Button href="#" variant="primaryOnDark" className="mt-12">
+                <Button   href="tel:0726601941" variant="primary" className="mt-12">
                   Book a call
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
