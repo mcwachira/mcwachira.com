@@ -68,7 +68,7 @@ const Testimonials = () => {
             We owe our business&apos;s online success to this developer. They&apos;re not just technically skilled but also have a keen eye for design, creating a perfect blend for profitability.
             </p>
             <div className="mt-14 flex gap-2.5 lg:mt-12">
-              <button className="carousel-prev inline-flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-sm shadow-sky-200/75 ring-1 ring-slate-200/60 duration-200 hover:bg-sky-50/50">
+              <button className="carousel-prev inline-flex h-12 w-12 items-center justify-center rounded-full bg-light shadow-sm shadow-sky-200/75 ring-1 ring-slate-200/60 duration-200 hover:bg-sky-50/50">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
@@ -82,7 +82,7 @@ const Testimonials = () => {
                   />
                 </svg>
               </button>
-              <button className="carousel-next inline-flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-sm shadow-sky-200/75 ring-1 ring-slate-200/60 duration-200 hover:bg-sky-50/50">
+              <button className="carousel-next inline-flex h-12 w-12 items-center justify-center rounded-full bg-light shadow-sm shadow-sky-200/75 ring-1 ring-slate-200/60 duration-200 hover:bg-sky-50/50">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
