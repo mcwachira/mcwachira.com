@@ -18,7 +18,7 @@ const mrDafoe = Mr_Dafoe({
 
 const AboutHero = () => {
   return (
-    <section className="relative bg-slate-50/50 w-full">
+    <section className="relative bg-slate-50/50 bg-light dark:bg-dark w-full">
       <svg
         width={1068}
         height={897}

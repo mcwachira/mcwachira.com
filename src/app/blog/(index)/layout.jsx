@@ -38,7 +38,7 @@ export default async function BlogLayout({ children }) {
           <Pagination />
         </Container>
       </section>
-      {/*<Footer />*/}
+      <Footer />
     </>
   )
 }

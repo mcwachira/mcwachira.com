@@ -111,7 +111,7 @@ export default function BlogPost({ params }) {
           </div>
         </article>
       </main>
-
+<Footer/>
     </>
   )
 }

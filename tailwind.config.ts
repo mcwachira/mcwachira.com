@@ -26,7 +26,7 @@ const config: Config = {
     },
     colors: {
       dark: "#041434",
-      light: "#ffffff",
+      light: "#FFFAFA",
     },
     extend: {
       // fontFamily: {

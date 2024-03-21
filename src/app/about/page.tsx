@@ -22,8 +22,8 @@ export default function About() {
       <AboutHero />
       {/* <WorkExperience />
       <Workstation /> */}
-      <Stack /> 
-
+      <Stack />
+        <Footer/>
     </>
   )
 }

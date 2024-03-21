@@ -1,7 +1,7 @@
 import { defineDocumentType, makeSource } from 'contentlayer/source-files'
 import remarkGfm from 'remark-gfm'
 import rehypePrism from '@mapbox/rehype-prism'
-
+import rehypePrettyCode from 'rehype-pretty-code'
 const computedFields = {
   url: {
     type: 'string',
@@ -11,6 +11,11 @@ const computedFields = {
     type: 'string',
     resolve: (doc) => `${doc._raw.sourceFileName.replace('.mdx', '')}`,
   },
+}
+
+/** @type {import('rehype-pretty-code').Options} */
+const options = {
+  theme: 'nord',
 }
 
 export const Post = defineDocumentType(() => ({
@@ -60,6 +65,6 @@ export default makeSource({
   documentTypes: [Post, CaseStudy],
   mdx: {
     remarkPlugins: [remarkGfm],
-    rehypePlugins: [rehypePrism],
+    rehypePlugins: [rehypePrism, [rehypePrettyCode, options]],
   },
 })

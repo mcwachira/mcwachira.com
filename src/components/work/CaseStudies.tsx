@@ -43,7 +43,7 @@ function CaseStudy({ caseStudy, index }:any) {
         </p>
         <Link
           href={caseStudy.url}
-          className="inline-flex items-center justify-center gap-2 py-3 mt-12 font-medium transition duration-300 bg-light rounded-full shadow-sm group px-9 text-md text-sky-900 shadow-sky-100/50 ring-1 ring-slate-100/90 hover:bg-light/60 hover:text-sky-700 hover:shadow-md hover:shadow-sky-100"
+          className="inline-flex items-center justify-center gap-2 py-3 mt-12 font-medium transition duration-300 rounded-full shadow-sm group px-9 text-md  shadow-sky-100/50 ring-1 ring-slate-100/90 hover:bg-light/60 hover:text-dark hover:shadow-md hover:shadow-sky-100"
         >
           View Project
           <svg

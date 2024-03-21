@@ -77,7 +77,7 @@ export default function RootLayout({
           <ToastProvider />
           {children}
         </Template>
-        <Footer />
+        {/*<Footer />*/}
       </Provider>
       </body>
       </html>

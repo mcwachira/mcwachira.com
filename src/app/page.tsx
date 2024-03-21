@@ -8,6 +8,7 @@ import Testimonials from "@/components/Testimonials/Testimonials";
 import ProjectsGrid from "@/components/Projects/ProjectsGrid";
 import {FeaturedWork} from "@/components/work/FeaturedWork";
 import {FeaturedPosts} from "@/components/blog/FeaturedPosts";
+import Footer from "@/components/ui/Footer";
 
 
 
@@ -31,7 +32,7 @@ export default function Home() {
         <FeaturedWork/>
           <FeaturedPosts />
 
-
+<Footer/>
       </>
   )
 }

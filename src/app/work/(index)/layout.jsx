@@ -40,7 +40,7 @@ export default function WorkLayout({ children }) {
           </div>
         </Container>
       </section>
-      {/*<Footer />*/}
+      <Footer />
     </>
   )
 }

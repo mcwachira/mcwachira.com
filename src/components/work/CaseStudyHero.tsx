@@ -21,7 +21,7 @@ function Tag({ tag }) {
 
 export function CaseStudyHero({ title, subtitle, tags, coverImage }) {
   return (
-    <section className="pt-16 overflow-hidden bg-light sm:pt-20 lg:pt-28">
+    <section className="pt-16 overflow-hidden bg-light dark:bg-dark sm:pt-20 lg:pt-28">
       <Container>
         <div className="max-w-lg mx-auto sm:max-w-3xl lg:mx-0 lg:max-w-none">
           <h1 className="text-4xl font-semibold leading-tight font-display text-slate-900 sm:text-5xl sm:leading-tight lg:text-6xl lg:leading-tight">
