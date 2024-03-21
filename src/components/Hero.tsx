@@ -137,17 +137,20 @@ export function Hero() {
             <div className="flex gap-3 sm:gap-4">
               <SocialLink
                 href="https://dribbble.com"
+                target="_blank"
                 aria-label="Follow on Dribbble"
                 icon={GitHubIcon}
               />
 
               <SocialLink
                 href="https://instagram.com"
+                target="_blank"
                 aria-label="Follow on Instagram"
                 icon={InstagramIcon}
               />
               <SocialLink
                 href="https://twitter.com"
+                target="_blank"
                 aria-label="Follow on Twitter"
                 icon={TwitterIcon}
               />
