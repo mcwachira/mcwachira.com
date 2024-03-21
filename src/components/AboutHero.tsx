@@ -18,7 +18,7 @@ const mrDafoe = Mr_Dafoe({
 
 const AboutHero = () => {
   return (
-    <section className="relative bg-slate-50/50">
+    <section className="relative bg-slate-50/50 w-full">
       <svg
         width={1068}
         height={897}
@@ -70,9 +70,9 @@ const AboutHero = () => {
         </defs>
       </svg>
 
-      <Container className="relative py-16 sm:py-24 lg:py-32">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:mx-0 lg:w-2/3 lg:max-w-none lg:px-8 lg:pr-16">
-          <h1 className="font-display text-5xl font-semibold text-slate-900 sm:text-6xl">
+      <Container className="w-full flex items-center justify-center relative py-16 sm:py-24 lg:py-32">
+        <div className="mx-auto w-full">
+          <h1 className="font-display text-3xl font-semibold text-slate-900 sm:text-4xl">
             Hi,{' '}
             <span className="relative whitespace-nowrap">
               <svg
@@ -87,7 +87,7 @@ const AboutHero = () => {
               </svg>
               <span className="relative">I’m Mcwachira</span>
             </span>{' '}
-            and I’m a Fullstack Javascript Developer
+            and I’m a Fullstack React Developer
           </h1>
           <p className="mt-8 text-lg leading-8 text-slate-700">
           I am a  seasoned professional with over four years of experience in the dynamic world of web development. I am  not just a coder;i am a creator, a digital architect who crafts beautiful and responsive websites and full-stack web applications that leave a lasting impression.
@@ -102,54 +102,7 @@ const AboutHero = () => {
           </p>
         </div>
       </Container>
-      <div className="bg-picton-blue-25 relative h-96 w-full md:h-[600px] lg:absolute lg:inset-y-0 lg:right-0 lg:h-full lg:w-1/3">
-        <Image
-          src={heroImage}
-          alt=""
-          className="absolute inset-0 h-full w-full object-cover object-top"
-        />
-        <svg
-          width="229"
-          height="40"
-          viewBox="0 0 229 40"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="absolute bottom-16 left-0 mt-14 h-8 w-auto -translate-x-1/2 sm:mt-20 sm:h-10"
-        >
-          <g clipPath="url(#clip0_204_150)">
-            <path
-              d="M1 19L29.4 39L57.7 19L86.1 39L114.5 19L142.8 39L171.2 19L199.6 39L228 19"
-              stroke="#0369A1"
-              strokeWidth="2"
-              strokeMiterlimit="10"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-            <path
-              d="M1 19L29.4 39L57.7 19L86.1 39L114.5 19L142.8 39L171.2 19L199.6 39L228 19"
-              stroke="black"
-              strokeOpacity="0.2"
-              strokeWidth="2"
-              strokeMiterlimit="10"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-            <path
-              d="M1 1L29.4 21L57.7 1L86.1 21L114.5 1L142.8 21L171.2 1L199.6 21L228 1"
-              stroke="#BAE6FD"
-              strokeWidth="2"
-              strokeMiterlimit="10"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </g>
-          <defs>
-            <clipPath id="clip0_204_150">
-              <rect width="229" height="40" fill="white" />
-            </clipPath>
-          </defs>
-        </svg>
-      </div>
+
     </section>
   )
 }
