@@ -90,7 +90,7 @@ const AboutHero = () => {
             and I’m a Fullstack React Developer
           </h1>
           <p className="mt-8 text-lg leading-8 text-slate-700">
-          I am a  seasoned professional with over four years of experience in the dynamic world of web development. I am  not just a coder;i am a creator, a digital architect who crafts beautiful and responsive websites and full-stack web applications that leave a lasting impression.
+          I am a  seasoned professional with over three years of experience in the dynamic world of web development. I am  not just a coder;i am a creator, a digital architect who crafts beautiful and responsive websites and full-stack web applications that leave a lasting impression.
           </p>
           <p className="mt-6 text-lg leading-8 text-slate-700">
            I am adept to harnessing the power of React to create interactive and engaging user interfaces, leveraging TypeScript for robust type checking and enhanced code quality, and using Node.js and Go to craft scalable, high-performance backends.
