@@ -162,6 +162,7 @@ const  Footer = ({ newsletter = true }) => {
                     icon={socialLink.icon}
                     label={socialLink.label}
                     href={socialLink.href}
+                    target="_blank"
                   />
                 ))}
               </div>
