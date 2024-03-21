@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { Container } from '@/components/ui/Container'
 
-import image from '@/images/portrait-02.png'
+import image from '@/images/ai-1.jpg'
 import javascript from '@/images/logos/icons/javascript.png'
 import react from '@/images/logos/icons/react.png'
 import golang from '@/images/logos/icons/golang.png'
