@@ -190,16 +190,16 @@ export function Hero() {
                 </svg>
               </div>
               <div className="absolute -top-6 right-12 inline-flex h-12 w-max items-center justify-center gap-3.5 rounded-2xl bg-light/90 px-8 text-sm font-semibold !text-dark shadow-lg shadow-sky-100/50 ring-1 ring-slate-900/5 backdrop-blur-md md:-left-28 md:top-14 lg:-top-6 lg:left-44 lg:px-10 2xl:-left-48 2xl:top-14">
-                <Image src={react} alt="" className="h-auto w-4" priority />4
+                <Image src={react} alt="" className="h-auto w-4" priority />3
                 years of experience
               </div>
               <div className="absolute left-12 top-full inline-flex h-12 w-max -translate-y-6 items-center justify-center gap-3.5 rounded-2xl bg-light/90 px-8 text-sm font-semibold !text-dark shadow-lg shadow-sky-100/50 ring-1 ring-slate-900/5 backdrop-blur-md md:left-0 md:-translate-x-20 md:-translate-y-24 lg:-left-3 lg:-translate-y-24 lg:px-10 xl:-left-6 xl:-translate-x-28 xl:-translate-y-32">
-                <Image src={nodejs} alt="" className="h-6 w-auto" priority />4
+                <Image src={nodejs} alt="" className="h-6 w-auto" priority />3
                 years of experience
               </div>
               <div className="absolute top-[350px] hidden h-12 w-max items-center justify-center gap-3.5 rounded-2xl bg-light/90 px-8 text-sm font-semibold text-slate-700 shadow-lg shadow-sky-100/50 ring-1 ring-slate-900/5 backdrop-blur-md md:left-full md:inline-flex md:-translate-x-32 lg:left-48 lg:hidden lg:px-10 2xl:left-full 2xl:inline-flex 2xl:-translate-x-28">
                 <Image src={javascript} alt="" className="h-auto w-7" priority />
-                <span className="">5 years of experience</span>
+                <span className="">4 years of experience</span>
               </div>
             </div>
           </div>
