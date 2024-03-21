@@ -98,7 +98,7 @@ export default function  Contact(){
                         href="mailto:hey@janedoe.com"
                         className="mt-5 inline-block text-sky-700 duration-200 ease-in-out hover:text-sky-600 sm:mt-6"
                       >
-                        hey@janedoe.com
+                        mcwachira@gmail.com
                       </Link>
                     </div>
                   </div>
@@ -123,13 +123,13 @@ export default function  Contact(){
                         Call me
                       </p>
                       <p className="mt-2 text-base text-slate-600">
-                        I’m available weekdays from 9AM to 5PM
+                        I’m available weekdays from 8AM to 6PM
                       </p>
                       <Link
                         href="tel:+13234567891"
                         className="mt-6 inline-block text-sky-700 duration-200 ease-in-out hover:text-sky-600"
                       >
-                        +1 (323) 456-7891
+                        +254726601941
                       </Link>
                     </div>
                   </div>
@@ -202,7 +202,7 @@ export default function  Contact(){
                           id="phone"
                           autoComplete="tel"
                           aria-describedby="phone-description"
-                          placeholder="+1 (800) 123-4567"
+                          placeholder="+254726601941"
                           className="block w-full rounded-xl border-0 bg-slate-50 px-4 py-4 text-md leading-4 text-slate-900 shadow-sm shadow-sky-100/50 ring-1 ring-inset ring-slate-200 transition-colors duration-200 ease-in-out placeholder:text-slate-400 hover:bg-light focus:border-0 focus:bg-light focus:outline-none focus:ring-2 focus:ring-inset focus:ring-sky-600/60"
                         />
                       </div>
