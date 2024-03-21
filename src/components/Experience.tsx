@@ -269,16 +269,16 @@ export function Experience() {
           </div>
           <div className="lg:col-span-8 lg:pl-8 xl:pl-24">
             <div className="aspect-w-3 aspect-h-2 relative w-full">
-              <Image
-                className="h-full w-full rounded-3xl object-cover object-center"
-                src={image}
+              {/*<Image*/}
+              {/*  className="h-full w-full rounded-3xl object-cover object-center"*/}
+              {/*  src={image}*/}
 
-                   width={100}
-                height={100}
-                alt=""
-                //fill
-                sizes="(min-width: 1280px) 705.34px, (min-width: 1024px) calc((100vw - 64px) * 0.6667 - 32px), (min-width: 616px) 36rem, calc(100vw - 40px)"
-              />
+              {/*     width={100}*/}
+              {/*  height={100}*/}
+              {/*  alt=""*/}
+              {/*  //fill*/}
+              {/*  sizes="(min-width: 1280px) 705.34px, (min-width: 1024px) calc((100vw - 64px) * 0.6667 - 32px), (min-width: 616px) 36rem, calc(100vw - 40px)"*/}
+              {/*/>*/}
               <div>
                 <div className="absolute top-1/2 left-1/2 h-32 w-32 -translate-x-1/2 -translate-y-1/2 rounded-full bg-light/50 backdrop-blur-sm lg:h-44 lg:w-44">
                   <svg

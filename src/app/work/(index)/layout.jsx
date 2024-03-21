@@ -10,7 +10,7 @@ export const metadata = {
     default: 'Work',
   },
   description:
-    'Explore an impressive collection of case studies showcasing a my diverse skill set, innovative solutions, and successful projects.',
+    'Explore an impressive collection of projects showcasing a my diverse skill set, innovative solutions, and successful projects.',
 }
 
 export default function WorkLayout({ children }) {
@@ -21,7 +21,7 @@ export default function WorkLayout({ children }) {
           <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
             <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
               <h2 className="font-display text-5xl font-semibold text-slate-900 sm:text-6xl lg:leading-none">
-                Case Studies
+                Projects
               </h2>
 
               <p className="text-lg text-slate-700 lg:ml-auto lg:max-w-lg">

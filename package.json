@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/is-prop-valid": "^1.2.2",
     "@headlessui/react": "^1.7.18",
     "@mapbox/rehype-prism": "^0.8.0",
     "classname": "^0.0.0",

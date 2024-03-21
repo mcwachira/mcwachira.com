@@ -18,14 +18,14 @@ client:{
     headquarters: 'string',
 }
 
-testimonial: {
-    text: 'string',
-    author: {
-      name: 'string',
-      role: 'string',
-      image: 'string',
-    },
-  }
+// testimonial: {
+//     text: 'string',
+//     author: {
+//       name: 'string',
+//       role: 'string',
+//       image: 'string',
+//     },
+//   }
   projectDuration:string
 
   navigation: {

@@ -38,10 +38,10 @@ function CaseStudy({ caseStudy }) {
       />
       <div className="relative order-2 px-1 sm:px-4 lg:order-1 lg:col-span-6 lg:pb-16 lg:pl-12 lg:pt-16 xl:col-span-5 xl:pb-24 xl:pl-16 xl:pt-8">
         <div className="inline-flex items-center gap-2.5  text-sm font-medium leading-[16px] text-sky-900/80 sm:text-md">
-          <CategoryIcon
-            category={caseStudy.tags[0]}
-            className="w-4 h-4 text-sky-900/75"
-          />
+          {/*<CategoryIcon*/}
+          {/*  category={caseStudy.tags[0]}*/}
+          {/*  className="w-4 h-4 text-sky-900/75"*/}
+          {/*/>*/}
           {caseStudy.tags[0]}
         </div>
         <h3 className="mt-5 text-2xl font-medium font-display text-slate-900 sm:mt-6 sm:text-3xl">
@@ -54,7 +54,7 @@ function CaseStudy({ caseStudy }) {
           href={caseStudy.url}
           className="flex items-center gap-2 text-sm font-medium duration-200 ease-in-out group mt-14 text-sky-600 hover:text-sky-700 sm:mt-16 sm:text-md"
         >
-          View Case Study
+          View Project
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"

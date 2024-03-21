@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 import { Button } from './Button'
 import { Container } from './ui/Container'
-import heroPortrait from '../images/1.jpg'
+import heroPortrait from '@/images/1.jpg'
 import javascript from '@/images/logos/icons/javascript.png'
 import react from '@/images/logos/icons/react.png'
 import golang from '@/images/logos/icons/golang.png'

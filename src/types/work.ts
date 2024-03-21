@@ -8,7 +8,7 @@ tags:[],
 thumbnail:string,
 coverImage:string,
 projectURL:string,
-images:[],
+    githubLink:string,
 description:string,
 client:{
     name: 'string',
@@ -18,14 +18,6 @@ client:{
     headquarters: 'string',
 }
 
-testimonial: {
-    text: 'string',
-    author: {
-      name: 'string',
-      role: 'string',
-      image: 'string',
-    },
-  }
   projectDuration:string
 
   navigation: {

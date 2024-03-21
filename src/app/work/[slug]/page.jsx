@@ -3,7 +3,6 @@ import {CaseStudyHero} from "../../../components/work/CaseStudyHero";
 import {CaseStudyDetails} from "../../../components/work/CaseStudyDetails";
 import {MdxContent} from "../../../components/mdx/MdxContent";
 import {CaseStudyGallery} from "../../../components/work/CaseStudyGallery";
-import {CaseStudyTestimonial} from "../../../components/work/CaseStudyTestimonial";
 import {CaseStudyNavigation} from "../../../components/work/CaseStudyNavigation";
 import Footer from "../../../components/ui/Footer";
 
@@ -15,6 +14,7 @@ export async function generateMetadata({ params }) {
   const caseStudy = allCaseStudies.find(
     (caseStudy) => caseStudy.slug === params.slug
   )
+    console.log(caseStudy)
   return { title: caseStudy.title, description: caseStudy.description }
 }
 
@@ -36,14 +36,15 @@ export default function CaseStudyPage({ params }) {
         description={caseStudy.description}
         projectDuration={caseStudy.projectDuration}
         projectURL={caseStudy.projectURL}
+        githubLink={caseStudy.githubLink}
       >
         <MdxContent code={caseStudy.body.code} />
       </CaseStudyDetails>
-      <CaseStudyGallery images={caseStudy.images} />
-      <CaseStudyTestimonial
-        clientName={caseStudy.client.name}
-        testimonial={caseStudy.testimonial}
-      />
+      {/*<CaseStudyGallery images={caseStudy.images} />*/}
+      {/*<CaseStudyTestimonial*/}
+      {/*  clientName={caseStudy.client.name}*/}
+      {/*  testimonial={caseStudy.testimonial}*/}
+      {/*/>*/}
       <CaseStudyNavigation caseStudySlug={caseStudy.slug} />
       <Footer newsletter={false} />
     </>
