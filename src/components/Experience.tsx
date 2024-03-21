@@ -2,6 +2,7 @@ import Image from 'next/image'
 
 import { Container } from './ui/Container'
 import image from '@/images/experience-image.jpg'
+import Link from "next/link";
 
 export function Experience() {
   return (
@@ -378,7 +379,10 @@ export function Experience() {
                       fill="currentColor"
                     />
                   </svg>
-                  <button className="relative top-1/2 left-1/2 inline-flex h-12 w-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-light dark:bg-dark duration-200 hover:bg-slate-800 lg:h-20 lg:w-20">
+                  <Link
+                      href='https://drive.google.com/file/d/1oW1iWwZuknGZzBaBUHGorZ-Qw8Ic_l9b/view?usp=sharing'
+                      target="_blank"
+                      className="relative top-1/2 left-1/2 inline-flex h-12 w-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-light dark:bg-dark duration-200 hover:bg-slate-800 lg:h-20 lg:w-20">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="32"
@@ -407,7 +411,7 @@ export function Experience() {
                         <path d="M2,22v5a3,3,0,0,0,3,3H27a3,3,0,0,0,3-3V22"></path>
                       </g>
                     </svg>
-                  </button>
+                  </Link>
                 </div>
                 <div className="absolute bottom-0 right-1/2 grid w-max translate-x-1/2 translate-y-3/4 grid-cols-2 gap-5 rounded-2xl bg-sky-700/90 px-6 py-8 text-center backdrop-blur-sm sm:translate-y-1/2 sm:gap-12 sm:p-10 lg:right-20 lg:translate-x-0">
                   <div className="flex flex-col gap-1">
