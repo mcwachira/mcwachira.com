@@ -19,12 +19,11 @@ export type CaseStudy = {
   tags?: string[] | undefined
   thumbnail: string
   coverImage: string
-  images?: string[] | undefined
   projectURL: string
+  githubLink: string
   description: string
   projectDuration: string
   client: any
-  testimonial: any
   /** MDX file body */
   body: MDX
   url: string

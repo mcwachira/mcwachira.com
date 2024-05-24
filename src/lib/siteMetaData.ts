@@ -1,15 +1,16 @@
 // please update required information
 const siteMetadata = {
     title: 'mcwachira.com',
-    author: 'mcwachira',
-    headerTitle: 'Next.js  website',
     description: ' Elevate your digital presence with  web solutions designed to captivate and convert.',
-    language: 'en-us',
-    theme: 'system', // system, dark or light
     siteUrl: 'https://mcwachira.com', // your website URL
+    author: 'mcwachira',
+    siteName:"mcwachira's website",
+    language: 'en-us',
+    type:'website',
+    theme: 'system', // system, dark or light
     siteLogo: '/images/logos/png/color.png',
     siteIcon:'/favicon.ico',
-    // socialBanner: '/images/coffee/social/social-banner.png', // add social banner in the public folder
+    socialBanner: '/images/social-banner.jpg', // add social banner in the public folder
     email: 'mcwachira@outlook.com',
     github: 'https://github.com/mcwachira',
     twitter: 'https://twitter.com/mc_wachira',
