@@ -21,6 +21,9 @@ export const metadata = {
     default: siteMetadata.title, // a default is required when creating a template
   },
   description: siteMetadata.description,
+  icons:{
+    icon:siteMetadata.siteLogo
+  },
   openGraph: {
     title: siteMetadata.title,
     description: siteMetadata.description,
@@ -70,11 +73,12 @@ export default function RootLayout({
             suppressHydrationWarning
       >
       <body>
+      <link rel="icon" href="/logo/png/color.png" sizes="any"/>
       <Provider>
 
-        <Navbar />
+        <Navbar/>
         <Template>
-          <ToastProvider />
+          <ToastProvider/>
           {children}
         </Template>
         {/*<Footer />*/}
