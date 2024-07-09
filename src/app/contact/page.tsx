@@ -139,11 +139,10 @@ export default function  Contact(){
             <div className="px-5 py-16 sm:px-6 sm:py-24 lg:col-span-6 lg:pl-0 lg:pr-8 lg:pt-32 xl:col-span-5 xl:col-start-8 2xl:pr-0">
               <div className="mx-auto max-w-lg lg:mr-0">
                 <h3 className="font-display text-3xl font-semibold text-slate-900">
-                  Fill our the form below to get started
+                  Fill out the form below to get started
                 </h3>
                 <p className="mt-4 text-lg text-slate-600">
-                  Turkish cortado mazagran skinny macchiato espresso trade
-                  medium aromatic.
+                  Reach out for web development, design, consulting, and more. We're here to help!
                 </p>
                 <form action="#" method="POST" className="mt-10">
                   <div className="space-y-7">
