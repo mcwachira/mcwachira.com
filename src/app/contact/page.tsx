@@ -142,7 +142,7 @@ export default function  Contact(){
                   Fill out the form below to get started
                 </h3>
                 <p className="mt-4 text-lg text-slate-600">
-                  Reach out for web development, design, consulting, and more. We're here to help!
+                  Reach out for web development, design, consulting, and more. We&#39;re here to help!
                 </p>
                 <form action="#" method="POST" className="mt-10">
                   <div className="space-y-7">
