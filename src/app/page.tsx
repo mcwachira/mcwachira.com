@@ -14,7 +14,7 @@ import Footer from "@/components/ui/Footer";
 
 export const metadata = {
     description:
-        "I'm a passionate developer, entrepreneur, and general technology enthusiast living in San Francisco. I've worked with hundreds of startups to help them develop their ideas into profitable businesses.",
+        "I'm a passionate developer, entrepreneur, and general technology enthusiast living in Nairobi. I creates websites and apps for startups and businesses, turning their ideas into functional digital solutions and profitable companies.",
 }
 
 export default function Home() {
