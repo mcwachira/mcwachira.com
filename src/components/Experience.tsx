@@ -380,7 +380,7 @@ export function Experience() {
                     />
                   </svg>
                   <Link
-                      href='https://drive.google.com/file/d/1oW1iWwZuknGZzBaBUHGorZ-Qw8Ic_l9b/view?usp=sharing'
+                      href='https://drive.google.com/file/d/1LuaxMBleMu0QLmx7MjNY2r4fhE3nZSya/view?usp=sharing'
                       target="_blank"
                       className="relative top-1/2 left-1/2 inline-flex h-12 w-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-light dark:bg-dark duration-200 hover:bg-slate-800 lg:h-20 lg:w-20">
                     <svg
@@ -419,7 +419,7 @@ export function Experience() {
                       Years of experience
                     </dt>
                     <dd className="order-first text-3xl font-extrabold text-white sm:text-4xl">
-                   3
+                   4+
                     </dd>
                   </div>
 
@@ -428,7 +428,7 @@ export function Experience() {
                       Projects completed
                     </dt>
                     <dd className="order-first text-3xl font-extrabold text-white sm:text-4xl">
-                      7
+                      12
                     </dd>
                   </div>
                 </div>
