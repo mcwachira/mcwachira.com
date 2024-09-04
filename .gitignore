@@ -31,6 +31,13 @@ yarn-error.log*
 # vercel
 .vercel
 
+# content layer cache
+.contentlayer/
+
+#intelige
+./idea/
+
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
