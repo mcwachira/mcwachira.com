@@ -7,15 +7,13 @@ description: 'Learn how  to build a secure form Using Nextjs and React-hook-form
 timeToRead: 10
 ---
 
-
 Today we are going to use Next.js to build a simple , secure and user-friendly forms using a powerful combination of libraries:
 
-1. **React-Hook-Form -**  Streamlines form state management, user interactions, and simplifies form handling
+1. **React-Hook-Form -** Streamlines form state management, user interactions, and simplifies form handling
 
 2. **Yup -** Provides a robust and user-friendly schema validation library..
 
 3. **Tailwind CSS -** To style our forms
-
 
 ## Why Secure Forms Matter?
 
@@ -23,11 +21,23 @@ Insecure forms can be exploited by malicious actors through attacks like SQL inj
 
 Let's walk through the steps of creating the form:
 
-1. **Project Setup -** Create a new Next.js project: npx create-next-app my-secure-formInstall required dependencies: npm install react-hook-form yup @hookform/resolvers tailwindcss.
+1. **Project Setup -** Create a new Next.js project:
+
+```js
+npx create-next-app my-secure-form
+
+```
+
+Install required dependencies:
+
+```js
+npm install react-hook-form yup @hookform/resolvers tailwindcss.
+
+```
 
 2. **Form Component (Form.js) -**
 
-```js
+````js
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -74,7 +84,7 @@ const Form = () => {
           type="text"
           id="name"
           className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          placeholder="Enter your name"
+          placehold```er="Enter your name"
         />
         {errors.name && <span className="text-red-500 text-sm">{errors.name.message}</span>}
       </div>
@@ -101,27 +111,27 @@ const Form = () => {
 };
 
 export default Form;
-```
+````
 
 This code showcases our Form containing two fields Name and Email.
 
 We are using the useForm to generate individual error messages for both fields and we are also providing an error if the form fails to bi submitted on the server-side.
 
-To use thE Form we import it in our desired page as shown
-```js
+To use the Form we import it in our desired page as shown
 
-import Form from '../components/Form';
+```js
+import Form from '../components/Form'
 
 const MyPage = () => {
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-6">Contact Us</h1>
+      <h1 className="mb-6 text-3xl font-bold">Contact Us</h1>
       <Form />
     </div>
-  );
-};
+  )
+}
 
-export default MyPage;
+export default MyPage
 ```
 
 ### Considerations:
@@ -132,6 +142,6 @@ export default MyPage;
 
 ### Conclusion:
 
-By combining React Hook Forms, Yup, and Tailwind CSS, we can create secure and well validated  forms in we  Next.js applications as  approach improves data integrity, user experience, and protects our application from security vulnerabilities.
+By combining React Hook Forms, Yup, and Tailwind CSS, we can create secure and well validated forms in we Next.js applications as approach improves data integrity, user experience, and protects our application from security vulnerabilities.
 
-I hope this Blog Post will  empower you to build secure forms in your Next.js applications!
+I hope this Blog Post will empower you to build secure forms in your Next.js applications!

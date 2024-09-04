@@ -44,7 +44,7 @@ const stack = [
     logo: tailwind,
   },
   {
-    name: 'Nextjs',
+    name: 'Nextjs',<Image
     experience: '3 years of experience',
     logo: nextjs,
   },

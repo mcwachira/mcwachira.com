@@ -19,10 +19,7 @@ import firebase from '../images/logos/icons/firebase.png'
 
 
 const icons = [
-    {
-      name: 'Javascript',
-      icon: javascript,
-    },
+
     {
       name: 'HTML5',
       icon: html5,
@@ -31,9 +28,14 @@ const icons = [
       name: 'CSS',
       icon: css,
     },
+ 
     {
       name: 'Tailwind CSS',
       icon: tailwind,
+    },
+    {
+      name: 'Javascript',
+      icon: javascript,
     },
     {
       name: 'Nextjs',
@@ -47,25 +49,28 @@ const icons = [
       name: 'Nodejs',
       icon: nodejs,
     },
+ 
     {
-      name: 'Netlify',
-      icon: netlify,
+      name: 'Golang',
+      icon: golang,
+    },
+ 
+    {
+      name: 'Postgresql',
+      icon: postgresql,
+    },
+
+    {
+      name: 'Firebase',
+      icon: firebase,
     },
     {
       name: 'Python',
       icon: python,
     },
     {
-      name: 'Postgresql',
-      icon: postgresql,
-    },
-    {
-        name: 'Golang',
-        icon: golang,
-      },
-    {
-      name: 'Firebase',
-      icon: firebase,
+      name: 'Netlify',
+      icon: netlify,
     },
     // {
     //   name: 'C programming language',

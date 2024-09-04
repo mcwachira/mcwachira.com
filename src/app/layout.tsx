@@ -1,18 +1,18 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import type { Metadata } from 'next'
+import { Inter } from 'next/font/google'
 import '@/app/styles/globals.css'
 
-import Provider  from "@/providers/theme-provider";
+import Provider from '@/providers/theme-provider'
 
-import classNames from "classnames";
-import {cookies} from "next/headers";
+import classNames from 'classnames'
+import { cookies } from 'next/headers'
 import { ToastProvider } from '@/providers/toast-provider'
-import Template from "@/app/template";
-import siteMetadata from "@/lib/siteMetaData";
-import Navbar from "@/components/ui/Header/Navbar";
-import Footer from "@/components/ui/Footer";
+import Template from '@/app/template'
+import siteMetadata from '@/lib/siteMetaData'
+import Navbar from '@/components/ui/Header/Navbar'
+import Footer from '@/components/ui/Footer'
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   metadataBase: new URL(siteMetadata.siteUrl),
@@ -21,8 +21,8 @@ export const metadata = {
     default: siteMetadata.title, // a default is required when creating a template
   },
   description: siteMetadata.description,
-  icons:{
-    icon:siteMetadata.siteLogo
+  icons: {
+    icon: siteMetadata.siteLogo,
   },
   openGraph: {
     title: siteMetadata.title,
@@ -30,8 +30,8 @@ export const metadata = {
     url: siteMetadata.siteUrl,
     siteName: siteMetadata.siteName,
     images: [siteMetadata.socialBanner],
-    locale: "en_US",
-    type: "website",
+    locale: 'en_US',
+    type: 'website',
   },
   robots: {
     index: true,
@@ -40,50 +40,48 @@ export const metadata = {
       index: true,
       follow: true,
       noimageindex: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
     },
   },
   twitter: {
-    card: "summary_large_image",
+    card: 'summary_large_image',
     title: siteMetadata.title,
     images: [siteMetadata.socialBanner],
   },
-};
-
+}
 
 function getTheme() {
-  const cookieStore = cookies();
-  const themeCookie = cookieStore.get("theme");
-  const theme = themeCookie ? themeCookie.value : "dark";
-  return theme;
+  const cookieStore = cookies()
+  const themeCookie = cookieStore.get('theme')
+  const theme = themeCookie ? themeCookie.value : 'dark'
+  return theme
 }
 export default function RootLayout({
-                                     children,
-                                   }: {
-  children: React.ReactNode;
+  children,
+}: {
+  children: React.ReactNode
 }) {
-
-  const theme = getTheme() as string;
+  const theme = getTheme() as string
   return (
-      <html lang="en"
-            className={classNames(inter.className, 'scroll-smooth',theme)}
-            style={{ colorScheme: theme }}
-            suppressHydrationWarning
-      >
+    <html
+      lang="en"
+      className={classNames(inter.className, 'scroll-smooth', theme)}
+      style={{ colorScheme: theme }}
+      suppressHydrationWarning
+    >
       <body>
-      <link rel="icon" href="/logo/png/color.png" sizes="any"/>
-      <Provider>
-
-        <Navbar/>
-        <Template>
-          <ToastProvider/>
-          {children}
-        </Template>
-        {/*<Footer />*/}
-      </Provider>
+        <link rel="icon" href="/logo/png/color.png" sizes="any" />
+        <Provider>
+          <Navbar />
+          <Template>
+            <ToastProvider />
+            {children}
+          </Template>
+          {/*<Footer />*/}
+        </Provider>
       </body>
-      </html>
-  );
+    </html>
+  )
 }

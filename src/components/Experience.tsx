@@ -2,15 +2,15 @@ import Image from 'next/image'
 
 import { Container } from './ui/Container'
 import image from '@/images/experience-image.jpg'
-import Link from "next/link";
+import Link from 'next/link'
 
 export function Experience() {
   return (
-    <section className="relative overflow-hidden bg-light dark:bg-dark pt-20 pb-40 sm:pt-24 lg:pt-32 lg:pb-64">
-      <Container className=''>
+    <section className="relative overflow-hidden bg-light pb-40 pt-20 dark:bg-dark sm:pt-24 lg:pb-64 lg:pt-32">
+      <Container className="">
         <div className="mx-auto grid max-w-xl items-center gap-6 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:gap-16">
           <div>
-            <h2 className="font-display text-4xl font-semibold text-slate-900 sm:text-5xl">
+            <h2 className="font-display text-slate-900 text-4xl font-semibold sm:text-5xl">
               I&apos;m your{' '}
               <span className="relative whitespace-nowrap">
                 <svg
@@ -19,18 +19,18 @@ export function Experience() {
                   height="22"
                   viewBox="0 0 249 22"
                   fill="currentColor"
-                  className="absolute top-2/3 left-0 h-[0.6em] w-full fill-sky-200/75"
+                  className="fill-sky-200/75 absolute left-0 top-2/3 h-[0.6em] w-full"
                 >
                   <path d="M247.564 18.5808C241.772 13.3568 232.473 12.7526 225.225 11.4427C217.124 9.97398 208.996 8.57034 200.846 7.46096C186.542 5.51305 172.169 4.08857 157.79 3.01565C126.033 0.645858 94.0929 0.0338786 62.3387 2.36982C42.1785 3.85419 22.008 5.90888 2.32917 10.8464C-0.0155171 11.4349 0.207047 14.6719 2.6889 14.7084C22.0261 14.9896 41.3866 12.6406 60.7109 11.8568C79.9471 11.0808 99.2274 10.6719 118.484 10.9558C142.604 11.3125 166.719 12.8334 190.722 15.5156C199.956 16.5469 209.195 17.6016 218.411 18.8255C227.864 20.0808 237.259 22 246.767 20.7422C247.709 20.6198 248.426 19.3568 247.564 18.5808Z" />
                 </svg>
 
-                <span className="relative text-sky-700">all-in-one</span>
+                <span className="text-sky-700 relative">all-in-one</span>
               </span>{' '}
               project solution
             </h2>
           </div>
           <div>
-            <p className="text-lg leading-8 text-slate-700">
+            <p className="text-slate-700 text-lg leading-8">
               Experience the advantage of an all-inclusive project solution,
               where excellence, speed, and responsiveness converge to ensure the
               highest quality outcome.
@@ -43,19 +43,19 @@ export function Experience() {
               <li>
                 <div className="relative pb-24 lg:pb-20">
                   <span
-                    className="absolute top-24 left-10 bottom-4 -ml-px border border-dashed border-slate-300"
+                    className="border-slate-300 absolute bottom-4 left-10 top-24 -ml-px border border-dashed"
                     aria-hidden="true"
                   ></span>
                   <div className="relative flex space-x-7">
                     <div>
-                      <span className="flex h-20 w-20 items-center justify-center rounded-full bg-light dark:bg-dark shadow-lg">
+                      <span className="flex h-20 w-20 items-center justify-center rounded-full bg-light shadow-lg dark:bg-dark">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="24"
                           height="24"
                           viewBox="0 0 24 24"
                           fill="none"
-                          className="h-6 w-6 text-sky-50"
+                          className="text-sky-50 h-6 w-6"
                         >
                           <g clipPath="url(#clip0_112_3)">
                             <path
@@ -82,10 +82,10 @@ export function Experience() {
                       </span>
                     </div>
                     <div>
-                      <h3 className="font-display text-xl font-medium text-slate-900 ">
+                      <h3 className="font-display text-slate-900 text-xl font-medium ">
                         Excellence
                       </h3>
-                      <p className="mt-2.5 text-base text-slate-700">
+                      <p className="text-slate-700 mt-2.5 text-lg ">
                         I take pride in doing things well. All client work is
                         done with the best quality possible.
                       </p>
@@ -96,19 +96,19 @@ export function Experience() {
               <li>
                 <div className="relative pb-24 lg:pb-20">
                   <span
-                    className="absolute top-24 left-10 bottom-4 -ml-px border border-dashed border-slate-300"
+                    className="border-slate-300 absolute bottom-4 left-10 top-24 -ml-px border border-dashed"
                     aria-hidden="true"
                   ></span>
                   <div className="relative flex space-x-7">
                     <div>
-                      <span className="flex h-20 w-20 items-center justify-center rounded-full bg-light dark:bg-dark shadow-lg">
+                      <span className="flex h-20 w-20 items-center justify-center rounded-full bg-light shadow-lg dark:bg-dark">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="24"
                           height="24"
                           viewBox="0 0 24 24"
                           fill="none"
-                          className="h-6 w-6 text-sky-50"
+                          className="text-sky-50 h-6 w-6"
                         >
                           <g clipPath="url(#clip0_112_53)">
                             <path
@@ -153,12 +153,12 @@ export function Experience() {
                       </span>
                     </div>
                     <div>
-                      <h3 className="font-display text-xl font-medium text-slate-900 ">
+                      <h3 className="font-display text-slate-900 text-xl font-medium ">
                         Speed
                       </h3>
-                      <p className="mt-2.5 text-base text-slate-700">
-                    
-                        I  am a hard worker and efficient and I strive to meet project deadlines.
+                      <p className="text-slate-700 mt-2.5 text-lg ">
+                        I am a hard worker and efficient and I strive to meet
+                        project deadlines.
                       </p>
                     </div>
                   </div>
@@ -168,14 +168,14 @@ export function Experience() {
                 <div className="relative">
                   <div className="relative flex space-x-7">
                     <div>
-                      <span className="flex h-20 w-20 items-center justify-center rounded-full bg-light dark:bg-dark shadow-lg">
+                      <span className="flex h-20 w-20 items-center justify-center rounded-full bg-light shadow-lg dark:bg-dark">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="24"
                           height="24"
                           viewBox="0 0 24 24"
                           fill="none"
-                          className="h-6 w-6 text-sky-50"
+                          className="text-sky-50 h-6 w-6"
                         >
                           <g clipPath="url(#clip0_112_46)">
                             <path
@@ -223,12 +223,12 @@ export function Experience() {
                       </span>
                     </div>
                     <div>
-                      <h3 className="font-display text-xl font-medium text-slate-900 ">
+                      <h3 className="font-display text-slate-900 text-xl font-medium ">
                         Responsiveness
                       </h3>
-                      <p className="mt-2.5 text-base text-slate-700">
-                        Clients can rely on me to be responsive and clear while working together.
-                  
+                      <p className="text-slate-700 mt-2.5 text-lg ">
+                        Clients can rely on me to be responsive and clear while
+                        working together.
                       </p>
                     </div>
                   </div>
@@ -241,7 +241,7 @@ export function Experience() {
                   height="83"
                   viewBox="0 0 81 83"
                   fill="none"
-                  className="relative -top-2 h-auto w-20 text-slate-600"
+                  className="text-slate-600 relative -top-2 h-auto w-20"
                 >
                   <g clipPath="url(#clip0_112_68)">
                     <path
@@ -262,14 +262,14 @@ export function Experience() {
                     </clipPath>
                   </defs>
                 </svg>
-                <span className="inline-block max-w-[220px] -rotate-12 transform font-writing text-2xl tracking-wide text-slate-600">
+                <span className="font-writing text-slate-600 inline-block max-w-[220px] -rotate-12 transform text-2xl tracking-wide">
                   What differentiates me from others
                 </span>
               </div>
             </ul>
           </div>
           <div className="lg:col-span-8 lg:pl-8 xl:pl-24">
-            <div className="aspect-w-3 aspect-h-2 relative w-full">
+            <div className="aspect-h-2 aspect-w-3 relative w-full">
               {/*<Image*/}
               {/*  className="h-full w-full rounded-3xl object-cover object-center"*/}
               {/*  src={image}*/}
@@ -281,14 +281,14 @@ export function Experience() {
               {/*  sizes="(min-width: 1280px) 705.34px, (min-width: 1024px) calc((100vw - 64px) * 0.6667 - 32px), (min-width: 616px) 36rem, calc(100vw - 40px)"*/}
               {/*/>*/}
               <div>
-                <div className="absolute top-1/2 left-1/2 h-32 w-32 -translate-x-1/2 -translate-y-1/2 rounded-full bg-light/50 backdrop-blur-sm lg:h-44 lg:w-44">
+                <div className="absolute left-1/2 top-1/2 h-32 w-32 -translate-x-1/2 -translate-y-1/2 rounded-full bg-light/50 backdrop-blur-sm lg:h-44 lg:w-44">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="145"
                     height="145"
                     viewBox="0 0 145 145"
                     fill="none"
-                    className="absolute inset-4 h-24 w-24 animate-spin-slow text-slate-900/90 lg:h-36 lg:w-36"
+                    className="text-slate-900/90 absolute inset-4 h-24 w-24 animate-spin-slow lg:h-36 lg:w-36"
                   >
                     <path
                       d="M56.5817 14.6547L56.1606 12.8143L60.98 11.7114L61.4011 13.5518L56.5817 14.6547Z"
@@ -380,15 +380,16 @@ export function Experience() {
                     />
                   </svg>
                   <Link
-                      href='https://drive.google.com/file/d/1LuaxMBleMu0QLmx7MjNY2r4fhE3nZSya/view?usp=sharing'
-                      target="_blank"
-                      className="relative top-1/2 left-1/2 inline-flex h-12 w-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-light dark:bg-dark duration-200 hover:bg-slate-800 lg:h-20 lg:w-20">
+                    href="https://drive.google.com/file/d/1LuaxMBleMu0QLmx7MjNY2r4fhE3nZSya/view?usp=sharing"
+                    target="_blank"
+                    className="hover:bg-slate-800 relative left-1/2 top-1/2 inline-flex h-12 w-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-light duration-200 dark:bg-dark lg:h-20 lg:w-20"
+                  >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="32"
                       height="32"
                       viewBox="0 0 32 32"
-                      className="h-5 w-5 text-white lg:h-7 lg:w-7"
+                      className="text-white h-5 w-5 lg:h-7 lg:w-7"
                     >
                       <g
                         strokeLinecap="round"
@@ -413,21 +414,21 @@ export function Experience() {
                     </svg>
                   </Link>
                 </div>
-                <div className="absolute bottom-0 right-1/2 grid w-max translate-x-1/2 translate-y-3/4 grid-cols-2 gap-5 rounded-2xl bg-sky-700/90 px-6 py-8 text-center backdrop-blur-sm sm:translate-y-1/2 sm:gap-12 sm:p-10 lg:right-20 lg:translate-x-0">
+                <div className="bg-sky-700/90 absolute bottom-0 right-1/2 grid w-max translate-x-1/2 translate-y-3/4 grid-cols-2 gap-5 rounded-2xl px-6 py-8 text-center backdrop-blur-sm sm:translate-y-1/2 sm:gap-12 sm:p-10 lg:right-20 lg:translate-x-0">
                   <div className="flex flex-col gap-1">
-                    <dt className="text-sm font-semibold leading-6 text-sky-50">
+                    <dt className="text-sky-50 text-sm font-semibold leading-6">
                       Years of experience
                     </dt>
-                    <dd className="order-first text-3xl font-extrabold text-white sm:text-4xl">
-                   4+
+                    <dd className="text-white order-first text-3xl font-extrabold sm:text-4xl">
+                      4+
                     </dd>
                   </div>
 
                   <div className="flex flex-col gap-1">
-                    <dt className="text-sm font-semibold leading-6 text-sky-50">
+                    <dt className="text-sky-50 text-sm font-semibold leading-6">
                       Projects completed
                     </dt>
-                    <dd className="order-first text-3xl font-extrabold text-white sm:text-4xl">
+                    <dd className="text-white order-first text-3xl font-extrabold sm:text-4xl">
                       12
                     </dd>
                   </div>
@@ -437,7 +438,7 @@ export function Experience() {
                   width="82"
                   height="84"
                   viewBox="0 0 82 84"
-                  className="absolute -top-8 -right-8 h-auto w-20 text-slate-700"
+                  className="text-slate-700 absolute -right-8 -top-8 h-auto w-20"
                 >
                   <g clipPath="url(#clip0_102_2463)">
                     <path
