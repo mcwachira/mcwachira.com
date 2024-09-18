@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { format, parseISO } from 'date-fns'
 import {
   WebDevelopmentIcon,
+  ZohoIcon,
   TutorialIcon,
   BusinessIcon,
   ContentCreationIcon,
@@ -10,54 +11,55 @@ import {
 
 const iconOptions = {
   'Web Development': WebDevelopmentIcon,
-  Business: BusinessIcon,
+  Zoho: ZohoIcon,
+  ' Business': BusinessIcon,
   'Content Creation': ContentCreationIcon,
   Tutorials: TutorialIcon,
 }
 
 export function Post({ post }) {
   const categorySlug = post.category.replace(/ /g, '-').toLowerCase()
-  const CategoryIcon = iconOptions[post.category]
+  // const CategoryIcon = iconOptions[post.category]
   console.log(post.url)
 
   return (
-    <article className="flex flex-col items-start justify-between shadow-sm rounded-2xl bg-slate-50 shadow-sky-100/50 ring-1 ring-slate-100">
+    <article className="bg-slate-50 shadow-sky-100/50 ring-slate-100 flex flex-col items-start justify-between rounded-2xl shadow-sm ring-1">
       <div className="w-full px-4 pt-4">
         <Link
           href={post.url}
-          className="relative block w-full overflow-hidden group aspect-h-9 aspect-w-16 rounded-xl md:aspect-h-2 md:aspect-w-3"
+          className="group aspect-h-9 aspect-w-16 relative block w-full overflow-hidden rounded-xl md:aspect-h-2 md:aspect-w-3"
         >
           <Image
             src={post.image}
             alt={post.title}
             fill={true}
-            className="object-cover w-full transition duration-300 rounded-xl bg-slate-100 group-hover:scale-105"
+            className="bg-slate-100 w-full rounded-xl object-cover transition duration-300 group-hover:scale-105"
             sizes="(min-width: 1280px) 22.5rem, (min-width: 1024px) 33vw, (min-width: 768px) calc(50vw - 2.5rem), (min-width: 640px) 30rem, calc(100vw - 4.5rem)"
           />
-          <div className="absolute inset-0 rounded-xl ring-1 ring-inset ring-slate-900/5"></div>
+          <div className="ring-slate-900/5 absolute inset-0 rounded-xl ring-1 ring-inset"></div>
         </Link>
       </div>
 
-      <div className="relative flex flex-col flex-1 px-5 pt-8 pb-10 group xl:px-7">
+      <div className="group relative flex flex-1 flex-col px-5 pb-10 pt-8 xl:px-7">
         <Link
           href={`/blog/categories/${categorySlug}`}
-          className="group relative z-10 flex items-center gap-2.5 text-md  text-sky-700 transition duration-200 ease-in-out hover:text-sky-600"
+          className="text-sky-700 hover:text-sky-600 group relative z-10 flex items-center  gap-2.5 text-md transition duration-200 ease-in-out"
         >
-          <CategoryIcon className="w-4 h-4 text-sky-600" />
+          {/* <CategoryIcon className="w-4 h-4 text-sky-600" /> */}
           {post.category}
         </Link>
         <div className="flex-1">
-          <h3 className="mt-4 text-xl font-medium leading-normal transition duration-200 ease-in-out font-display text-slate-900 decoration-slate-400 group-hover:text-sky-900">
+          <h3 className="font-display text-slate-900 decoration-slate-400 group-hover:text-sky-900 mt-4 text-xl font-medium leading-normal transition duration-200 ease-in-out">
             <Link href={post.url}>
               <span className="absolute inset-0"></span>
               {post.title}
             </Link>
           </h3>
-          <p className="mt-3.5 line-clamp-3 text-md leading-7 text-slate-700">
+          <p className="text-slate-700 mt-3.5 line-clamp-3 text-md leading-7">
             {post.description}
           </p>
         </div>
-        <div className="flex items-center gap-3 mt-8 text-sm text-slate-500">
+        <div className="text-slate-500 mt-8 flex items-center gap-3 text-sm">
           <span className="flex items-center gap-1.5">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -65,7 +67,7 @@ export function Post({ post }) {
               viewBox="0 0 24 24"
               strokeWidth="1.75"
               stroke="currentColor"
-              className="w-5 h-5 text-slate-400"
+              className="text-slate-400 h-5 w-5"
             >
               <path
                 strokeLinecap="round"
@@ -84,7 +86,7 @@ export function Post({ post }) {
               viewBox="0 0 24 24"
               strokeWidth="1.75"
               stroke="currentColor"
-              className="w-5 h-5 text-slate-400"
+              className="text-slate-400 h-5 w-5"
             >
               <path
                 strokeLinecap="round"

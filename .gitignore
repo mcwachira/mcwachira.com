@@ -32,7 +32,7 @@ yarn-error.log*
 .vercel
 
 # content layer cache
-.contentlayer/
+./contentlayer/
 
 #intelige
 ./idea/
