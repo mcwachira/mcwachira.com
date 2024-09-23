@@ -96,13 +96,15 @@ const icons = [
   }
 
 
-  interface toolsProps{
-   icon:{};
-    alt:string;
-    index:number
-  }
+import { StaticImageData } from 'next/image';
 
-  function StackIcon({ icon, alt, index }:any) {
+interface StackIconProps {
+    icon: string | StaticImageData;  // Supports both image URLs and static imports
+    alt: string;  // Alt text is always a string
+    index: number;  // Used to calculate the top margin
+}
+
+  function StackIcon({ icon, alt, index }:StackIconProps) {
     const mtClass = getTopMargin(index)
     return (
       <div
