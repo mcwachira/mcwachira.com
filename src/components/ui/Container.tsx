@@ -1,6 +1,12 @@
 import clsx from 'clsx'
+import React from "react";
 
-export function Container({ className, ...props }) {
+
+interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
+    className?: string;  // Make className optional
+}
+
+export function Container({ className, ...props }: ContainerProps) {
   return (
     <div
       className={clsx(
