@@ -32,7 +32,9 @@ yarn-error.log*
 .vercel
 
 # content layer cache
-/.contentlayer/*
+/.contentlayer
+/.contentlayer/.cache
+/.contentlayer/.cache/v0.3.4
 
 #intellia
 .idea/
@@ -42,5 +44,4 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-/.contentlayer/.cache
-/.contentlayer/.cache/v0.3.4
+

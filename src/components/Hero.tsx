@@ -21,32 +21,32 @@ import {
 } from '@/components/SocialIcons'
 import React from 'react'
 import { Url } from 'next/dist/shared/lib/router/router'
+import { UrlObject } from 'url';
 import { useTheme } from 'next-themes'
 import clsx from 'clsx'
 
-interface socialLinkTypes {
-  props: React.ReactNode
-  icon: any
-  href: {
-    href: string
-    'aria-label': string
-    icon: (props: any) => Element
-  }
+
+
+interface SocialLinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  href: string | undefined;
+  className?: string;  // Optional className if needed
 }
 
-function SocialLink({ icon: Icon, ...props }: any) {
+function SocialLink({ icon: Icon, href, className = '', ...props }: SocialLinkProps) {
   return (
-    <Link
-      className="border-slate-200 hover:bg-slate-50 flex h-11 w-11 items-center justify-center rounded-full border duration-200"
-      {...props}
-    >
-      <Icon className="fill-slate-600 group-hover:fill-slate-700 h-4 w-4 transition" />
-    </Link>
-  )
+      <Link
+          href={href}
+          className={`border-slate-200 hover:bg-slate-50 flex h-11 w-11 items-center justify-center rounded-full border duration-200 ${className}`}
+          {...props}  // Remaining props passed to the Link
+      >
+        <Icon className="fill-slate-600 group-hover:fill-slate-700 h-4 w-4 transition" />
+      </Link>
+  );
 }
 
 export function Hero() {
-  const { theme, setTheme } = useTheme()
+
   return (
     <section className="relative overflow-hidden bg-light py-20 dark:bg-dark lg:py-24">
       {/* Light blue gradient background */}
