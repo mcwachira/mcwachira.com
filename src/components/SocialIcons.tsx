@@ -1,6 +1,8 @@
+import React, { SVGProps } from 'react'
 
+interface SocialIconProps extends React.SVGProps<SVGSVGElement>{}
 
-export function TwitterIcon(props:any) {
+export function TwitterIcon(props:SocialIconProps) {
     return (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -17,7 +19,7 @@ export function TwitterIcon(props:any) {
     )
   }
   
-  export function InstagramIcon(props:any) {
+  export function InstagramIcon(props:SocialIconProps) {
     return (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -36,7 +38,7 @@ export function TwitterIcon(props:any) {
     )
   }
   
-  export function FacebookIcon(props:any) {
+  export function FacebookIcon(props:SocialIconProps) {
     return (
       <svg
         height="24"
@@ -53,7 +55,7 @@ export function TwitterIcon(props:any) {
     )
   }
   
-  export function GitHubIcon(props:any) {
+  export function GitHubIcon(props:SocialIconProps) {
     return (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -79,7 +81,7 @@ export function TwitterIcon(props:any) {
     )
   }
   
-  export function LinkedInIcon(props:any) {
+  export function LinkedInIcon(props:SocialIconProps) {
     return (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -94,7 +96,7 @@ export function TwitterIcon(props:any) {
     )
   }
   
-  export function DribbbleIcon(props:any) {
+  export function DribbbleIcon(props:SocialIconProps) {
     return (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -116,7 +118,7 @@ export function TwitterIcon(props:any) {
   }
 
     
-  export function GithubIcon(props:any) {
+  export function GithubIcon(props:SocialIconProps) {
     return (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -133,7 +135,7 @@ export function TwitterIcon(props:any) {
     )
   }
   
-  export function EmailIcon(props:any) {
+  export function EmailIcon(props:SocialIconProps) {
     return (
       <svg
         xmlns="http://www.w3.org/2000/svg"

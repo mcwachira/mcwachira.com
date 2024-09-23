@@ -1,6 +1,7 @@
 import React from 'react'
 
-export function WebDevelopmentIcon(props: any) {
+interface CategoryIconProps extends React.SVGProps<SVGSVGElement>{}
+export function WebDevelopmentIcon(props: CategoryIconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -29,7 +30,7 @@ export function WebDevelopmentIcon(props: any) {
   )
 }
 
-export function ZohoIcon(props: any) {
+export function ZohoIcon(props: CategoryIconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -148,7 +149,7 @@ export function ZohoIcon(props: any) {
   )
 }
 
-export function ConsultingIcon(props: any) {
+export function ConsultingIcon(props: CategoryIconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -176,7 +177,7 @@ export function ConsultingIcon(props: any) {
   )
 }
 
-export function ContentCreationIcon(props: any) {
+export function ContentCreationIcon(props: CategoryIconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -204,7 +205,7 @@ export function ContentCreationIcon(props: any) {
   )
 }
 
-export function BrandingIcon(props: any) {
+export function BrandingIcon(props: CategoryIconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -236,7 +237,7 @@ export function BrandingIcon(props: any) {
   )
 }
 
-export function ProductDevelopmentIcon(props: any) {
+export function ProductDevelopmentIcon(props: CategoryIconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -263,7 +264,7 @@ export function ProductDevelopmentIcon(props: any) {
     </svg>
   )
 }
-export function BusinessIcon(props: any) {
+export function BusinessIcon(props: CategoryIconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -291,7 +292,7 @@ export function BusinessIcon(props: any) {
   )
 }
 
-export function TutorialIcon(props: any) {
+export function TutorialIcon(props: CategoryIconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

@@ -2,8 +2,8 @@
 import Link from 'next/link'
 import Image from 'next/image'
 
-import { Button } from './Button'
-import { Container } from './ui/Container'
+import { Button } from '@/components/Button'
+import { Container } from '@/components/ui/Container'
 import heroPortrait from '@/images/1.jpg'
 import javascript from '@/images/logos/icons/javascript.png'
 import react from '@/images/logos/icons/react.png'
@@ -18,7 +18,7 @@ import {
   GitHubIcon,
   InstagramIcon,
   TwitterIcon,
-} from './SocialIcons'
+} from '@/components/SocialIcons'
 import React from 'react'
 import { Url } from 'next/dist/shared/lib/router/router'
 import { useTheme } from 'next-themes'
