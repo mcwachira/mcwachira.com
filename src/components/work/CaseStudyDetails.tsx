@@ -1,6 +1,11 @@
 import { Button } from '@/components/Button'
+import React from "react";
 
-function Detail({ label, data }) {
+interface DetailsProps {
+  label:string,
+  data?:string
+}
+function Detail({ label, data }:DetailsProps) {
   return (
     <div>
       <dt className="text-lg font-medium font-display text-slate-900">
@@ -11,6 +16,22 @@ function Detail({ label, data }) {
   )
 }
 
+interface ClientDetails {
+  description?: string;
+  industry?: string;
+  companySize?: string;
+  headquarters?: string;
+}
+
+interface CaseStudyDetailsProps {
+  client?: ClientDetails;
+  description: string;
+  projectDuration?: string;
+  projectURL: string;
+  githubLink?: string;
+  children?: React.ReactNode;
+}
+
 export function CaseStudyDetails({
   client,
   description,
@@ -18,16 +39,16 @@ export function CaseStudyDetails({
   projectURL,
     githubLink,
   children,
-}) {
+}:CaseStudyDetailsProps) {
   return (
     <section className="py-16 overflow-hidden bg-light dark:bg-dark sm:py-20 lg:py-28">
       <div className="grid max-w-lg px-5 mx-auto sm:max-w-2xl sm:px-6 lg:max-w-6xl lg:grid-cols-10 lg:px-8 xl:px-12">
         <div className="order-2 pt-8 mt-8 border-t border-slate-200 lg:order-1 lg:col-span-3 lg:mt-0 lg:border-0 lg:pr-8 lg:pt-0">
           <dl className="space-y-8">
-            <Detail label="Client" data={client.description} />
-            <Detail label="Industry" data={client.industry} />
-            <Detail label="Company Size" data={client.companySize} />
-            <Detail label="Headquarters" data={client.headquarters} />
+            <Detail label="Client" data={client?.description} />
+            <Detail label="Industry" data={client?.industry} />
+            <Detail label="Company Size" data={client?.companySize} />
+            <Detail label="Headquarters" data={client?.headquarters} />
             <Detail label="Project Duration" data={projectDuration} />
           </dl>
           <Button

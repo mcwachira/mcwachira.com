@@ -2,8 +2,10 @@ import Image from 'next/image'
 import {Container} from "../ui/Container";
 
 
-
-export function CaseStudyGallery({ images }) {
+interface CaseStudyGalleryProps {
+    images:[]
+}
+export function CaseStudyGallery({ images }:CaseStudyGalleryProps ) {
   return (
     <section className="py-16 overflow-hidden bg-slate-50 sm:py-24 lg:py-28 xl:py-32">
       <Container>

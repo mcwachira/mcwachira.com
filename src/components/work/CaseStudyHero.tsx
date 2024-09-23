@@ -2,8 +2,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import { Container } from '@/components/ui/Container'
-
-function Tag({ tag }) {
+interface TagProps {
+    tag:string
+}
+function Tag({ tag }:TagProps) {
   const tagSlug = tag.replace(/ /g, '-').toLowerCase()
   const href = `/work/categories/${tagSlug}`
 
@@ -19,7 +21,13 @@ function Tag({ tag }) {
   )
 }
 
-export function CaseStudyHero({ title, subtitle, tags, coverImage }) {
+interface CaseStudyHeroProps  {
+    title:string,
+    subtitle:string,
+    tags:[],
+    coverImage:string
+}
+export function CaseStudyHero({ title, subtitle, tags, coverImage }:CaseStudyHeroProps) {
   return (
     <section className="pt-16 overflow-hidden bg-light dark:bg-dark sm:pt-20 lg:pt-28">
       <Container>
