@@ -1,9 +1,9 @@
-import {getAllTags} from "../../../../../lib/caseStudies";
-import {CaseStudies} from "../../../../../components/work/CaseStudies";
+import {getAllTags} from "@/lib/caseStudies";
+import {CaseStudies} from "@/components/work/CaseStudies";
 import {allCaseStudies} from "contentlayer/generated";
 
 
-const parseTag = (tagSlug) => {
+const parseTag = (tagSlug:string) => {
   const tag = tagSlug
     .replace(/-/g, ' ')
     .split(' ')
@@ -17,14 +17,14 @@ export const generateStaticParams = async () => {
   return tags.map((tag) => ({ tagSlug: tag.replace(/ /g, '-').toLowerCase() }))
 }
 
-export async function generateMetadata({ params }) {
+export async function generateMetadata({ params:any }) {
   const tag = parseTag(params.tagSlug)
   return { title: tag }
 }
 
-export default async function WorkCategoryPage({ params }) {
+export default async function WorkCategoryPage({ params:any }) {
   const caseStudies = allCaseStudies.filter((caseStudy) =>
-    caseStudy.tags.includes(parseTag(params.tagSlug))
+    caseStudy?.tags.includes(parseTag(params?.tagSlug))
   )
 
   return <CaseStudies caseStudies={caseStudies} />
