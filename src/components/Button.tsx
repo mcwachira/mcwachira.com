@@ -1,11 +1,10 @@
-import Link from 'next/link'
-import clsx from 'clsx'
-import { Url } from 'next/dist/shared/lib/router/router'
+import { ReactNode } from 'react';
+import Link from 'next/link';
+import clsx from 'clsx';
+import { Url } from 'next/dist/shared/lib/router/router';
 
-// Define the possible variants
 type Variant = 'primary' | 'secondary' | 'primaryOnDark';
 
-// Ensure variantStyles has keys that match the Variant union
 const variantStyles: Record<`${Variant}ClassName`, string> = {
   primaryClassName: '',
   secondaryClassName:
@@ -14,21 +13,27 @@ const variantStyles: Record<`${Variant}ClassName`, string> = {
 }
 
 interface ButtonProps {
-  variant?: Variant; // Make variant optional and restrict it to valid values
+  variant?: Variant;
   href?: Url;
   className?: string;
+  type?: 'button' | 'submit' | 'reset'; // Add type for HTML button types
+  children?: ReactNode; // Add children prop
 }
 
-export function Button({ variant = 'primary', className, href, ...props }: ButtonProps) {
+export function Button({ variant = 'primary', className, href, type = 'button', children, ...props }: ButtonProps) {
   className = clsx(
       'inline-flex items-center rounded-full gap-2.5 justify-center px-7 py-3 text-md font-semibold leading-none outline-offset-2 transition-all duration-200 ease-in-out active:transition-none',
-      variantStyles[`${variant}ClassName`], // Type-safe key lookup
+      variantStyles[`${variant}ClassName`],
       className
-  )
+  );
 
   return href ? (
-      <Link href={href} className={className} {...props} />
+      <Link href={href} className={className} {...props}>
+        {children}
+      </Link>
   ) : (
-      <button className={className} {...props} />
-  )
+      <button type={type} className={className} {...props}>
+        {children}
+      </button>
+  );
 }
