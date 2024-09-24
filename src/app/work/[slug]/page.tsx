@@ -1,26 +1,27 @@
-import { allCaseStudies } from "contentlayer/generated";
+import {allCaseStudies} from "contentlayer/generated";
 import { CaseStudyHero } from "@/components/work/CaseStudyHero";
 import { CaseStudyDetails } from "@/components/work/CaseStudyDetails";
 import { MdxContent } from "@/components/mdx/MdxContent";
 import { CaseStudyNavigation } from "@/components/work/CaseStudyNavigation";
 import Footer from "@/components/ui/Footer";
+import {CaseStudy} from "@/types/types";
 
 // Define the CaseStudy interface
-interface CaseStudy {
-    slug: string;
-    title: string;
-    subtitle: string;
-    tags: string[];
-    coverImage: string;
-    client: string;
-    description: string;
-    projectDuration: string;
-    projectURL: string;
-    githubLink?: string; // Optional property
-    body: {
-        code: string; // Assuming body has a code property
-    };
-}
+// interface CaseStudy {
+//     slug: string;
+//     title: string;
+//     subtitle: string;
+//     tags: string[];
+//     coverImage: string;
+//     client: string;
+//     description: string;
+//     projectDuration: string;
+//     projectURL: string;
+//     githubLink?: string; // Optional property
+//     body: {
+//         code: string; // Assuming body has a code property
+//     };
+// }
 
 // Define the Params interface for generateMetadata
 interface MetadataParams {
