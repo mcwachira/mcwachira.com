@@ -65,8 +65,12 @@ export default function BlogPost({ params }: BlogPostProps) {
                     href={`/articles/${categorySlug}#articles`}
                     className="group inline-flex items-center justify-center gap-3.5 text-base leading-5 tracking-wide text-sky-700 transition duration-200 ease-in-out hover:text-sky-600 sm:text-lg"
                 >
-                  <CategoryIcon className="h-[18px] w-[18px] text-sky-700/90 transition duration-200 group-hover:text-sky-600 sm:h-5 sm:w-5" />
-                  {post?.category}
+                  {CategoryIcon ? (
+                      <CategoryIcon className="h-[18px] w-[18px] text-sky-700/90 transition duration-200 group-hover:text-sky-600 sm:h-5 sm:w-5" />
+                  ) : (
+                      <div className="h-[18px] w-[18px] sm:h-5 sm:w-5" /> // Placeholder if no icon is available
+                  )}
+                  {post.category}
                 </Link>
                 <h1 className="mt-6 text-center font-display text-4xl font-semibold leading-tight text-slate-900 sm:text-5xl sm:leading-tight">
                   {post?.title}
