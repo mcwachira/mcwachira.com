@@ -1,4 +1,4 @@
-// BlogPost.tsx
+import React, { FC } from "react";
 import { allPosts } from "contentlayer/generated";
 import { BusinessIcon, ContentCreationIcon, TutorialIcon, WebDevelopmentIcon } from "@/components/CategoryIcons";
 import Link from "next/link";
@@ -8,7 +8,7 @@ import { PostFooter } from "./PostFooter";
 import Footer from "@/components/ui/Footer";
 import Image from "next/image";
 import { PostTypes } from "@/types/post";
-import React from "react"; // Import your PostType
+
 
 const iconOptions: { [key: string]: React.FC<any> } = {
   'Web Development': WebDevelopmentIcon,
