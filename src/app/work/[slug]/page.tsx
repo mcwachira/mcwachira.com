@@ -62,7 +62,7 @@ export default function CaseStudyPage({ params }: MetadataParams) {
             <CaseStudyHero
                 title={caseStudy.title}
                 subtitle={caseStudy.subtitle}
-                tags={caseStudy.tags}
+                tags={caseStudy.tags ?? []}
                 coverImage={caseStudy.coverImage}
             />
             <CaseStudyDetails
