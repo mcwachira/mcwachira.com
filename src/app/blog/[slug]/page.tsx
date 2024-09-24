@@ -40,7 +40,10 @@ interface BlogPostProps {
 export default function BlogPost({ params }: BlogPostProps) {
   const post = allPosts.find((post: PostTypes) => post?.slug === params.slug);
   const categorySlug = post?.category.replace(/ /g, '-').toLowerCase();
-  const CategoryIcon = iconOptions[post?.category];
+
+
+  // Ensure the category is valid before accessing iconOptions
+  const CategoryIcon = post?.category && iconOptions[post?.category];
 
   return (
       <>
