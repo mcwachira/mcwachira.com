@@ -1,8 +1,9 @@
-import {Container} from "../../../components/ui/Container";
-import {Tabs} from "../../../components/Tabs";
-import Pagination from "../../../components/Pagination";
-import Footer from "../../../components/ui/Footer";
-import {getFeaturedTags} from "../../../lib/caseStudies";
+import {Container} from "@/components/ui/Container";
+import {Tabs} from "@/components/Tabs";
+import Pagination from "@/components/Pagination";
+import Footer from "@/components/ui/Footer";
+import {getFeaturedTags} from "@/lib/caseStudies";
+import React from "react";
 
 export const metadata = {
   title: {
@@ -13,7 +14,7 @@ export const metadata = {
     'Explore an impressive collection of projects showcasing a my diverse skill set, innovative solutions, and successful projects.',
 }
 
-export default function WorkLayout({ children }) {
+export default function WorkLayout({children,}: { children: React.ReactNode }) {
   return (
     <>
       <section className="overflow-hidden bg-ligth dark:bg-dark py-16 sm:pt-24 lg:pt-32">

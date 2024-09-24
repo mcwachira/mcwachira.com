@@ -11,6 +11,7 @@ import Template from '@/app/template'
 import siteMetadata from '@/lib/siteMetaData'
 import Navbar from '@/components/ui/Header/Navbar'
 import Footer from '@/components/ui/Footer'
+import React from "react";
 
 const inter = Inter({ subsets: ['latin'] })
 
