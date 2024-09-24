@@ -21,12 +21,13 @@ function Tag({ tag }:TagProps) {
   )
 }
 
-interface CaseStudyHeroProps  {
-    title:string,
-    subtitle:string,
-    tags:[],
-    coverImage:string
+interface CaseStudyHeroProps {
+    title: string;
+    subtitle: string;
+    tags: string[];  // Allow an array of strings
+    coverImage: string;
 }
+
 export function CaseStudyHero({ title, subtitle, tags, coverImage }:CaseStudyHeroProps) {
   return (
     <section className="pt-16 overflow-hidden bg-light dark:bg-dark sm:pt-20 lg:pt-28">
