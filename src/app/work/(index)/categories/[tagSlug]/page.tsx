@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: { params: Params }) {
 
 export default async function WorkCategoryPage({ params }: { params: Params }) {
   const caseStudies = allCaseStudies.filter((caseStudy) =>
-      caseStudy?.tags.includes(parseTag(params.tagSlug))
+      caseStudy?.tags?.includes(parseTag(params.tagSlug))
   );
 
   return <CaseStudies caseStudies={caseStudies} />;
