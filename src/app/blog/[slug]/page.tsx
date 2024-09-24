@@ -43,7 +43,9 @@ export default function BlogPost({ params }: BlogPostProps) {
 
 
   // Ensure the category is valid before accessing iconOptions
-  const CategoryIcon: FC<any> | undefined = post.category ? iconOptions[post.category] : undefined;
+  const CategoryIcon = post.category ? iconOptions[post.category] : undefined;
+
+
 
 
   return (
