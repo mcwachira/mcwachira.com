@@ -44,7 +44,7 @@ export default function BlogPost({ params }: BlogPostProps) {
 
   let CategoryIcon;
 
-  if (post.category) {
+  if (post?.category) {
     CategoryIcon = iconOptions[post.category];
   } else {
     CategoryIcon = undefined;
