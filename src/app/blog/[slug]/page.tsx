@@ -42,10 +42,15 @@ export default function BlogPost({ params }: BlogPostProps) {
   const categorySlug = post?.category.replace(/ /g, '-').toLowerCase();
 
 
-  // Ensure the category is valid before accessing iconOptions
-  const CategoryIcon = post.category ? iconOptions[post.category] : undefined;
+  let CategoryIcon;
 
-
+  if (post.category) {
+    CategoryIcon = iconOptions[post.category];
+  } else {
+    CategoryIcon = undefined;
+  }
+  // // Ensure the category is valid before accessing iconOptions
+  // const CategoryIcon: FC<any> | undefined = post.category ? iconOptions[post.category] : undefined;
 
 
   return (
