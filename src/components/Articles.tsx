@@ -1,7 +1,8 @@
-import  Article  from '@/components/Article/Article'
-import  Pagination  from '@/components/Pagination'
-import  Tabs  from '@/components/Tabs'
-import { Container } from '@/components/Common/Container'
+import Pagination from "@/components/Pagination";
+import { Container } from "./ui/Container";
+import {Tabs} from "@/components/Tabs";
+import Article from "@/components/article/Article";
+
 
 export function Articles({ articles, categories }:any) {
   return (
