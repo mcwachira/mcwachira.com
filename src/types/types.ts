@@ -16,3 +16,10 @@ export type Service = {
   timeToRead:string;
 
   }
+
+export type CaseStudy = {
+    slug: string;
+    title: string;
+    tags?: string[]; // tags can be string[] or undefined
+    // other fields...
+};

@@ -3,7 +3,7 @@ import { CaseStudyHero } from "@/components/work/CaseStudyHero";
 import { CaseStudyDetails } from "@/components/work/CaseStudyDetails";
 import { MdxContent } from "@/components/mdx/MdxContent";
 import { CaseStudyNavigation } from "@/components/work/CaseStudyNavigation";
-import Footer from "../../../components/ui/Footer";
+import Footer from "@/components/ui/Footer";
 
 // Define the CaseStudy interface
 interface CaseStudy {
@@ -38,7 +38,10 @@ export async function generateMetadata({ params }: MetadataParams) {
     );
 
     if (!caseStudy) {
-        throw new Error('Case study not found');
+        return {
+            title: "Case Study Not Found",
+            description: "The requested case study could not be found.",
+        };
     }
 
     return { title: caseStudy.title, description: caseStudy.description };
@@ -50,7 +53,7 @@ export default function CaseStudyPage({ params }: MetadataParams) {
     );
 
     if (!caseStudy) {
-        return <div>Case study not found</div>; // Handle case study not found
+        return <div>Case study not found</div>; // Gracefully handle case study not found
     }
 
     return (
@@ -70,11 +73,9 @@ export default function CaseStudyPage({ params }: MetadataParams) {
             >
                 <MdxContent code={caseStudy.body.code} />
             </CaseStudyDetails>
-            {/*<CaseStudyGallery images={caseStudy.images} />*/}
-            {/*<CaseStudyTestimonial*/}
-            {/*  clientName={caseStudy.client.name}*/}
-            {/*  testimonial={caseStudy.testimonial}*/}
-            {/*/>*/}
+            {/* Optionally render other components like a gallery or testimonial */}
+            {/* <CaseStudyGallery images={caseStudy.images} /> */}
+            {/* <CaseStudyTestimonial clientName={caseStudy.client} testimonial={caseStudy.testimonial} /> */}
             <CaseStudyNavigation caseStudySlug={caseStudy.slug} />
             <Footer newsletter={false} />
         </>
