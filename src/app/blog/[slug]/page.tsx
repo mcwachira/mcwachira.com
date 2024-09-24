@@ -7,7 +7,7 @@ import { MdxContent } from "@/components/mdx/MdxContent";
 import { PostFooter } from "./PostFooter";
 import Footer from "@/components/ui/Footer";
 import Image from "next/image";
-import { PostType } from "@/types/post";
+import { PostTypes } from "@/types/post";
 import React from "react"; // Import your PostType
 
 const iconOptions: { [key: string]: React.FC<any> } = {
@@ -24,10 +24,10 @@ interface GenerateMetadataParams {
 }
 
 export const generateStaticParams = async () =>
-    allPosts.map((post: PostType) => ({ slug: post.slug }));
+    allPosts.map((post: PostTypes) => ({ slug: post.slug }));
 
 export async function generateMetadata({ params }: GenerateMetadataParams) {
-  const post = allPosts.find((post: PostType) => post.slug === params.slug);
+  const post = allPosts.find((post: PostTypes) => post.slug === params.slug);
   return { title: post.title, description: post.description };
 }
 
@@ -38,7 +38,7 @@ interface BlogPostProps {
 }
 
 export default function BlogPost({ params }: BlogPostProps) {
-  const post = allPosts.find((post: PostType) => post.slug === params.slug);
+  const post = allPosts.find((post: PostTypes) => post.slug === params.slug);
   const categorySlug = post.category.replace(/ /g, '-').toLowerCase();
   const CategoryIcon = iconOptions[post.category];
 
