@@ -2,7 +2,7 @@
 import React, {FormEvent, useState} from 'react';
 import {Button} from "@/components/Button";
 import toast from "react-hot-toast";
-import { redirect } from 'next/navigation';
+import { redirect , useRouter} from 'next/navigation';
 
 
 
@@ -10,6 +10,7 @@ function ContactForm() {
 
     const [formData, setFormData] = useState({});
 
+    const router = useRouter()
 
     const handleSubmit = async(e: FormEvent<HTMLFormElement>) => {
 
@@ -34,29 +35,25 @@ function ContactForm() {
         console.log('Form Data:', formValues);
         setFormData(formValues);
 
-        // const data  = Object.fromEntries(formData.entries())
-
-        console.log(formData)
         const response = await fetch('/api/contact', {
-
-            method:'POST',
-            headers:{
-
-                'Content-Type':'application/json',
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json', // Set the correct content type
             },
-            body:JSON.stringify(formData),
+            body: JSON.stringify(formValues), // Convert the form data to JSON
         });
 
         if(response.ok){
           toast.success('Message sent Successfully')
-            redirect('/')
+            router.push('/')
     }else {
+
             toast.error('Message not sent')
         }
     }
     return (
         <>
-            <form onSubmit={handleSubmit} className="mt-10">
+            <form onSubmit={handleSubmit} className="mt-10"   >
                 <div className="space-y-7">
                     {/* Name Input */}
                     <div>
@@ -92,27 +89,31 @@ function ContactForm() {
 
                     {/* Services Checkbox */}
                     <fieldset>
-                        <legend className="block text-md font-medium leading-6 text-slate-900">Expected services
+                        <legend className="block text-md font-medium leading-6 text-slate-900">
+                            Expected services
                         </legend>
-                        <div className="space-y-3">
+                        <div className="mt-4 space-y-3">
                             <div className="flex items-start">
-                                <input id="web-development" name="web-development" type="checkbox"
-                                       className="h-4 w-4 ..."/>
+                                <input id="web-development" name="services[]" type="checkbox"
+                                       className="h-4 w-4 rounded border-slate-300/80 bg-slate-50 text-sky-600 shadow-sm shadow-sky-100/50 focus:outline-none focus:ring-transparent"
+                                />
                                 <label htmlFor="web-development" className="ml-3 text-sm leading-6 text-slate-700">Web
                                     development</label>
                             </div>
                             <div className="flex items-start">
-                                <input id="web-design" name="web-design" type="checkbox" className="h-4 w-4 ..."/>
+                                <input id="web-design" name="services[]" type="checkbox"
+                                       className="h-4 w-4 rounded border-slate-300/80 bg-slate-50 text-sky-600 shadow-sm shadow-sky-100/50 focus:outline-none focus:ring-transparent"/>
                                 <label htmlFor="web-design" className="ml-3 text-sm leading-6 text-slate-700">Web
                                     design</label>
                             </div>
                             <div className="flex items-start">
-                                <input id="consulting" name="consulting" type="checkbox" className="h-4 w-4 ..."/>
+                                <input id="consulting" name="services[]" type="checkbox"
+                                       className="h-4 w-4 rounded border-slate-300/80 bg-slate-50 text-sky-600 shadow-sm shadow-sky-100/50 focus:outline-none focus:ring-transparent"/>
                                 <label htmlFor="consulting"
                                        className="ml-3 text-sm leading-6 text-slate-700">Consulting</label>
                             </div>
                             <div className="flex items-start">
-                                <input id="other" name="other" type="checkbox" className="h-4 w-4 ..."/>
+                                <input id="other" name="services[]" type="checkbox"/>
                                 <label htmlFor="other" className="ml-3 text-sm leading-6 text-slate-700">Other</label>
                             </div>
                         </div>
