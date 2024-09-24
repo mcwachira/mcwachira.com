@@ -70,7 +70,7 @@ export default function BlogPost({ params }: BlogPostProps) {
                   ) : (
                       <div className="h-[18px] w-[18px] sm:h-5 sm:w-5" /> // Placeholder if no icon is available
                   )}
-                  {post.category}
+                  {post?.category}
                 </Link>
                 <h1 className="mt-6 text-center font-display text-4xl font-semibold leading-tight text-slate-900 sm:text-5xl sm:leading-tight">
                   {post?.title}
