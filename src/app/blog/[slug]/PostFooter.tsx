@@ -10,8 +10,15 @@ import {
   TwitterShareButton,
   LinkedinShareButton,
 } from 'next-share'
+import React from "react";
 
-function SocialIcon({ icon: Icon, ...props }) {
+
+interface SocialLinkProps {
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  className?: string;  // Optional className if needed
+}
+
+function SocialIcon({ icon: Icon, ...props }: SocialLinkProps) {
   return (
     <span
       className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 duration-200 hover:bg-slate-50"

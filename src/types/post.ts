@@ -1,11 +1,13 @@
-export type PostTypes ={
-  post:{
-      url: string;
-    image: string;
+export interface PostTypes {
+    slug: string;
     title: string;
     description: string;
     category: string;
-    date: string;
-    timeToRead: number; // Assuming timeToRead is in minutes
+    date?: string; // or Date
+    image: string;
+    timeToRead: number; // or string
+    url: string;
+    body: {
+        code: string; // or whatever structure your body content has
+    };
 }
-};
