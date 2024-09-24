@@ -2,8 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import {MetaTypes } from '@/types/types'
-import  Navbar from '@/components/Header/Navbar'
-import Footer  from '@/components/Footer'
+
 import { formatDate } from '@/lib/formatDate'
 import { LinkedInIcon, InstagramIcon, TwitterIcon } from '@/components/SocialIcons'
 import {
@@ -13,6 +12,8 @@ import {
     ContentCreationIcon,
 } from '@/components/CategoryIcons'
 import React from 'react'
+import Footer from "@/components/ui/Footer";
+import Navbar from "@/components/ui/Header/Navbar";
 
 const iconOptions:any = {
     'Web Development': WebDevelopmentIcon,
