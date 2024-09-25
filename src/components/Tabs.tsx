@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect } from 'react'
+import React, { useEffect } from 'react'
 import Link from 'next/link'
 import clsx from 'clsx'
 import { usePathname } from 'next/navigation'
@@ -17,7 +17,7 @@ function Tab({ tabName, directory }: TabProps) {
     let tabSlug: string | undefined
     let nestedDirectory = ''
     if (!isDefaultTab) {
-        tabSlug = tabName.replace(/ /g, '-').toLowerCase()
+        tabSlug = tabName?.replace(/ /g, '-').toLowerCase()
         nestedDirectory = '/categories'
     }
     const href = isDefaultTab
