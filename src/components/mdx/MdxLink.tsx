@@ -1,5 +1,5 @@
 import Link, { LinkProps } from 'next/link';
-import { AnchorHTMLAttributes, DetailedHTMLProps } from 'react';
+import React, { AnchorHTMLAttributes, DetailedHTMLProps } from 'react';
 
 interface MdxLinkProps
     extends Omit<
