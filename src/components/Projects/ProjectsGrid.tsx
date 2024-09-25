@@ -1,12 +1,13 @@
 'use client'
 
-import { useState } from "react";
+import React, { useState } from "react";
 import ProjectSingle from "./ProjectSingle";
 import { projectsData } from "@/data/projectsData";
 import ProjectFilter from "./ProjectsFilter";
-import {Search} from '@styled-icons/ionicons-solid/Search'
 import SectionTitle from "../Common/SectionTitle";
-import { Container } from "../Common/Container";
+import {Container} from "@/components/ui/Container";
+import {Search} from "@styled-icons/bootstrap";
+
 
 
 
@@ -68,7 +69,7 @@ const ProjectsGrid = () => {
                     <div className="flex justify-between gap-2">
 
                         <span className="hidden sm:block bg-light dark:bg-dark p-2 5 shadow-sm rounded-xl cursor-pointer">
-                        <Search className="  text-body-color w-5 h-5"></Search>
+                        <Search className="text-body-color w-5 h-5"></Search>
                         </span>
 
                         <input

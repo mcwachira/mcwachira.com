@@ -6,7 +6,7 @@ import Link from 'next/link'
 const imageStyle = { maxWidth: '100%', height: 'auto' };
 
 type  ProjectProps ={
-	id:string,
+	id:number,
 	title:string,
 	category:string,
 	img:string,
