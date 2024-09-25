@@ -20,16 +20,12 @@ import {
   TwitterIcon,
 } from '@/components/SocialIcons'
 import React from 'react'
-import { Url } from 'next/dist/shared/lib/router/router'
-import { UrlObject } from 'url';
-import { useTheme } from 'next-themes'
-import clsx from 'clsx'
 
 
 
 interface SocialLinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
-  href: string | Url;
+  href: string;
   className?: string;  // Optional className if needed
 }
 
