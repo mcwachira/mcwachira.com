@@ -29,8 +29,11 @@ export function getAllTags() {
   return tags
 }
 
-export function getFeaturedTags() {
-  const tags = getAllTags()
 
-  return tags.slice(0, 4)
+export function getFeaturedTags(): string[] {
+  const tags = getAllTags();
+
+  // Filter out any undefined values and slice the first 4 valid tags
+  return tags.filter((tag): tag is string => tag !== undefined).slice(0, 4);
 }
+
