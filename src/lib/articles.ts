@@ -13,7 +13,9 @@ export async function getAllCategories() {
         }
     })
 
-    const uniqueCategories = [...new Set(repeatingCategories)]
+    // const uniqueCategories = [...new Set(repeatingCategories)]
+    const uniqueCategories = Array.from(new Set(repeatingCategories));
+
 
     const categories = uniqueCategories.sort((category1, category2) => {
         let freq1 = categoryCount.get(category1)
