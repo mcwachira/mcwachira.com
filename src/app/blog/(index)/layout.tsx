@@ -1,4 +1,4 @@
-import {getAllCategories} from "../../../lib/articles";
+import {getAllCategories} from "@/lib/articles";
 import {BlogHero} from "@/components/BlogHero";
 import {Container} from "@/components/ui/Container";
 import {Tabs} from "@/components/Tabs";
