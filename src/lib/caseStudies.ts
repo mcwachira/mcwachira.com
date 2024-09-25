@@ -13,8 +13,12 @@ export function getAllTags() {
     }
   })
 
-  const uniqueTags = [...new Set(repeatingTags)]
 
+
+  // const uniqueTags = [...new Set(repeatingTags)]
+
+
+  const uniqueTags = Array.from(new Set(repeatingTags));
   const tags = uniqueTags.sort((tag1, tag2) => {
     let freq1 = tagCount.get(tag1)
     let freq2 = tagCount.get(tag2)
