@@ -12,7 +12,7 @@ type  ProjectProps ={
 	img:string,
 }
 
-const ProjectSingle = (props) => {
+const ProjectSingle = (props:ProjectProps) => {
 
 	// console.log(props)
   return (
