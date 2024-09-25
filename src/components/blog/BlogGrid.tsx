@@ -32,7 +32,7 @@ export async function BlogGrid({ posts, featured = false }:BlogGridProps) {
         </div>
       )}
       {posts.map((post) => (
-        <Post key={post.slug} post={post} />
+          <Post key={post.slug} {...post} />
       ))}
     </div>
   )
