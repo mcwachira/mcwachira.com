@@ -1,11 +1,15 @@
 'use client'
 
-import { useEffect } from 'react'
+import React, { useEffect } from 'react'
 import Link from 'next/link'
 import clsx from 'clsx'
 import { usePathname } from 'next/navigation'
 
-function Tab({ tabName, directory }:any) {
+interface TabProps {
+    tabName?: string | null
+    directory: string
+}
+function Tab({ tabName, directory }:TabProps) {
     const isDefaultTab = tabName == null
     let tabSlug
     let nestedDirectory = ''
@@ -40,7 +44,15 @@ function Tab({ tabName, directory }:any) {
     )
 }
 
-export function Tabs({ tabs, directory, className, ...props }:any) {
+
+
+interface TabsProps extends React.HTMLAttributes<HTMLUListElement> {
+    tabs: string[]
+    directory: string
+    className?: string
+}
+
+export function Tabs({ tabs, directory, className, ...props }:TabProps) {
     useEffect(() => {
         // 👇️ scroll to top on page load
         window.scrollTo({ top: 0, left: 0 })
