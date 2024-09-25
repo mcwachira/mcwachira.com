@@ -7,120 +7,95 @@ description: 'Learn how  to build a secure form Using Nextjs and React-hook-form
 timeToRead: 10
 ---
 
-Today we are going to use Next.js to build a simple , secure and user-friendly forms using a powerful combination of libraries:
+In this guide, we will explore how to build secure, user-friendly forms in Next.js using a powerful combination of libraries:
 
-1. **React-Hook-Form -** Streamlines form state management, user interactions, and simplifies form handling
+1. **React-Hook-Form** - Simplifies form state management and user interactions.
 
-2. **Yup -** Provides a robust and user-friendly schema validation library..
+2. **Yup** - Provides robust schema validation.
 
-3. **Tailwind CSS -** To style our forms
+3. **Tailwind CSS** - Efficiently styles our forms.
 
-## Why Secure Forms Matter?
 
-Insecure forms can be exploited by malicious actors through attacks like SQL injection and cross-site scripting (XSS). These attacks can compromise your application's security and potentially steal sensitive data. Additionally, proper validation ensures you receive the data in the expected format, improving data integrity and user experience.
+### Why Secure Forms Matter
 
-Let's walk through the steps of creating the form:
+Insecure forms can be exploited through attacks like SQL injection and cross-site scripting (XSS), compromising your application's security and potentially stealing sensitive data. Proper validation ensures data integrity and enhances user experience.
 
-1. **Project Setup -** Create a new Next.js project:
+### Step-by-Step Guide to Creating Secure Forms
 
-```js
-npx create-next-app my-secure-form
+#### 1\. Project Setup
 
+First, create a new Next.js project and install the required dependencies:
+
+```bash
+npx create-next-app@latest my-secure-form
+cd my-secure-form
+npm install react-hook-form yup @hookform/resolvers tailwindcss
 ```
 
-Install required dependencies:
+#### 2\. Form Component (Form.js)
 
-```js
-npm install react-hook-form yup @hookform/resolvers tailwindcss.
+Create a form component using React-Hook-Form, Yup, and Tailwind CSS:
 
-```
-
-2. **Form Component (Form.js) -**
-
-````js
-import React from 'react';
+```jsx
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import * as yup from 'yup';
+import * as Yup from 'yup';
 
-const schema = yup.object({
-  name: yup.string().required('Name is required'),
-  email: yup.string().email('Invalid email format').required('Email is required'),
+const validationSchema = Yup.object().shape({
+  name: Yup.string().required('Name is required'),
+  email: Yup.string().email('Email is invalid').required('Email is required'),
 });
 
 const Form = () => {
   const { register, handleSubmit, formState: { errors } } = useForm({
-    resolver: yupResolver(schema)
+    resolver: yupResolver(validationSchema),
   });
 
-  const onSubmit = async (data) => {
-    try {
-      // Handle form submission logic (e.g., send data to server)
-      const response = await fetch('/api/submit-form', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
-      });
-
-      if (!response.ok) {
-        throw new Error('Form submission failed');
-      }
-
-      console.log('Form submitted successfully!', data);
-    } catch (error) {
-      console.error('Form submission error:', error);
-      // Handle errors gracefully (e.g., display error message to user)
-    }
+  const onSubmit = data => {
+    console.log(data);
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(onSubmit)} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
       <div className="mb-4">
-        <label htmlFor="name" className="block text-gray-700 text-sm font-bold mb-2">
-          Name
-        </label>
+        <label htmlFor="name" className="block text-gray-700 text-sm font-bold mb-2">Name</label>
         <input
-          {...register('name', { required: true })}
+          {...register('name')}
           type="text"
           id="name"
           className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          placehold```er="Enter your name"
+          placeholder="Enter your name"
         />
         {errors.name && <span className="text-red-500 text-sm">{errors.name.message}</span>}
       </div>
       <div className="mb-4">
-        <label htmlFor="email" className="block text-gray-700 text-sm font-bold mb-2">
-          Email
-        </label>
+        <label htmlFor="email" className="block text-gray-700 text-sm font-bold mb-2">Email</label>
         <input
-          {...register('email', { required: true })}
+          {...register('email')}
           type="email"
           id="email"
           className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           placeholder="Enter your email"
         />
-         {errors.email && <span className="text-red-500 text-sm">{errors.email.message}</span>}
+        {errors.email && <span className="text-red-500 text-sm">{errors.email.message}</span>}
       </div>
       <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
         Submit
       </button>
-      {/* Display a general error message if form submission fails */}
       {errors.submit && <span className="text-red-500 text-sm">Form submission failed. Please try again.</span>}
     </form>
   );
 };
 
 export default Form;
-````
+```
 
-This code showcases our Form containing two fields Name and Email.
+#### 3\. Integrate Form Component in a Page
 
-We are using the useForm to generate individual error messages for both fields and we are also providing an error if the form fails to bi submitted on the server-side.
+Create a page to display the form:
 
-To use the Form we import it in our desired page as shown
-
-```js
-import Form from '../components/Form'
+```jsx
+import Form from '../components/Form';
 
 const MyPage = () => {
   return (
@@ -128,20 +103,22 @@ const MyPage = () => {
       <h1 className="mb-6 text-3xl font-bold">Contact Us</h1>
       <Form />
     </div>
-  )
-}
+  );
+};
 
-export default MyPage
+export default MyPage;
 ```
 
-### Considerations:
+### Key Considerations
 
-1. **Server-Side Validation -** Always validate user input on the server-side to prevent malicious attacks. Sanitize and escape user input before processing it. Even with client-side validation, server-side validation is crucial for robust security.
+#### Server-Side Validation
 
-2. **API Endpoints -** If you're handling form submissions on the server, create a secure API endpoint in a Next.js API route to receive and process form data.
+Always validate user input on the server-side to prevent malicious attacks. Sanitize and escape user input before processing it. Even with client-side validation, server-side validation is crucial for robust security.
 
-### Conclusion:
+#### API Endpoints
 
-By combining React Hook Forms, Yup, and Tailwind CSS, we can create secure and well validated forms in we Next.js applications as approach improves data integrity, user experience, and protects our application from security vulnerabilities.
+If you're handling form submissions on the server, create a secure API endpoint in a Next.js API route to receive and process form data.
 
-I hope this Blog Post will empower you to build secure forms in your Next.js applications!
+### Conclusion
+
+By combining React-Hook-Form, Yup, and Tailwind CSS, you can create secure and well-validated forms in your Next.js applications. This approach improves data integrity, user experience, and protects your application from security vulnerabilities.
