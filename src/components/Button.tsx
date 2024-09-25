@@ -15,12 +15,13 @@ const variantStyles: Record<`${Variant}ClassName`, string> = {
 interface ButtonProps {
   variant?: Variant;
   href?: Url;
+  target?: string; // Optional, only if you want to specify a target
   className?: string;
   type?: 'button' | 'submit' | 'reset'; // Add type for HTML button types
   children?: ReactNode; // Add children prop
 }
 
-export function Button({ variant = 'primary', className, href, type = 'button', children, ...props }: ButtonProps) {
+export function Button({ variant = 'primary', className, href, target,  type = 'button', children, ...props }: ButtonProps) {
   className = clsx(
       'inline-flex items-center rounded-full gap-2.5 justify-center px-7 py-3 text-md font-semibold leading-none outline-offset-2 transition-all duration-200 ease-in-out active:transition-none',
       variantStyles[`${variant}ClassName`],
@@ -28,7 +29,7 @@ export function Button({ variant = 'primary', className, href, type = 'button', 
   );
 
   return href ? (
-      <Link href={href} className={className} {...props}>
+      <Link href={href}  target={target} className={className} {...props}>
         {children}
       </Link>
   ) : (
