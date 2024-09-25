@@ -7,25 +7,33 @@ interface Params {
   tagSlug: string;
 }
 
+// Function to format tag slug into a readable format
 const parseTag = (tagSlug: string) => {
-  const tag = tagSlug
+  return tagSlug
       .replace(/-/g, ' ')
       .split(' ')
-      .map((w) => w[0].toUpperCase() + w.substring(1).toLowerCase())
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
       .join(' ');
-  return tag;
 };
 
+// Generate static params based on tags
 export const generateStaticParams = async () => {
   const tags = await getAllTags();
-  return tags.map((tag) => ({ tagSlug: tag.replace(/ /g, '-').toLowerCase() }));
+
+  // Filter undefined tags and ensure proper string type
+  return (tags || []).filter((tag): tag is string => typeof tag === 'string')
+      .map((tag) => ({
+        tagSlug: tag.replace(/ /g, '-').toLowerCase(),
+      }));
 };
 
+// Generate metadata for the page
 export async function generateMetadata({ params }: { params: Params }) {
   const tag = parseTag(params.tagSlug);
   return { title: tag };
 }
 
+// Default export for the Work Category Page
 export default async function WorkCategoryPage({ params }: { params: Params }) {
   const caseStudies = allCaseStudies.filter((caseStudy) =>
       caseStudy?.tags?.includes(parseTag(params.tagSlug))
@@ -34,4 +42,5 @@ export default async function WorkCategoryPage({ params }: { params: Params }) {
   return <CaseStudies caseStudies={caseStudies} />;
 }
 
+// Static params configuration
 export const dynamicParams = false;
