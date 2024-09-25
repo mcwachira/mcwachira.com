@@ -5,9 +5,11 @@ import Link from 'next/link';
 import {PostTypes} from "@/types/post";
 
 // Define the type for the post prop
+interface PostProps {
+  post: PostTypes;
+}
 
-
-export const Post = ({ post }:PostTypes) => {
+export const Post = ({ post }:PostProps) => {
   const categorySlug = post.category.replace(/ /g, '-').toLowerCase();
 
   return (
