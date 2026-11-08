@@ -104,7 +104,7 @@ export const skillsQuery = queryOptions({
 export const settingsQuery = queryOptions({
     queryKey: ["settings"],
     queryFn: async (): Promise<SiteSettings> => {
-        return (await getSettings()) ?? {};
+        return (((await getSettings()) ?? {}) as unknown) as SiteSettings;
     },
 });
 

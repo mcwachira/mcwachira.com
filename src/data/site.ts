@@ -22,7 +22,7 @@ export const profile = {
 
 export const metrics = [
     { value: "7+", label: "Years of professional software engineering" },
-    { value: "6+", label: "CRM & custom application projects delivered" },
+    { value: "6+", label: "CRM & custom application work delivered" },
     { value: "50%", label: "Increase in online bookings — Soul Breeze" },
     { value: "2\u00d7", label: "Increase in online donations — Fundi Kipusa" },
 ];
@@ -157,13 +157,13 @@ export const projects: Project[] = [
         year: "2023",
         role: "Architecture / Implementation / Training",
         summary:
-            "Custom operational platform for a 150+ unit heavy equipment fleet and the projects that equipment is deployed to.",
+            "Custom operational platform for a 150+ unit heavy equipment fleet and the work that equipment is deployed to.",
         problem:
             "Fleet deployment, maintenance schedules, availability and operator assignments were spread across spreadsheets. Nobody could answer which machines were free next week without calling around.",
         approach: [
             "Built a fleet register covering 150+ heavy equipment units with deployment and availability state.",
             "Added maintenance scheduling and operator assignment against each unit.",
-            "Modelled projects with milestone tracking and resource allocation drawn from the same fleet register.",
+            "Modelled work with milestone tracking and resource allocation drawn from the same fleet register.",
             "Replaced the spreadsheet workflows and trained the operations team on the system.",
         ],
         decisions: [
@@ -277,7 +277,7 @@ export const experience = [
         end: "Present",
         kind: "Employment",
         description:
-            "Lead technical delivery of CRM architecture, business automation and integration projects from requirements through handover.",
+            "Lead technical delivery of CRM architecture, business automation and integration work from requirements through handover.",
         achievements: [
             "Architect multi-stage CRM pipelines, approval systems and operational automation.",
             "Own implementation, QA, deployment, client handover and technical training.",
@@ -315,7 +315,7 @@ export const experience = [
         start: "Jan 2018",
         end: "Feb 2020",
         kind: "Employment",
-        description: "Application development across client web projects.",
+        description: "Application development across client web work.",
         achievements: ["Built and shipped client applications end to end."],
     },
 ];
@@ -421,7 +421,7 @@ export const nav = [
 ] as const;
 
 /* ------------------------------------------------------------------
- * Engineering projects (GitHub repositories).
+ * Engineering work (GitHub repositories).
  * Kept deliberately separate from the CV-backed professional case
  * studies above. Nothing here is described as production or commercial
  * unless the repository itself documents it.

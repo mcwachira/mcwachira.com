@@ -2,6 +2,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import type { WebGLRenderer } from "three";
 
 /**
  * Decorative network/system visual for the hero.
@@ -17,6 +18,7 @@ import { useEffect, useRef } from "react";
 
 export function HeroScene({ className }: { className?: string }) {
     const host = useRef<HTMLDivElement>(null);
+
 
     useEffect(() => {
         const mount = host.current;
@@ -50,7 +52,7 @@ export function HeroScene({ className }: { className?: string }) {
                     return value || fallback;
                 };
 
-                let renderer: THREE.WebGLRenderer;
+                let renderer: WebGLRenderer;
 
                 try {
                     renderer = new THREE.WebGLRenderer({

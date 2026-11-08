@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { cache } from "react";
-import { QueryClient } from "@tanstack/react-query";
+
 
 import { getHomeContent } from "@/lib/content";
 
@@ -32,18 +32,13 @@ const defaultDescription =
  * React cache() allows generateMetadata() and the page to reuse
  * the same result during a server render.
  */
+const getHomeContentCached = cache(getHomeContent);
+
 const getHomeData = cache(async () => {
-  const queryClient = new QueryClient();
+  const { projects, posts, experiences, settings } =
+      await getHomeContentCached();
 
-  const getHomeData = cache(getHomeContent);
-  const { projects, posts, experiences, settings } = await getHomeData();
-
-  return {
-    projects,
-    posts,
-    experiences,
-    settings,
-  };
+  return { projects, posts, experiences, settings };
 });
 
 /**
