@@ -2,9 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { cache } from "react";
 
-
 import { getHomeContent } from "@/lib/content";
-
 import { formatDate } from "@/lib/format";
 import { Page, SectionHead, Band } from "@/components/page-layout";
 import { ProjectVisual, FlowDiagram } from "@/components/project-visuals";
@@ -82,7 +80,6 @@ export default async function Home() {
   const { projects, posts, experiences, settings } = await getHomeData();
 
   const featured = projects.cases.filter((project) => project.featured);
-
   const publishedEngineering = projects.builds;
 
   const metricList = settings?.metrics?.length
@@ -133,6 +130,7 @@ export default async function Home() {
               __html: JSON.stringify(personData).replace(/</g, "\\u003c"),
             }}
         />
+
         <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{
@@ -143,22 +141,20 @@ export default async function Home() {
         <Page>
           {/* 02 — HERO */}
           <section className="rule-field border-b border-border">
-            <div className="shell grid12 relative py-12 sm:py-16 md:py-20 lg:py-24">
+            <div className="shell grid12 relative items-start py-10 sm:py-14 md:py-20 lg:py-24">
               <HeroScene className="pointer-events-none absolute inset-0 opacity-50" />
 
               <div className="relative col-span-2 min-w-0 md:col-span-6 lg:col-span-8 rise">
-                <p className="label">
-                  01 / Profile — Based in Nairobi
-                </p>
+                <p className="label">01 / Profile — Based in Nairobi</p>
 
-                <h1 className="fluid-display mt-5 max-w-full text-balance font-bold leading-[0.98] tracking-[-0.045em]">
+                <h1 className="fluid-display mt-5 max-w-[16ch] text-balance font-bold leading-[0.94] tracking-[-0.055em] sm:max-w-[18ch] sm:leading-[0.96] lg:max-w-none lg:leading-[0.98]">
                   <span className="block">Senior software</span>
                   <span className="block">engineer building</span>
                   <span className="block">
-    <span className="box-decoration-clone bg-accent px-[0.16em] py-[0.04em] text-accent-foreground">
-      scalable systems
-    </span>
-  </span>
+                  <span className="inline box-decoration-clone bg-accent px-[0.14em] py-[0.04em] text-accent-foreground">
+                    scalable systems
+                  </span>
+                </span>
                   <span className="block">for real businesses.</span>
                 </h1>
 
@@ -171,7 +167,7 @@ export default async function Home() {
                       "Currently technical lead at Finlanza, working across full-stack engineering, CRM architecture, automation and technical delivery."}
                 </p>
 
-                <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                <div className="mt-8 flex flex-col gap-3 min-[420px]:flex-row min-[420px]:flex-wrap">
                   <Link
                       href="/work"
                       className="press edge inline-flex items-center justify-center bg-foreground px-5 py-3 text-center font-mono text-xs uppercase tracking-[0.14em] text-background"
@@ -205,10 +201,10 @@ export default async function Home() {
                     ].map(([key, value]) => (
                         <div
                             key={key}
-                            className="flex items-baseline justify-between gap-4 px-4 py-3"
+                            className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 px-4 py-3"
                         >
                           <dt className="label">{key}</dt>
-                          <dd className="text-right font-display text-sm font-bold">
+                          <dd className="min-w-0 text-right font-display text-sm font-bold">
                             {value}
                           </dd>
                         </div>
@@ -226,9 +222,7 @@ export default async function Home() {
                             key={technology}
                             className={`px-4 py-3 font-mono text-[11px] uppercase tracking-[0.14em] ${
                                 index % 2 === 0 ? "border-r border-rule" : ""
-                            } ${
-                                index < 2 ? "border-b border-rule" : ""
-                            }`}
+                            } ${index < 2 ? "border-b border-rule" : ""}`}
                         >
                       {technology}
                     </span>
@@ -263,11 +257,11 @@ export default async function Home() {
                               : ""
                       } ${index === 0 ? "lg:pl-0" : ""}`}
                   >
-                    <p className="font-display text-4xl font-bold leading-none sm:text-5xl">
+                    <p className="font-display text-4xl font-bold leading-none tracking-[-0.05em] sm:text-5xl lg:text-[3.5rem]">
                       {metric.value}
                     </p>
 
-                    <p className="mt-2 text-xs leading-snug text-muted-foreground sm:text-sm">
+                    <p className="mt-3 max-w-[16ch] text-xs leading-relaxed text-muted-foreground sm:text-sm">
                       {metric.label}
                     </p>
                   </div>
@@ -295,7 +289,7 @@ export default async function Home() {
                       <span className="label">{item.tech.length} tech</span>
                     </div>
 
-                    <h3 className="mt-3 font-display text-2xl font-bold sm:text-3xl">
+                    <h3 className="mt-4 font-display text-2xl font-bold leading-tight tracking-tight sm:text-3xl">
                       {item.title}
                     </h3>
 
@@ -307,7 +301,7 @@ export default async function Home() {
                       {item.tech.map((technology) => (
                           <li
                               key={technology}
-                              className="edge px-2 py-1 font-mono text-[10px] uppercase tracking-[0.1em]"
+                              className="edge px-2 py-1 font-mono text-[10px] uppercase tracking-[0.1em] transition-colors hover:bg-accent hover:text-accent-foreground"
                           >
                             {technology}
                           </li>
@@ -333,12 +327,9 @@ export default async function Home() {
                       key={project.slug}
                       className={`group col-span-2 min-w-0 md:col-span-6 ${project.span}`}
                   >
-                    <Link
-                        href={`/work/${project.slug}`}
-                        className="block"
-                    >
+                    <Link href={`/work/${project.slug}`} className="block">
                       <div className="overflow-hidden">
-                        <div className="transition-transform duration-300 group-hover:-translate-y-1">
+                        <div className="transition-transform duration-500 ease-out group-hover:-translate-y-1">
                           <ProjectVisual
                               flow={project.flow}
                               no={project.no}
@@ -354,7 +345,7 @@ export default async function Home() {
                         <span className="label">{project.year}</span>
                       </div>
 
-                      <h3 className="mt-2 font-display text-2xl font-bold sm:text-3xl">
+                      <h3 className="mt-2 font-display text-2xl font-bold transition-colors group-hover:text-muted-foreground sm:text-3xl">
                         {project.title}
                       </h3>
 
@@ -371,7 +362,7 @@ export default async function Home() {
                       </ul>
 
                       <p className="mt-3 font-mono text-xs uppercase tracking-[0.14em] text-foreground">
-                    <span className="border-b border-accent pb-0.5">
+                    <span className="border-b border-accent pb-0.5 transition-colors group-hover:border-foreground">
                       View case study &rarr;
                     </span>
                       </p>
@@ -396,9 +387,7 @@ export default async function Home() {
             <ul className="border-t border-border">
               {publishedEngineering
                   .filter((project) => project.featured)
-                  .sort(
-                      (a, b) => a.featuredOrder - b.featuredOrder,
-                  )
+                  .sort((a, b) => a.featuredOrder - b.featuredOrder)
                   .map((project) => (
                       <li
                           key={project.slug}
@@ -406,13 +395,13 @@ export default async function Home() {
                       >
                         <Link
                             href={`/work/${project.slug}`}
-                            className="grid grid-cols-[2rem_minmax(0,1fr)] gap-x-4 gap-y-2 py-5 transition-colors hover:bg-surface sm:grid-cols-6 lg:grid-cols-12"
+                            className="group grid grid-cols-[2rem_minmax(0,1fr)] gap-x-4 gap-y-2 py-5 transition-colors duration-200 hover:bg-surface sm:grid-cols-6 lg:grid-cols-12"
                         >
                     <span className="label row-span-3 pt-1 sm:col-span-1 sm:row-span-1">
                       {project.no}
                     </span>
 
-                          <span className="min-w-0 font-display text-lg font-bold sm:col-span-5 sm:text-xl lg:col-span-3">
+                          <span className="min-w-0 font-display text-lg font-bold transition-colors group-hover:text-muted-foreground sm:col-span-5 sm:text-xl lg:col-span-3">
                       {project.title}
                     </span>
 
@@ -603,7 +592,7 @@ export default async function Home() {
             />
 
             <ul className="divide-y divide-rule border-y border-rule">
-{posts.slice(0, 3).map((post, index) => (
+              {posts.slice(0, 3).map((post, index) => (
                   <li
                       key={post.slug}
                       className="grid grid-cols-[2rem_minmax(0,1fr)] gap-x-3 gap-y-2 py-5 sm:grid-cols-6 lg:grid-cols-12"
@@ -612,33 +601,33 @@ export default async function Home() {
                   {String(index + 1).padStart(2, "0")}
                 </span>
 
-                      <div className="min-w-0 sm:col-span-5 lg:col-span-3">
-                        <span className="label">{post.category}</span>
-                      </div>
+                    <div className="min-w-0 sm:col-span-5 lg:col-span-3">
+                      <span className="label">{post.category}</span>
+                    </div>
 
-                      <div className="min-w-0 sm:col-span-5 lg:col-span-5">
-                        <h3 className="font-display text-lg font-bold leading-snug sm:text-xl">
-                          {post.hasBody ? (
-                              <Link
-                                  href={`/writing/${post.slug}`}
-                                  className="transition-colors hover:text-muted-foreground"
-                              >
-                                {post.title}
-                              </Link>
-                          ) : (
-                              post.title
-                          )}
-                        </h3>
-                      </div>
+                    <div className="min-w-0 sm:col-span-5 lg:col-span-5">
+                      <h3 className="font-display text-lg font-bold leading-snug sm:text-xl">
+                        {post.hasBody ? (
+                            <Link
+                                href={`/writing/${post.slug}`}
+                                className="transition-colors hover:text-muted-foreground"
+                            >
+                              {post.title}
+                            </Link>
+                        ) : (
+                            post.title
+                        )}
+                      </h3>
+                    </div>
 
-                      <div className="col-start-2 flex flex-wrap gap-x-4 gap-y-1 sm:col-span-5 sm:col-start-2 lg:col-span-3 lg:col-start-auto lg:justify-end">
-                <span className="label">
-                  {formatDate(post.published_at)}
-                </span>
+                    <div className="col-start-2 flex flex-wrap gap-x-4 gap-y-1 sm:col-span-5 sm:col-start-2 lg:col-span-3 lg:col-start-auto lg:justify-end">
+                  <span className="label">
+                    {formatDate(post.published_at)}
+                  </span>
 
-                          <span className="label">{post.read_time}</span>
-                        </div>
-                      </li>
+                      <span className="label">{post.read_time}</span>
+                    </div>
+                  </li>
               ))}
             </ul>
 
@@ -703,17 +692,15 @@ export default async function Home() {
           </Band>
 
           {/* 11 — CONTACT */}
-          <section className="py-14 sm:py-16 md:py-24">
+          <section className="border-t border-border py-16 sm:py-20 md:py-28">
             <div className="shell grid12">
               <div className="col-span-2 min-w-0 md:col-span-6 lg:col-span-7">
                 <p className="label">09 / Contact</p>
 
-                <h2 className="fluid-display mt-4 font-bold">
-                  Have a system
-                  <br />
-                  that needs
-                  <br />
-                  building?
+                <h2 className="fluid-display mt-4 max-w-[12ch] text-balance font-bold leading-[0.94] tracking-[-0.05em]">
+                  <span className="block">Have a system</span>
+                  <span className="block">that needs</span>
+                  <span className="block">building?</span>
                 </h2>
               </div>
 
@@ -727,7 +714,7 @@ export default async function Home() {
 
                 <Link
                     href="/contact"
-                    className="press edge mt-6 inline-flex items-center justify-center bg-accent px-5 py-3 font-mono text-xs uppercase tracking-[0.14em] text-accent-foreground"
+                    className="press edge mt-7 inline-flex min-h-12 items-center justify-center bg-accent px-6 py-3 font-mono text-xs uppercase tracking-[0.14em] text-accent-foreground transition-transform duration-200 hover:-translate-y-0.5"
                 >
                   Start a conversation
                 </Link>
