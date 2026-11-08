@@ -133,7 +133,7 @@ export async function getAllArticles(): Promise<ArticleSummary[]> {
 
         try {
             const format = detectFormat(file);
-            const { frontmatter, content } = parseMarkdown(markdown, format);
+            const { frontmatter, content } = parseMarkdown(markdown, format, file);
 
             if (!frontmatter.published) {
                 continue;
@@ -176,6 +176,7 @@ export async function getArticleBySlug(slug: string): Promise<Article | null> {
     // Try .md first, then .mdx
     let markdown: string;
     let format: ArticleFormat = "markdown";
+    let filename = `${slug}.md`;
 
     try {
         markdown = await fetchFromGitHub(`${POSTS_DIR}/${slug}.md`);
@@ -185,6 +186,7 @@ export async function getArticleBySlug(slug: string): Promise<Article | null> {
             try {
                 markdown = await fetchFromGitHub(`${POSTS_DIR}/${slug}.mdx`);
                 format = "mdx";
+                filename = `${slug}.mdx`;
             } catch (mdxError) {
                 if (mdxError instanceof GitHubContentError && mdxError.code === "NOT_FOUND") {
                     return null; // Genuinely not found
@@ -197,7 +199,7 @@ export async function getArticleBySlug(slug: string): Promise<Article | null> {
     }
 
     try {
-        const { frontmatter, content } = parseMarkdown(markdown, format);
+        const { frontmatter, content } = parseMarkdown(markdown, format, filename);
 
         if (!frontmatter.published) {
             return null;

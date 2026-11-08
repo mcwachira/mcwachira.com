@@ -9,16 +9,51 @@ export interface ParsedMarkdown {
     format: ArticleFormat;
 }
 
-export function parseMarkdown(markdown: string, format: ArticleFormat): ParsedMarkdown {
+export function parseMarkdown(markdown: string, format: ArticleFormat, filename?: string): ParsedMarkdown {
     const { data, content } = matter(markdown);
 
-    const validated = validateFrontmatter(data);
+    // Transform frontmatter to match expected schema
+    const transformed = transformFrontmatter(data, filename);
+
+    const validated = validateFrontmatter(transformed);
 
     return {
         frontmatter: validated,
         content: content.trim(),
         format,
     };
+}
+
+function transformFrontmatter(data: Record<string, unknown>, filename?: string): Record<string, unknown> {
+    const result = { ...data };
+
+    // Derive slug from filename if not present
+    if (!result.slug && filename) {
+        const baseName = filename.replace(/\.(md|mdx)$/i, "");
+        result.slug = baseName;
+    }
+
+    // Map timeToRead -> readTime
+    if (result.timeToRead && !result.readTime) {
+        result.readTime = result.timeToRead;
+    }
+
+    // Map image -> coverImage
+    if (result.image && !result.coverImage) {
+        result.coverImage = result.image;
+    }
+
+    // Default tags to empty array
+    if (!result.tags) {
+        result.tags = [];
+    }
+
+    // Default published to false for safety (articles must explicitly opt-in)
+    if (result.published === undefined) {
+        result.published = false;
+    }
+
+    return result;
 }
 
 export function extractExcerpt(content: string, maxLength: number = 200): string {
