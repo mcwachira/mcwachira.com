@@ -17,6 +17,7 @@ export const metadata: Metadata = {
         description:
             "Engineering notes on Node.js, Next.js and Zoho automation.",
         type: "website",
+        url: "https://mcwachira.com/writing",
     },
     twitter: {
         card: "summary_large_image",

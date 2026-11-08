@@ -27,13 +27,40 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "My Project",
-  description: "My application",
+  metadataBase: new URL("https://mcwachira.com"),
+  title: {
+    default: "Charles Wachira — Senior Software Engineer & Technical Lead",
+    template: "%s | Charles Wachira",
+  },
+  description:
+    "Senior software engineer and technical lead in Nairobi. Full-stack systems, CRM architecture, business automation and API integrations for real businesses.",
+  alternates: {
+    canonical: "https://mcwachira.com/",
+  },
+  openGraph: {
+    title: "Charles Wachira — Senior Software Engineer & Technical Lead",
+    description:
+      "Senior software engineer and technical lead in Nairobi. Full-stack systems, CRM architecture, business automation and API integrations for real businesses.",
+    type: "profile",
+    url: "https://mcwachira.com/",
+    siteName: "Charles Wachira",
+    locale: "en_KE",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Charles Wachira — Senior Software Engineer & Technical Lead",
+    description:
+      "Senior software engineer and technical lead in Nairobi. Full-stack systems, CRM architecture, business automation and API integrations for real businesses.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
-                                     children,
-                                   }: Readonly<{
+                                      children,
+                                    }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (

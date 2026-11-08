@@ -19,11 +19,15 @@ export const metadata: Metadata = {
     title: "About — Charles Wachira, Senior Software Engineer",
     description:
         "Seven years of software engineering across full-stack development, CRM architecture, automation and integrations, based in Diani, Kenya.",
+    alternates: {
+        canonical: "https://mcwachira.com/about",
+    },
     openGraph: {
         title: "About — Charles Wachira, Senior Software Engineer",
         description:
             "Seven years of software engineering across full-stack development, CRM architecture, automation and integrations.",
         type: "profile",
+        url: "https://mcwachira.com/about",
     },
     twitter: {
         card: "summary_large_image",
@@ -358,7 +362,7 @@ export default async function AboutPage() {
 
                 <div className="mt-8 flex flex-wrap gap-3">
                     <Link
-                        href="/projects"
+                        href="/work"
                         className="press edge bg-foreground px-5 py-3 font-mono text-xs uppercase tracking-[0.14em] text-background"
                     >
                         View selected work

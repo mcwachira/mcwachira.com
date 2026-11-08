@@ -9,11 +9,15 @@ export const metadata: Metadata = {
     title: "Work — Charles Wachira",
     description:
         "Professional case studies in CRM architecture and business systems, plus engineering work built in public on GitHub.",
+    alternates: {
+        canonical: "https://mcwachira.com/work",
+    },
     openGraph: {
         title: "Work — Charles Wachira",
         description:
             "Professional case studies in CRM architecture and business systems, plus engineering work built in public on GitHub.",
         type: "website",
+        url: "https://mcwachira.com/work",
     },
     twitter: {
         card: "summary_large_image",

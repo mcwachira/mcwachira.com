@@ -62,8 +62,8 @@ type PageProps = {
 };
 
 export async function generateMetadata({
-                                           params,
-                                       }: PageProps): Promise<Metadata> {
+                                            params,
+                                        }: PageProps): Promise<Metadata> {
     const { slug } = await params;
     const post = await getPost(slug);
 
@@ -79,17 +79,53 @@ export async function generateMetadata({
 
     const title = `${post.seoTitle ?? post.title} — Charles Wachira`;
     const description = post.seoDescription ?? post.excerpt;
+    const url = `https://mcwachira.com/writing/${post.slug}`;
+
+    const structuredData = {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        headline: post.seoTitle ?? post.title,
+        description: post.seoDescription ?? post.excerpt,
+        url,
+        datePublished: post.publishedAt,
+        dateModified: post.publishedAt,
+        author: {
+            "@type": "Person",
+            name: "Charles Wachira",
+            url: "https://mcwachira.com",
+        },
+        publisher: {
+            "@type": "Person",
+            name: "Charles Wachira",
+            url: "https://mcwachira.com",
+        },
+        mainEntityOfPage: {
+            "@type": "WebPage",
+            "@id": url,
+        },
+    };
 
     return {
         title,
         description,
+        alternates: {
+            canonical: url,
+        },
         openGraph: {
             title,
             description,
             type: "article",
+            url,
+            publishedTime: post.publishedAt ?? undefined,
+            authors: ["Charles Wachira"],
         },
         twitter: {
             card: "summary_large_image",
+            title,
+            description,
+        },
+        other: {
+            "script:ld+json": JSON.stringify(structuredData).replace(/</g, "\\u003c"),
         },
     };
 }

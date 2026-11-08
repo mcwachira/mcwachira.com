@@ -93,12 +93,13 @@ export default async function Home() {
       (experience) => experience.kind === "Employment",
   );
 
-  const structuredData = {
+  const personData = {
     "@context": "https://schema.org",
     "@type": "Person",
     name: profile.name,
     jobTitle: "Senior Software Engineer, Technical Lead",
     email: `mailto:${profile.email}`,
+    url: "https://mcwachira.com",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Nairobi",
@@ -108,13 +109,34 @@ export default async function Home() {
     knowsAbout: profile.specialisms,
   };
 
+  const websiteData = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Charles Wachira",
+    url: "https://mcwachira.com",
+    potentialAction: {
+      "@type": "SearchAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: "https://mcwachira.com/writing?q={search_term_string}",
+      },
+      "query-input": "required name=search_term_string",
+    },
+  };
+
   return (
       <>
         {/* Structured data for search engines */}
         <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{
-              __html: JSON.stringify(structuredData).replace(/</g, "\\u003c"),
+              __html: JSON.stringify(personData).replace(/</g, "\\u003c"),
+            }}
+        />
+        <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(websiteData).replace(/</g, "\\u003c"),
             }}
         />
 
@@ -582,7 +604,7 @@ export default async function Home() {
             />
 
             <ul className="divide-y divide-rule border-y border-rule">
-              {posts.slice(0, 3).map((post, index) => (
+{posts.slice(0, 3).map((post, index) => (
                   <li
                       key={post.slug}
                       className="grid grid-cols-[2rem_minmax(0,1fr)] gap-x-3 gap-y-2 py-5 sm:grid-cols-6 lg:grid-cols-12"
@@ -591,38 +613,38 @@ export default async function Home() {
                   {String(index + 1).padStart(2, "0")}
                 </span>
 
-                    <div className="min-w-0 sm:col-span-5 lg:col-span-3">
-                      <span className="label">{post.category}</span>
-                    </div>
+                      <div className="min-w-0 sm:col-span-5 lg:col-span-3">
+                        <span className="label">{post.category}</span>
+                      </div>
 
-                    <div className="min-w-0 sm:col-span-5 lg:col-span-5">
-                      <h3 className="font-display text-lg font-bold leading-snug sm:text-xl">
-                        {post.hasBody ? (
-                            <Link
-                                href={`/blog/${post.slug}`}
-                                className="transition-colors hover:text-muted-foreground"
-                            >
-                              {post.title}
-                            </Link>
-                        ) : (
-                            post.title
-                        )}
-                      </h3>
-                    </div>
+                      <div className="min-w-0 sm:col-span-5 lg:col-span-5">
+                        <h3 className="font-display text-lg font-bold leading-snug sm:text-xl">
+                          {post.hasBody ? (
+                              <Link
+                                  href={`/writing/${post.slug}`}
+                                  className="transition-colors hover:text-muted-foreground"
+                              >
+                                {post.title}
+                              </Link>
+                          ) : (
+                              post.title
+                          )}
+                        </h3>
+                      </div>
 
-                    <div className="col-start-2 flex flex-wrap gap-x-4 gap-y-1 sm:col-span-5 sm:col-start-2 lg:col-span-3 lg:col-start-auto lg:justify-end">
-                  <span className="label">
-                    {formatDate(post.published_at)}
-                  </span>
+                      <div className="col-start-2 flex flex-wrap gap-x-4 gap-y-1 sm:col-span-5 sm:col-start-2 lg:col-span-3 lg:col-start-auto lg:justify-end">
+                <span className="label">
+                  {formatDate(post.published_at)}
+                </span>
 
-                      <span className="label">{post.read_time}</span>
-                    </div>
-                  </li>
+                          <span className="label">{post.read_time}</span>
+                        </div>
+                      </li>
               ))}
             </ul>
 
             <Link
-                href="/blog"
+                href="/writing"
                 className="label mt-5 inline-block border-b border-accent pb-0.5 text-foreground"
             >
               All notes &rarr;

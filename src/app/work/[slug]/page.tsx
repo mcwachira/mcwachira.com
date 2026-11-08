@@ -62,32 +62,80 @@ type PageProps = {
 };
 
 export async function generateMetadata({
-                                           params,
-                                       }: PageProps): Promise<Metadata> {
+                                            params,
+                                        }: PageProps): Promise<Metadata> {
     const { slug } = await params;
     const entry = await findProject(slug);
 
     if (!entry) {
         return {
             title: "Project unavailable — Charles Wachira",
+            robots: {
+                index: false,
+                follow: false,
+            },
         };
     }
 
     const project = entry.data;
-    const kind =
-        entry.kind === "case-study" ? "Case Study" : "Project";
+    const kind = entry.kind === "case-study" ? "Case Study" : "Project";
     const title = `${project.title} — ${kind} | Charles Wachira`;
+    const url = `https://mcwachira.com/work/${project.slug}`;
+
+    const structuredData = {
+        "@context": "https://schema.org",
+        "@type": entry.kind === "case-study" ? "CreativeWork" : "SoftwareApplication",
+        name: project.title,
+        description: project.summary,
+        url,
+        author: {
+            "@type": "Person",
+            name: "Charles Wachira",
+            url: "https://mcwachira.com",
+        },
+        publisher: {
+            "@type": "Person",
+            name: "Charles Wachira",
+            url: "https://mcwachira.com",
+        },
+        ...(entry.kind === "case-study"
+            ? {
+                datePublished: (project as Project).year
+                    ? new Date(`${(project as Project).year}-01-01`).toISOString()
+                    : undefined,
+            }
+            : {
+                applicationCategory: project.category,
+                operatingSystem: "Web",
+                offers: (project as EngineeringProject).live
+                    ? {
+                        "@type": "Offer",
+                        url: (project as EngineeringProject).live,
+                        availability: "https://schema.org/InStock",
+                    }
+                    : undefined,
+            }),
+    };
 
     return {
         title,
         description: project.summary,
+        alternates: {
+            canonical: url,
+        },
         openGraph: {
             title,
             description: project.summary,
             type: "article",
+            url,
         },
         twitter: {
             card: "summary_large_image",
+            title,
+            description: project.summary,
+        },
+        other: {
+            "script:ld+json": JSON.stringify(structuredData).replace(/</g, "\\u003c"),
         },
     };
 }
@@ -143,7 +191,7 @@ function CaseStudyPage({ project }: { project: Project }) {
                 <div className="shell grid12 py-10 md:py-14">
                     <div className="col-span-2 md:col-span-6 lg:col-span-8">
                         <Link
-                            href="/projects"
+                            href="/work"
                             className="label border-b border-accent pb-0.5 text-foreground"
                         >
                             ← All work
@@ -313,7 +361,7 @@ function BuildPage({
                 <div className="shell grid12 py-10 md:py-14">
                     <div className="col-span-2 md:col-span-6 lg:col-span-8">
                         <Link
-                            href="/projects"
+                            href="/work"
                             className="label border-b border-accent pb-0.5 text-foreground"
                         >
                             ← All work
