@@ -1,12 +1,12 @@
 
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import type { FormEvent } from "react";
 
 import { SiteQa } from "@/components/site-qa";
 import { profile } from "@/data/site";
-import { submitContactMessage } from "./actions";
+import { submitContactMessage, getContactCsrfToken } from "./actions";
 
 type FieldErrors = {
     name?: string;
@@ -19,12 +19,25 @@ export default function ContactForm() {
     const [email, setEmail] = useState("");
     const [message, setMessage] = useState("");
     const [website, setWebsite] = useState("");
+    const [csrfToken, setCsrfToken] = useState("");
 
     const [errors, setErrors] = useState<FieldErrors>({});
     const [sent, setSent] = useState(false);
     const [emailSent, setEmailSent] = useState(false);
     const [busy, setBusy] = useState(false);
     const [failed, setFailed] = useState<string | null>(null);
+
+    useEffect(() => {
+        async function fetchCsrfToken() {
+            try {
+                const token = await getContactCsrfToken();
+                setCsrfToken(token);
+            } catch (error) {
+                console.error("Failed to fetch CSRF token:", error);
+            }
+        }
+        fetchCsrfToken();
+    }, []);
 
     function validate() {
         const nextErrors: FieldErrors = {};
@@ -64,6 +77,7 @@ export default function ContactForm() {
                 email: email.trim(),
                 message: message.trim(),
                 website,
+                csrfToken,
             });
 
             if (!result.ok) {

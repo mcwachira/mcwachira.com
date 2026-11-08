@@ -3,12 +3,14 @@
 
 import { Resend } from "resend";
 import { createClient } from "@/integrations/supabase/server";
+import { cookies } from "next/headers";
 
 type ContactInput = {
     name: string;
     email: string;
     message: string;
     website?: string;
+    csrfToken?: string;
 };
 
 type ContactResult =
@@ -27,11 +29,99 @@ type ContactResult =
 };
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const CSRF_COOKIE_NAME = "csrf_token";
+const CSRF_COOKIE_MAX_AGE = 60 * 60 * 24; // 24 hours
+
+// Rate limit: 5 submissions per hour per email
+const RATE_LIMIT_MAX = 5;
+const RATE_LIMIT_WINDOW_MS = 60 * 60 * 1000;
+
+async function getCsrfToken(): Promise<string> {
+    const cookieStore = await cookies();
+    let token = cookieStore.get(CSRF_COOKIE_NAME)?.value;
+
+    if (!token) {
+        token = crypto.randomUUID();
+        cookieStore.set(CSRF_COOKIE_NAME, token, {
+            httpOnly: true,
+            secure: process.env.NODE_ENV === "production",
+            sameSite: "strict",
+            maxAge: CSRF_COOKIE_MAX_AGE,
+            path: "/",
+        });
+    }
+
+    return token;
+}
+
+async function validateCsrfToken(submittedToken: string | undefined): Promise<boolean> {
+    if (!submittedToken) {
+        return false;
+    }
+
+    const cookieStore = await cookies();
+    const cookieToken = cookieStore.get(CSRF_COOKIE_NAME)?.value;
+
+    if (!cookieToken) {
+        return false;
+    }
+
+    // Constant-time comparison to prevent timing attacks
+    if (submittedToken.length !== cookieToken.length) {
+        return false;
+    }
+
+    let result = 0;
+    for (let i = 0; i < submittedToken.length; i++) {
+        result |= submittedToken.charCodeAt(i) ^ cookieToken.charCodeAt(i);
+    }
+
+    return result === 0;
+}
+
+async function checkRateLimit(supabase: Awaited<ReturnType<typeof createClient>>, email: string): Promise<{ allowed: boolean; retryAfter?: number }> {
+    const windowStart = new Date(Date.now() - RATE_LIMIT_WINDOW_MS).toISOString();
+
+    const { data, error } = await supabase
+        .from("contact_messages")
+        .select("created_at")
+        .eq("email", email)
+        .gte("created_at", windowStart)
+        .order("created_at", { ascending: false })
+        .limit(RATE_LIMIT_MAX);
+
+    if (error) {
+        console.error("Rate limit check error:", error);
+        // Fail open - allow request if rate limit check fails
+        return { allowed: true };
+    }
+
+    const count = data?.length ?? 0;
+
+    if (count >= RATE_LIMIT_MAX) {
+        const oldestInWindow = data?.[data.length - 1]?.created_at;
+        const retryAfter = oldestInWindow
+            ? Math.max(0, Math.ceil((new Date(oldestInWindow).getTime() + RATE_LIMIT_WINDOW_MS - Date.now()) / 1000))
+            : RATE_LIMIT_WINDOW_MS / 1000;
+        return { allowed: false, retryAfter };
+    }
+
+    return { allowed: true };
+}
 
 export async function submitContactMessage(
     input: ContactInput,
 ): Promise<ContactResult> {
     try {
+        // Validate CSRF token
+        const csrfValid = await validateCsrfToken(input.csrfToken);
+        if (!csrfValid) {
+            return {
+                ok: false,
+                message: "Invalid request. Please refresh the page and try again.",
+            };
+        }
+
         // Validate input on the server.
         const name = String(input?.name ?? "").trim();
         const email = String(input?.email ?? "").trim().toLowerCase();
@@ -73,9 +163,22 @@ export async function submitContactMessage(
             };
         }
 
-        // Save the enquiry before attempting email delivery.
         const supabase = await createClient();
 
+        // Rate limiting by email
+        const { allowed, retryAfter } = await checkRateLimit(supabase, email);
+
+        if (!allowed) {
+            return {
+                ok: false,
+                message: `Too many submissions. Please try again in ${Math.ceil((retryAfter ?? 3600) / 60)} minutes.`,
+                fieldErrors: {
+                    message: `Rate limit exceeded. Please wait before submitting again.`,
+                },
+            };
+        }
+
+        // Save the enquiry before attempting email delivery.
         const { data, error } = await supabase
             .from("contact_messages")
             .insert({
@@ -161,4 +264,9 @@ export async function submitContactMessage(
             message: "Your message could not be sent. Please try again.",
         };
     }
+}
+
+// Server action to get/set CSRF token for the contact form
+export async function getContactCsrfToken(): Promise<string> {
+    return getCsrfToken();
 }
