@@ -151,16 +151,15 @@ export default async function Home() {
                   01 / Profile — Based in Nairobi
                 </p>
 
-                <h1 className="fluid-display mt-5 max-w-full font-bold">
-                  Senior software
-                  <br />
-                  engineer building
-                  <br />
-                  <span className="bg-accent px-2 text-accent-foreground">
-                  scalable systems
-                </span>
-                  <br />
-                  for real businesses.
+                <h1 className="fluid-display mt-5 max-w-full text-balance font-bold leading-[0.98] tracking-[-0.045em]">
+                  <span className="block">Senior software</span>
+                  <span className="block">engineer building</span>
+                  <span className="block">
+    <span className="box-decoration-clone bg-accent px-[0.16em] py-[0.04em] text-accent-foreground">
+      scalable systems
+    </span>
+  </span>
+                  <span className="block">for real businesses.</span>
                 </h1>
 
                 <p className="mt-7 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
