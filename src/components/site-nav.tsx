@@ -9,13 +9,9 @@ import { nav, profile } from "@/data/site";
 import { ThemeToggle } from "@/components/theme";
 
 export function SiteNav() {
-    const [open, setOpen] = useState(false);
+    const [openForPath, setOpenForPath] = useState<string | null>(null);
     const pathname = usePathname();
-
-    // Close the mobile menu whenever the route changes.
-    useEffect(() => {
-        setOpen(false);
-    }, [pathname]);
+    const open = openForPath === pathname;
 
     // Prevent background scrolling while the mobile menu is open.
     useEffect(() => {
@@ -86,7 +82,7 @@ export function SiteNav() {
 
                     <button
                         type="button"
-                        onClick={() => setOpen((previous) => !previous)}
+                        onClick={() => setOpenForPath(open ? null : pathname)}
                         aria-expanded={open}
                         aria-controls="mobile-menu"
                         aria-label={open ? "Close navigation menu" : "Open navigation menu"}

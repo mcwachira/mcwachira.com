@@ -1,7 +1,6 @@
-
 "use server";
 
-import { revalidatePath } from "next/cache";
+import { revalidatePath, updateTag } from "next/cache";
 import { createClient } from "@/integrations/supabase/server";
 
 export type PostStatus =
@@ -87,8 +86,10 @@ function validatePost(input: PostInput) {
         throw new Error("Invalid post status.");
     }
 
-    if (!Array.isArray(input.tags) ||
-        !input.tags.every((tag) => typeof tag === "string")) {
+    if (
+        !Array.isArray(input.tags) ||
+        !input.tags.every((tag) => typeof tag === "string")
+    ) {
         throw new Error("Post tags must be a list of strings.");
     }
 
@@ -114,11 +115,35 @@ function validatePost(input: PostInput) {
     };
 }
 
+function revalidatePublicPosts() {
+    updateTag("public-posts");
+
+    revalidatePath("/");
+    revalidatePath("/writing");
+    revalidatePath("/admin/posts");
+}
+
 export async function savePost(input: PostInput) {
     const supabase = await getAdminClient();
     const payload = validatePost(input);
 
     if (input.id) {
+        const { data: existingPost, error: lookupError } = await supabase
+            .from("posts")
+            .select("slug")
+            .eq("id", input.id)
+            .maybeSingle();
+
+        if (lookupError) {
+            throw new Error(
+                `Could not find existing post: ${lookupError.message}`,
+            );
+        }
+
+        if (!existingPost) {
+            throw new Error("Post not found.");
+        }
+
         const { data, error } = await supabase
             .from("posts")
             .update(payload)
@@ -134,8 +159,13 @@ export async function savePost(input: PostInput) {
             throw new Error("Post not found or could not be updated.");
         }
 
-        revalidatePath("/admin/posts");
+        revalidatePublicPosts();
+
+        updateTag(`public-post-${existingPost.slug}`);
+        updateTag(`public-post-${data.slug}`);
+
         revalidatePath(`/admin/posts/${data.id}`);
+        revalidatePath(`/writing/${existingPost.slug}`);
         revalidatePath(`/writing/${data.slug}`);
 
         return { id: data.id };
@@ -151,7 +181,9 @@ export async function savePost(input: PostInput) {
         throw new Error(`Could not create post: ${error.message}`);
     }
 
-    revalidatePath("/admin/posts");
+    revalidatePublicPosts();
+    updateTag(`public-post-${data.slug}`);
+
     revalidatePath(`/writing/${data.slug}`);
 
     return { id: data.id };
@@ -183,7 +215,9 @@ export async function deletePost(input: { id: string }) {
         throw new Error("Post not found or could not be deleted.");
     }
 
-    revalidatePath("/admin/posts");
+    revalidatePublicPosts();
+    updateTag(`public-post-${data.slug}`);
+
     revalidatePath(`/writing/${data.slug}`);
 
     return { ok: true as const };

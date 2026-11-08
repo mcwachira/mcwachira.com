@@ -2,6 +2,7 @@
 import "server-only";
 
 import { createClient } from "@supabase/supabase-js";
+import { cacheLife, cacheTag } from "next/cache";
 import type { Database } from "@/integrations/supabase/types";
 
 function publicClient() {
@@ -45,6 +46,11 @@ const projectColumns =
     "slug, kind, title, data, featured, featured_order, current_build, sort_order";
 
 export async function listProjects() {
+    "use cache";
+
+    cacheLife("hours");
+    cacheTag("public-projects");
+
     const { data, error } = await publicClient()
         .from("projects")
         .select(projectColumns)
@@ -59,6 +65,11 @@ export async function listProjects() {
 }
 
 export async function listPosts() {
+    "use cache";
+
+    cacheLife("hours");
+    cacheTag("public-posts");
+
     const { data, error } = await publicClient()
         .from("posts")
         .select("slug, title, excerpt, category, published_at, read_time, body")
@@ -76,6 +87,11 @@ export async function listPosts() {
 }
 
 export async function getPost(slug: string) {
+    "use cache";
+
+    cacheLife("hours");
+    cacheTag("public-posts", `public-post-${slug}`);
+
     const { data, error } = await publicClient()
         .from("posts")
         .select(
@@ -93,6 +109,11 @@ export async function getPost(slug: string) {
 }
 
 export async function listExperiences() {
+    "use cache";
+
+    cacheLife("hours");
+    cacheTag("public-experiences");
+
     const { data, error } = await publicClient()
         .from("experiences")
         .select(
@@ -109,6 +130,11 @@ export async function listExperiences() {
 }
 
 export async function listSkills() {
+    "use cache";
+
+    cacheLife("hours");
+    cacheTag("public-skills");
+
     const { data, error } = await publicClient()
         .from("skills")
         .select("id, name, category, level, evidence, sort_order")
@@ -123,6 +149,11 @@ export async function listSkills() {
 }
 
 export async function getSettings() {
+    "use cache";
+
+    cacheLife("hours");
+    cacheTag("public-site-settings");
+
     const { data, error } = await publicClient()
         .from("site_settings")
         .select("data")
@@ -136,7 +167,3 @@ export async function getSettings() {
 
     return data?.data ?? null;
 }
-
-
-
-

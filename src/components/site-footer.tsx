@@ -1,11 +1,19 @@
-
 import Link from "next/link";
+import { cacheLife } from "next/cache";
 
 import { nav, profile } from "@/data/site";
 import { ThemeToggle } from "@/components/theme";
 
-export function SiteFooter() {
-    const currentYear = new Date().getFullYear();
+async function getCurrentYear() {
+    "use cache";
+
+    cacheLife("hours");
+
+    return new Date().getFullYear();
+}
+
+export async function SiteFooter() {
+    const currentYear = await getCurrentYear();
 
     return (
         <footer className="border-t border-border">

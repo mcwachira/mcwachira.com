@@ -1,7 +1,6 @@
-
 "use server";
 
-import { revalidatePath } from "next/cache";
+import { revalidatePath, updateTag } from "next/cache";
 import { createClient } from "@/integrations/supabase/server";
 import type { Database, Json } from "@/integrations/supabase/types";
 
@@ -85,12 +84,18 @@ function validateProject(input: ProjectInput): ProjectInput {
         throw new Error("Invalid verification status.");
     }
 
-    if (!Number.isFinite(input.sort_order) ||
-        !Number.isFinite(input.featured_order)) {
+    if (
+        !Number.isFinite(input.sort_order) ||
+        !Number.isFinite(input.featured_order)
+    ) {
         throw new Error("Project ordering values must be valid numbers.");
     }
 
-    if (!input.data || typeof input.data !== "object" || Array.isArray(input.data)) {
+    if (
+        !input.data ||
+        typeof input.data !== "object" ||
+        Array.isArray(input.data)
+    ) {
         throw new Error("Project data must be a JSON object.");
     }
 
@@ -101,9 +106,9 @@ function validateProject(input: ProjectInput): ProjectInput {
     };
 }
 
-export async function getProject(id: string) {
-    if (!id || id === "new") {
-        throw new Error("A valid project ID is required.");
+export async function getProject(slug: string) {
+    if (!slug || slug === "new") {
+        throw new Error("A valid project slug is required.");
     }
 
     const supabase = await getAdminClient();
@@ -111,7 +116,7 @@ export async function getProject(id: string) {
     const { data, error } = await supabase
         .from("projects")
         .select("*")
-        .eq("id", id)
+        .eq("slug", slug)
         .single();
 
     if (error) {
@@ -122,35 +127,37 @@ export async function getProject(id: string) {
 }
 
 export async function saveProject(input: {
-    id?: string;
+    slug?: string;
     project: ProjectInput;
 }) {
     const project = validateProject(input.project);
     const supabase = await getAdminClient();
 
-    if (input.id) {
+    if (input.slug) {
         const updatePayload = project as ProjectUpdate;
 
         const { data, error } = await supabase
             .from("projects")
             .update(updatePayload)
-            .eq("id", input.id)
-            .select("id")
+            .eq("slug", input.slug)
+            .select("slug")
             .single();
 
         if (error) {
             throw new Error(`Could not update project: ${error.message}`);
         }
 
+        updateTag("public-projects");
+
         revalidatePath("/admin");
         revalidatePath("/admin/projects");
-        revalidatePath(`/admin/projects/${data.id}`);
+        revalidatePath(`/admin/projects/${input.slug}`);
+        revalidatePath(`/admin/projects/${data.slug}`);
         revalidatePath("/work");
-        revalidatePath(`/work/${project.slug}`);
+        revalidatePath(`/work/${input.slug}`);
+        revalidatePath(`/work/${data.slug}`);
 
-        return { id: data.id };
-
-
+        return { slug: data.slug };
     }
 
     const insertPayload = project as ProjectInsert;
@@ -158,23 +165,25 @@ export async function saveProject(input: {
     const { data, error } = await supabase
         .from("projects")
         .insert(insertPayload)
-        .select("id")
+        .select("slug")
         .single();
 
     if (error) {
         throw new Error(`Could not create project: ${error.message}`);
     }
 
+    updateTag("public-projects");
+
     revalidatePath("/admin");
     revalidatePath("/admin/projects");
     revalidatePath("/work");
 
-    return { id: data.id };
+    return { slug: data.slug };
 }
 
-export async function deleteProject(id: string) {
-    if (!id || id === "new") {
-        throw new Error("A valid project ID is required.");
+export async function deleteProject(slug: string) {
+    if (!slug || slug === "new") {
+        throw new Error("A valid project slug is required.");
     }
 
     const supabase = await getAdminClient();
@@ -182,8 +191,8 @@ export async function deleteProject(id: string) {
     const { data, error } = await supabase
         .from("projects")
         .delete()
-        .eq("id", id)
-        .select("id")
+        .eq("slug", slug)
+        .select("slug")
         .single();
 
     if (error) {
@@ -194,9 +203,12 @@ export async function deleteProject(id: string) {
         throw new Error("Project was not found or could not be deleted.");
     }
 
+    updateTag("public-projects");
+
     revalidatePath("/admin");
     revalidatePath("/admin/projects");
     revalidatePath("/work");
+    revalidatePath(`/work/${slug}`);
 
     return { ok: true as const };
 }

@@ -29,8 +29,8 @@ export default async function AdminDashboardPage() {
     ] = await Promise.all([
         supabase
             .from("projects")
-            .select("id,title,kind,state,verification,updated_at")
-            .order("updated_at", { ascending: false }),
+            .select("slug,title,kind,state,verification,updated_at")
+             .order("updated_at", { ascending: false }),
 
         supabase
             .from("posts")
@@ -71,12 +71,12 @@ export default async function AdminDashboardPage() {
 
     const activity: ActivityItem[] = [
         ...projectRows.map((project) => ({
-            id: project.id,
+            id: project.slug,
+            href: `/admin/projects/${project.slug}`,
             title: project.title,
             type: "Project" as const,
             status: `${project.state} · ${project.verification}`,
             updatedAt: project.updated_at,
-            href: `/admin/projects/${project.id}`,
         })),
 
         ...postRows.map((post) => ({
@@ -171,9 +171,8 @@ export default async function AdminDashboardPage() {
                         {projectsNeedingReview.length > 0 && (
                             <ul className="space-y-2 border-l-2 pl-3">
                                 {projectsNeedingReview.slice(0, 5).map((project) => (
-                                    <li key={project.id}>
-                                        <Link
-                                            href={`/admin/projects/${project.id}`}
+                                    <li key={project.slug}>
+                                        <Link href={`/admin/projects/${project.slug}`}
                                             className="text-sm hover:underline"
                                         >
                                             {project.title}

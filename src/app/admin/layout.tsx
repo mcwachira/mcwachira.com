@@ -1,4 +1,4 @@
-
+import { Suspense } from "react";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 
@@ -13,9 +13,9 @@ const navigation = [
     { label: "Settings", href: "/admin/settings" },
 ];
 
-export default async function AdminLayout({
-                                              children,
-                                          }: Readonly<{
+async function AdminContent({
+                                children,
+                            }: Readonly<{
     children: React.ReactNode;
 }>) {
     const supabase = await createClient();
@@ -38,7 +38,9 @@ export default async function AdminLayout({
     );
 
     if (roleError) {
-        throw new Error(`Could not verify administrator access: ${roleError.message}`);
+        throw new Error(
+            `Could not verify administrator access: ${roleError.message}`,
+        );
     }
 
     return (
@@ -52,6 +54,7 @@ export default async function AdminLayout({
                         >
                             Admin
                         </Link>
+
                         <p className="text-sm text-muted-foreground">
                             Content management
                         </p>
@@ -93,6 +96,7 @@ export default async function AdminLayout({
                 {!isAdmin ? (
                     <div className="rounded-lg border p-8">
                         <h1 className="text-lg font-semibold">No access</h1>
+
                         <p className="mt-2 text-sm text-muted-foreground">
                             This account cannot manage content.
                         </p>
@@ -102,5 +106,29 @@ export default async function AdminLayout({
                 )}
             </div>
         </div>
+    );
+}
+
+function AdminFallback() {
+    return (
+        <div className="min-h-screen bg-background text-foreground">
+            <div className="mx-auto max-w-7xl px-6 py-6">
+                <p className="text-sm text-muted-foreground">
+                    Loading administration...
+                </p>
+            </div>
+        </div>
+    );
+}
+
+export default function AdminLayout({
+                                        children,
+                                    }: Readonly<{
+    children: React.ReactNode;
+}>) {
+    return (
+        <Suspense fallback={<AdminFallback />}>
+            <AdminContent>{children}</AdminContent>
+        </Suspense>
     );
 }

@@ -12,13 +12,13 @@ import {
 } from "@/lib/projects.actions";
 
 type ProjectRow = ProjectInput & {
-    id: string;
+
     created_at?: string;
     updated_at?: string;
 };
 
 type Props = {
-    id: string;
+    slug: string;
     initialProject: ProjectRow | null;
 };
 
@@ -174,11 +174,11 @@ function Check({
 }
 
 export default function ProjectEditor({
-                                          id,
+                                          slug,
                                           initialProject,
                                       }: Props) {
     const router = useRouter();
-    const isNew = id === "new";
+    const isNew = slug === "new";
 
     const [form, setForm] = useState<ProjectInput>(() => {
         if (!initialProject) return blank;
@@ -229,14 +229,14 @@ export default function ProjectEditor({
         startTransition(async () => {
             try {
                 const result = await saveProject({
-                    id: isNew ? undefined : id,
+                    slug: isNew ? undefined : slug,
                     project: form,
                 });
 
                 setMessage("Saved successfully.");
 
                 if (isNew) {
-                    router.replace(`/admin/projects/${result.id}`);
+                    router.replace(`/admin/projects/${result.slug}`);
                 } else {
                     router.refresh();
                 }
@@ -261,7 +261,7 @@ export default function ProjectEditor({
 
         startTransition(async () => {
             try {
-                await deleteProject(id);
+                await deleteProject(slug);
                 router.push("/admin/projects");
                 router.refresh();
             } catch (error) {

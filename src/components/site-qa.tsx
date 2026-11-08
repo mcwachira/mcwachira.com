@@ -85,7 +85,7 @@ export function SiteQa() {
                 {turns.length === 0 && (
                     <div className="space-y-2">
                         <p className="text-sm leading-relaxed text-muted-foreground">
-                            Questions about Charles's experience, systems he
+                            Questions about Charles&apos;s experience, systems he
                             has delivered, or how he works — answered from what
                             is published on this site.
                         </p>

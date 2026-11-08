@@ -1,8 +1,10 @@
+
+import { Suspense } from "react";
 import Link from "next/link";
 import { createClient } from "@/integrations/supabase/server";
 import PostsClient from "./posts-client";
 
-export default async function AdminPostsPage() {
+async function PostsContent() {
     const supabase = await createClient();
 
     const { data: posts, error } = await supabase
@@ -40,5 +42,22 @@ export default async function AdminPostsPage() {
 
             <PostsClient posts={posts ?? []} />
         </div>
+    );
+}
+
+function PostsFallback() {
+    return (
+        <div className="space-y-4" aria-busy="true">
+            <div className="h-8 w-48 animate-pulse rounded bg-muted" />
+            <div className="h-24 animate-pulse rounded-lg bg-muted" />
+        </div>
+    );
+}
+
+export default function AdminPostsPage() {
+    return (
+        <Suspense fallback={<PostsFallback />}>
+            <PostsContent />
+        </Suspense>
     );
 }

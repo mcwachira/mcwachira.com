@@ -6,29 +6,55 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
 import { Page } from "@/components/page-layout";
+import {
+    getPost as getPublishedPost,
+    listPosts,
+} from "@/lib/content.functions";
 
-// Temporary article type. The GitHub Markdown service will provide
-// these records when the blog content integration is implemented.
 type BlogPost = {
     slug: string;
     title: string;
     excerpt: string;
     category: string;
-    publishedAt: string;
+    publishedAt: string | null;
     readTime: string;
     body: string;
     seoTitle?: string;
     seoDescription?: string;
 };
 
-async function getPost(_slug: string): Promise<BlogPost | null> {
-    // GitHub Markdown fetching will be implemented in src/lib/blog.ts.
-    return null;
+const VALIDATION_SLUG = "__next_cache_validation__";
+
+export async function generateStaticParams() {
+    const posts = await listPosts();
+    const publishedPosts = posts.filter((post) => post.hasBody);
+
+    return publishedPosts.length > 0
+        ? publishedPosts.map((post) => ({ slug: post.slug }))
+        : [{ slug: VALIDATION_SLUG }];
+}
+async function getPost(slug: string): Promise<BlogPost | null> {
+    const post = await getPublishedPost(slug);
+
+    if (!post) {
+        return null;
+    }
+
+    return {
+        slug: post.slug,
+        title: post.title,
+        excerpt: post.excerpt ?? "",
+        category: post.category ?? "",
+        publishedAt: post.published_at,
+        readTime: post.read_time ?? "",
+        body: post.body ?? "",
+        seoTitle: post.seo_title ?? undefined,
+        seoDescription: post.seo_description ?? undefined,
+    };
 }
 
-async function getPosts(): Promise<BlogPost[]> {
-    // Returns the published articles from GitHub in the final integration.
-    return [];
+async function getPosts() {
+    return listPosts();
 }
 
 type PageProps = {
@@ -52,8 +78,7 @@ export async function generateMetadata({
     }
 
     const title = `${post.seoTitle ?? post.title} — Charles Wachira`;
-    const description =
-        post.seoDescription ?? post.excerpt ?? "";
+    const description = post.seoDescription ?? post.excerpt;
 
     return {
         title,
@@ -69,7 +94,11 @@ export async function generateMetadata({
     };
 }
 
-function formatDate(date: string) {
+function formatDate(date: string | null) {
+    if (!date) {
+        return "Date unavailable";
+    }
+
     const parsed = new Date(date);
 
     if (Number.isNaN(parsed.getTime())) {
@@ -97,10 +126,10 @@ export default async function BlogPostPage({ params }: PageProps) {
     }
 
     const others = allPosts
-        .filter((item) => item.slug !== slug && item.body)
+        .filter((item) => item.slug !== slug && item.hasBody)
         .slice(0, 2);
 
-    const url = `https://mcwachira.com/blog/${post.slug}`;
+    const url = `https://mcwachira.com/writing/${post.slug}`;
 
     const shares = [
         {
@@ -122,7 +151,7 @@ export default async function BlogPostPage({ params }: PageProps) {
             <article className="shell grid12 py-12 md:py-16">
                 <header className="col-span-2 md:col-span-6 lg:col-span-8 lg:col-start-3">
                     <Link
-                        href="/blog"
+                        href="/writing"
                         className="label border-b border-accent pb-0.5 text-foreground"
                     >
                         ← All notes
@@ -183,14 +212,14 @@ export default async function BlogPostPage({ params }: PageProps) {
                                         className="flex flex-wrap items-baseline justify-between gap-3 py-4"
                                     >
                                         <Link
-                                            href={`/blog/${item.slug}`}
+                                            href={`/writing/${item.slug}`}
                                             className="font-display text-lg font-bold hover:underline"
                                         >
                                             {item.title}
                                         </Link>
 
                                         <span className="label">
-                                            {formatDate(item.publishedAt)}
+                                            {formatDate(item.published_at)}
                                         </span>
                                     </li>
                                 ))}

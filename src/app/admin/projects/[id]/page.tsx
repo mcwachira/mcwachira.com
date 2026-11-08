@@ -11,7 +11,7 @@ export default async function AdminProjectPage({ params }: Props) {
 
     // The editor handles new projects without a database lookup.
     if (id === "new") {
-        return <ProjectEditor id="new" initialProject={null} />;
+        return <ProjectEditor slug="new" initialProject={null} />;
     }
 
     const supabase = await createClient();
@@ -19,7 +19,7 @@ export default async function AdminProjectPage({ params }: Props) {
     const { data: project, error } = await supabase
         .from("projects")
         .select("*")
-        .eq("id", id)
+        .eq("slug", id)
         .maybeSingle();
 
     if (error) {
@@ -32,9 +32,8 @@ export default async function AdminProjectPage({ params }: Props) {
 
     return (
         <ProjectEditor
-            id={project.id}
+            slug={project.slug}
             initialProject={{
-                id: project.id,
                 slug: project.slug,
                 title: project.title,
                 kind: project.kind,

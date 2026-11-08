@@ -5,7 +5,6 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 
 type Project = {
-    id: string;
     slug: string;
     title: string;
     kind: string;
@@ -71,8 +70,8 @@ export default function ProjectsClient({
                 <div className="divide-y">
                     {filteredProjects.map((project) => (
                         <Link
-                            key={project.id}
-                            href={`/admin/projects/${project.id}`}
+                            key={project.slug}
+                            href={`/admin/projects/${project.slug}`}
                             className="flex flex-wrap items-center justify-between gap-4 p-4 transition-colors hover:bg-muted/50 sm:p-5"
                         >
                             <div className="min-w-0 flex-1">

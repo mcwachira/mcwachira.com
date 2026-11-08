@@ -19,6 +19,14 @@ type ProjectEntry =
     | { kind: "case-study"; data: Project }
     | { kind: "engineering"; data: EngineeringProject };
 
+
+export async function generateStaticParams() {
+    const rows = await listProjects();
+
+    return rows.length > 0
+        ? rows.map((row) => ({ slug: row.slug }))
+        : [{ slug: "__no-published-projects__" }];
+}
 async function findProject(slug: string): Promise<ProjectEntry | null> {
     const rows = await listProjects();
 

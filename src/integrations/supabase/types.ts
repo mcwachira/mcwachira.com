@@ -157,50 +157,47 @@ export type Database = {
             }
             projects: {
                 Row: {
-                    created_at: string
-                    current_build: boolean
-                    data: Json
-                    featured: boolean
-                    featured_order: number
-                    id: string
-                    kind: string
-                    slug: string
-                    sort_order: number
-                    state: string
-                    title: string
-                    updated_at: string
-                    verification: string
-                }
+                    created_at: string;
+                    current_build: boolean;
+                    data: Json;
+                    featured: boolean;
+                    featured_order: number;
+                    kind: string;
+                    slug: string;
+                    sort_order: number;
+                    state: string;
+                    title: string;
+                    updated_at: string;
+                    verification: string;
+                };
                 Insert: {
-                    created_at?: string
-                    current_build?: boolean
-                    data?: Json
-                    featured?: boolean
-                    featured_order?: number
-                    id?: string
-                    kind?: string
-                    slug: string
-                    sort_order?: number
-                    state?: string
-                    title: string
-                    updated_at?: string
-                    verification?: string
-                }
+                    created_at?: string;
+                    current_build?: boolean;
+                    data?: Json;
+                    featured?: boolean;
+                    featured_order?: number;
+                    kind?: string;
+                    slug: string;
+                    sort_order?: number;
+                    state?: string;
+                    title: string;
+                    updated_at?: string;
+                    verification?: string;
+                };
                 Update: {
-                    created_at?: string
-                    current_build?: boolean
-                    data?: Json
-                    featured?: boolean
-                    featured_order?: number
-                    id?: string
-                    kind?: string
-                    slug?: string
-                    sort_order?: number
-                    state?: string
-                    title?: string
-                    updated_at?: string
-                    verification?: string
-                }
+                    created_at?: string;
+                    current_build?: boolean;
+                    data?: Json;
+                    featured?: boolean;
+                    featured_order?: number;
+                    kind?: string;
+                    slug?: string;
+                    sort_order?: number;
+                    state?: string;
+                    title?: string;
+                    updated_at?: string;
+                    verification?: string;
+                };
                 Relationships: []
             }
             site_settings: {

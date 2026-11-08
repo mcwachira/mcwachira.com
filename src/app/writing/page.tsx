@@ -3,16 +3,17 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { Page } from "@/components/page-layout";
+import { listPosts } from "@/lib/content.functions";
 
 export const metadata: Metadata = {
-    title: "Blog — Charles Wachira",
+    title: "Writing — Charles Wachira",
     description:
         "Engineering notes on Node.js, Next.js and Zoho automation from Charles Wachira, senior software engineer based in Diani, Kenya.",
     alternates: {
-        canonical: "https://mcwachira.com/blog",
+        canonical: "https://mcwachira.com/writing",
     },
     openGraph: {
-        title: "Blog — Charles Wachira",
+        title: "Writing — Charles Wachira",
         description:
             "Engineering notes on Node.js, Next.js and Zoho automation.",
         type: "website",
@@ -22,24 +23,35 @@ export const metadata: Metadata = {
     },
 };
 
-export default function BlogPage() {
-    // Markdown posts will be loaded from the public GitHub repository
-    // when the blog content integration is implemented.
-    const posts: {
-        slug: string;
-        title: string;
-        category: string;
-        publishedAt: string;
-        readTime: string;
-        excerpt: string;
-    }[] = [];
+function formatDate(date: string | null) {
+    if (!date) {
+        return "Date unavailable";
+    }
+
+    const parsed = new Date(date);
+
+    if (Number.isNaN(parsed.getTime())) {
+        return date;
+    }
+
+    return new Intl.DateTimeFormat("en-GB", {
+        day: "2-digit",
+        month: "short",
+        year: "numeric",
+        timeZone: "UTC",
+    }).format(parsed);
+}
+
+export default async function WritingPage() {
+    const allPosts = await listPosts();
+    const posts = allPosts.filter((post) => post.hasBody);
 
     return (
         <Page>
             <section className="border-b border-border">
                 <div className="shell grid12 py-12 md:py-16">
                     <div className="col-span-2 md:col-span-6 lg:col-span-8">
-                        <p className="label">01 / Blog</p>
+                        <p className="label">01 / Writing</p>
                         <h1 className="fluid-display mt-4 font-bold">
                             Notes
                         </h1>
@@ -70,7 +82,7 @@ export default function BlogPage() {
                         </p>
 
                         <Link
-                            href="/projects"
+                            href="/work"
                             className="mt-6 inline-block border-b border-accent pb-1 font-mono text-xs uppercase tracking-[0.14em]"
                         >
                             Explore selected work →
@@ -79,10 +91,7 @@ export default function BlogPage() {
                 ) : (
                     <ol className="divide-y divide-rule border-y border-rule">
                         {posts.map((post, index) => (
-                            <li
-                                key={post.slug}
-                                className="grid12 py-6"
-                            >
+                            <li key={post.slug} className="grid12 py-6">
                                 <span className="label col-span-1 lg:col-span-1">
                                     {String(index + 1).padStart(2, "0")}
                                 </span>
@@ -107,11 +116,11 @@ export default function BlogPage() {
                                 </div>
 
                                 <span className="label col-span-1 md:col-span-3 lg:col-span-2">
-                                    {post.publishedAt}
+                                    {formatDate(post.published_at)}
                                 </span>
 
                                 <span className="label col-span-1 md:col-span-3 lg:col-span-1 lg:text-right">
-                                    {post.readTime}
+                                    {post.read_time}
                                 </span>
                             </li>
                         ))}
