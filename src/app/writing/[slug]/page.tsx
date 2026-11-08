@@ -2,59 +2,46 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
 
 import { Page } from "@/components/page-layout";
-import {
-    getPost as getPublishedPost,
-    listPosts,
-} from "@/lib/content.functions";
-
-type BlogPost = {
-    slug: string;
-    title: string;
-    excerpt: string;
-    category: string;
-    publishedAt: string | null;
-    readTime: string;
-    body: string;
-    seoTitle?: string;
-    seoDescription?: string;
-};
+import { ArticleRenderer } from "@/components/writing";
+import { getArticleBySlug, getAllArticles, getPublishedArticleSlugs } from "@/lib/writing";
 
 const VALIDATION_SLUG = "__next_cache_validation__";
 
 export async function generateStaticParams() {
-    const posts = await listPosts();
-    const publishedPosts = posts.filter((post) => post.hasBody);
+    const slugs = await getPublishedArticleSlugs();
 
-    return publishedPosts.length > 0
-        ? publishedPosts.map((post) => ({ slug: post.slug }))
+    return slugs.length > 0
+        ? slugs.map((slug) => ({ slug }))
         : [{ slug: VALIDATION_SLUG }];
 }
-async function getPost(slug: string): Promise<BlogPost | null> {
-    const post = await getPublishedPost(slug);
 
-    if (!post) {
+async function getPost(slug: string) {
+    const article = await getArticleBySlug(slug);
+
+    if (!article) {
         return null;
     }
 
     return {
-        slug: post.slug,
-        title: post.title,
-        excerpt: post.excerpt ?? "",
-        category: post.category ?? "",
-        publishedAt: post.published_at,
-        readTime: post.read_time ?? "",
-        body: post.body ?? "",
-        seoTitle: post.seo_title ?? undefined,
-        seoDescription: post.seo_description ?? undefined,
+        slug: article.frontmatter.slug,
+        title: article.frontmatter.title,
+        excerpt: article.frontmatter.description,
+        category: article.frontmatter.category ?? "General",
+        publishedAt: article.frontmatter.date,
+        updatedAt: article.frontmatter.updatedAt,
+        readTime: article.readingTime,
+        body: article.content,
+        format: article.format,
+        seoTitle: article.frontmatter.seoTitle,
+        seoDescription: article.frontmatter.seoDescription,
+        tags: article.frontmatter.tags,
     };
 }
 
 async function getPosts() {
-    return listPosts();
+    return getAllArticles();
 }
 
 type PageProps = {
@@ -88,7 +75,7 @@ export async function generateMetadata({
         description: post.seoDescription ?? post.excerpt,
         url,
         datePublished: post.publishedAt,
-        dateModified: post.publishedAt,
+        dateModified: post.updatedAt ?? post.publishedAt,
         author: {
             "@type": "Person",
             name: "Charles Wachira",
@@ -116,8 +103,10 @@ export async function generateMetadata({
             description,
             type: "article",
             url,
-            publishedTime: post.publishedAt ?? undefined,
+            publishedTime: post.publishedAt,
+            modifiedTime: post.updatedAt,
             authors: ["Charles Wachira"],
+            tags: post.tags,
         },
         twitter: {
             card: "summary_large_image",
@@ -130,11 +119,7 @@ export async function generateMetadata({
     };
 }
 
-function formatDate(date: string | null) {
-    if (!date) {
-        return "Date unavailable";
-    }
-
+function formatDate(date: string) {
     const parsed = new Date(date);
 
     if (Number.isNaN(parsed.getTime())) {
@@ -162,7 +147,7 @@ export default async function BlogPostPage({ params }: PageProps) {
     }
 
     const others = allPosts
-        .filter((item) => item.slug !== slug && item.hasBody)
+        .filter((item) => item.slug !== slug && item.published)
         .slice(0, 2);
 
     const url = `https://mcwachira.com/writing/${post.slug}`;
@@ -210,9 +195,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                 </header>
 
                 <div className="prose-cw col-span-2 mt-10 border-t border-border pt-8 md:col-span-6 lg:col-span-8 lg:col-start-3">
-                    <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                        {post.body}
-                    </ReactMarkdown>
+                    <ArticleRenderer content={post.body} format={post.format} />
                 </div>
 
                 <footer className="col-span-2 mt-12 border-t border-border pt-8 md:col-span-6 lg:col-span-8 lg:col-start-3">
@@ -255,7 +238,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                                         </Link>
 
                                         <span className="label">
-                                            {formatDate(item.published_at)}
+                                            {formatDate(item.date)}
                                         </span>
                                     </li>
                                 ))}

@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { Page } from "@/components/page-layout";
-import { listPosts } from "@/lib/content.functions";
+import { getAllArticles } from "@/lib/writing";
 
 export const metadata: Metadata = {
     title: "Writing — Charles Wachira",
@@ -24,11 +24,7 @@ export const metadata: Metadata = {
     },
 };
 
-function formatDate(date: string | null) {
-    if (!date) {
-        return "Date unavailable";
-    }
-
+function formatDate(date: string) {
     const parsed = new Date(date);
 
     if (Number.isNaN(parsed.getTime())) {
@@ -44,8 +40,7 @@ function formatDate(date: string | null) {
 }
 
 export default async function WritingPage() {
-    const allPosts = await listPosts();
-    const posts = allPosts.filter((post) => post.hasBody);
+    const posts = await getAllArticles();
 
     return (
         <Page>
@@ -112,16 +107,16 @@ export default async function WritingPage() {
                                     </h2>
 
                                     <p className="mt-2 text-sm text-muted-foreground">
-                                        {post.excerpt}
+                                        {post.description}
                                     </p>
                                 </div>
 
                                 <span className="label col-span-1 md:col-span-3 lg:col-span-2">
-                                    {formatDate(post.published_at)}
+                                    {formatDate(post.date)}
                                 </span>
 
                                 <span className="label col-span-1 md:col-span-3 lg:col-span-1 lg:text-right">
-                                    {post.read_time}
+                                    {post.readTime}
                                 </span>
                             </li>
                         ))}

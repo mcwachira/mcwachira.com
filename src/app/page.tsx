@@ -583,7 +583,7 @@ export default async function Home() {
             </p>
           </Band>
 
-          {/* 09 — WRITING */}
+{/* 09 — WRITING */}
           <Band>
             <SectionHead
                 no="07"
@@ -601,33 +601,29 @@ export default async function Home() {
                   {String(index + 1).padStart(2, "0")}
                 </span>
 
-                    <div className="min-w-0 sm:col-span-5 lg:col-span-3">
-                      <span className="label">{post.category}</span>
-                    </div>
+                      <div className="min-w-0 sm:col-span-5 lg:col-span-3">
+                        <span className="label">{post.category}</span>
+                      </div>
 
-                    <div className="min-w-0 sm:col-span-5 lg:col-span-5">
-                      <h3 className="font-display text-lg font-bold leading-snug sm:text-xl">
-                        {post.hasBody ? (
-                            <Link
-                                href={`/writing/${post.slug}`}
-                                className="transition-colors hover:text-muted-foreground"
-                            >
-                              {post.title}
-                            </Link>
-                        ) : (
-                            post.title
-                        )}
-                      </h3>
-                    </div>
+                      <div className="min-w-0 sm:col-span-5 lg:col-span-5">
+                        <h3 className="font-display text-lg font-bold leading-snug sm:text-xl">
+                          <Link
+                              href={`/writing/${post.slug}`}
+                              className="transition-colors hover:text-muted-foreground"
+                          >
+                            {post.title}
+                          </Link>
+                        </h3>
+                      </div>
 
-                    <div className="col-start-2 flex flex-wrap gap-x-4 gap-y-1 sm:col-span-5 sm:col-start-2 lg:col-span-3 lg:col-start-auto lg:justify-end">
-                  <span className="label">
-                    {formatDate(post.published_at)}
-                  </span>
+                      <div className="col-start-2 flex flex-wrap gap-x-4 gap-y-1 sm:col-span-5 sm:col-start-2 lg:col-span-3 lg:col-start-auto lg:justify-end">
+                <span className="label">
+                  {formatDate(post.date)}
+                </span>
 
-                      <span className="label">{post.read_time}</span>
-                    </div>
-                  </li>
+                          <span className="label">{post.readTime}</span>
+                        </div>
+                      </li>
               ))}
             </ul>
 

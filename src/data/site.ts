@@ -416,7 +416,7 @@ export const industries = [
 export const nav = [
     { to: "/work", label: "Work" },
     { to: "/about", label: "About" },
-    { to: "/blog", label: "Writing" },
+    { to: "/writing", label: "Writing" },
     { to: "/contact", label: "Contact" },
 ] as const;
 

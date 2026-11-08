@@ -1,14 +1,25 @@
 import { MetadataRoute } from "next";
 import { listProjects } from "@/lib/content.functions";
-import { listPosts } from "@/lib/content.functions";
+import { getAllArticles, GitHubContentError } from "@/lib/writing";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const baseUrl = "https://mcwachira.com";
 
-    const [projects, posts] = await Promise.all([
-        listProjects(),
-        listPosts(),
-    ]);
+    let articles: Awaited<ReturnType<typeof getAllArticles>> = [];
+    try {
+        articles = await getAllArticles();
+    } catch (error) {
+        if (error instanceof GitHubContentError && error.code !== "NOT_FOUND") {
+            // Upstream error - log but don't fail the build; return empty array
+            // Stale cache will be served on subsequent requests if available
+            console.warn("Failed to fetch articles for sitemap:", error.message);
+            articles = [];
+        } else {
+            throw error;
+        }
+    }
+
+    const projects = await listProjects();
 
     const projectUrls: MetadataRoute.Sitemap = projects.map((project) => ({
         url: `${baseUrl}/work/${project.slug}`,
@@ -17,14 +28,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         priority: project.featured ? 0.8 : 0.6,
     }));
 
-    const postUrls: MetadataRoute.Sitemap = posts
-        .filter((post) => post.hasBody)
-        .map((post) => ({
-            url: `${baseUrl}/writing/${post.slug}`,
-            lastModified: post.published_at ? new Date(post.published_at) : new Date(),
-            changeFrequency: "monthly",
-            priority: 0.7,
-        }));
+    const postUrls: MetadataRoute.Sitemap = articles.map((article) => ({
+        url: `${baseUrl}/writing/${article.slug}`,
+        lastModified: article.updatedAt ? new Date(article.updatedAt) : new Date(article.date),
+        changeFrequency: "monthly",
+        priority: 0.7,
+    }));
 
     const staticUrls: MetadataRoute.Sitemap = [
         {

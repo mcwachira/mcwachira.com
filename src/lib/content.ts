@@ -3,12 +3,11 @@ import { queryOptions } from "@tanstack/react-query";
 
 import {
     listProjects,
-    listPosts,
-    getPost,
     listExperiences,
     listSkills,
     getSettings,
 } from "./content.functions";
+import { getAllArticles, getArticleBySlug, GitHubContentError } from "./writing";
 
 import type { Project, EngineeringProject } from "@/data/site";
 
@@ -73,13 +72,13 @@ export const projectsQuery = queryOptions({
 
 export const postsQuery = queryOptions({
     queryKey: ["posts"],
-    queryFn: () => listPosts(),
+    queryFn: () => getAllArticles(),
 });
 
 export const postQuery = (slug: string) =>
     queryOptions({
         queryKey: ["post", slug],
-        queryFn: () => getPost(slug),
+        queryFn: () => getArticleBySlug(slug),
     });
 
 export const experiencesQuery = queryOptions({
@@ -117,17 +116,26 @@ export const settingsQuery = queryOptions({
  */
 
 export async function getHomeContent() {
-    const[projectRows, posts, experiences, settings] = await Promise.all([
+    let posts: Awaited<ReturnType<typeof getAllArticles>> = [];
+    try {
+        posts = await getAllArticles();
+    } catch (error) {
+        if (error instanceof GitHubContentError && error.code !== "NOT_FOUND") {
+            console.warn("Failed to fetch posts for homepage:", error.message);
+            posts = [];
+        } else {
+            throw error;
+        }
+    }
 
+    const [projectRows, experiences, settings] = await Promise.all([
         listProjects(),
-        listPosts(),
         listExperiences(),
         getSettings(),
-
     ]);
 
     return {
-        projects:{
+        projects: {
             cases: projectRows
                 .filter((row) => row.kind === "case-study")
                 .map(toCaseStudy),
