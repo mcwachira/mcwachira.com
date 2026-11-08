@@ -1,4 +1,8 @@
+packages:
+  - .
+
 allowBuilds:
   protobufjs: false
+
 minimumReleaseAgeExclude:
   - react-resizable-panels@4.19.1
